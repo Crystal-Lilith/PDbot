@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"udp:ETI""Discordrb::Voice::VoiceWS#udp;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Z@return [VoiceUDP] the UDP voice connection over which the actual audio data is sent.;T:
+@fileI"#lib/discordrb/voice/network.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::VoiceWS;TcRDoc::NormalClass0

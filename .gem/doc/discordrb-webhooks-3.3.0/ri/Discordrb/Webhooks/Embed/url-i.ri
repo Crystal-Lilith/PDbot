@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"url:ETI"#Discordrb::Webhooks::Embed#url;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"8@return [String, nil] URL the title should point to;T:
+@fileI"%lib/discordrb/webhooks/embeds.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Webhooks::Embed;TcRDoc::NormalClass0

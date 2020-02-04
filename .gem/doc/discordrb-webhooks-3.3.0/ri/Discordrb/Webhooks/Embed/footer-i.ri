@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"footer:ETI"&Discordrb::Webhooks::Embed#footer;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"&@example Add a footer to an embed;To:RDoc::Markup::Verbatim;	[I"uembed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Hello', icon_url: 'https://i.imgur.com/j69wMDu.jpg')
+;T:@format0o;
+;	[I"5@return [EmbedFooter, nil] footer for this embed;T:
+@fileI"%lib/discordrb/webhooks/embeds.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Webhooks::Embed;TcRDoc::NormalClass0

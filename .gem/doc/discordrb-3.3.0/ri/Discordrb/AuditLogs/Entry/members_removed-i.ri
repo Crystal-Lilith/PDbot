@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"members_removed:ETI"0Discordrb::AuditLogs::Entry#members_removed;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"i@return [Integer, nil] the amount of members removed. Only present if the action is `:member_prune`.;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I" Discordrb::AuditLogs::Entry;TcRDoc::NormalClass0

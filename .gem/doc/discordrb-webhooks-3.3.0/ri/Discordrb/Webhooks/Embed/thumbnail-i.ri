@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"thumbnail:ETI")Discordrb::Webhooks::Embed#thumbnail;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@see EmbedThumbnail ;TI")@example Add a thumbnail to an embed;To:RDoc::Markup::Verbatim;	[I"gembed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://i.imgur.com/xTG3a1I.jpg')
+;T:@format0o;
+;	[I";@return [EmbedThumbnail, nil] thumbnail for this embed;T:
+@fileI"%lib/discordrb/webhooks/embeds.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Webhooks::Embed;TcRDoc::NormalClass0

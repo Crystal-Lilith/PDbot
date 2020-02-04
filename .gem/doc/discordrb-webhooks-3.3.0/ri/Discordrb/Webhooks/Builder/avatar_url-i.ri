@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"avatar_url:ETI",Discordrb::Webhooks::Builder#avatar_url;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"qThe URL of an image file to be used as an avatar. If this is not set, the default avatar from the webhook's ;TI"$settings will be used instead. ;TI"%@return [String] the avatar URL.;T:
+@fileI"&lib/discordrb/webhooks/builder.rb;T:0@omit_headings_from_table_of_contents_below0F@I"!Discordrb::Webhooks::Builder;TcRDoc::NormalClass0

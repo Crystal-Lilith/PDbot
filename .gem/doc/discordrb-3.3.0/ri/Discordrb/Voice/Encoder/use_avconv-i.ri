@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"use_avconv:ETI")Discordrb::Voice::Encoder#use_avconv;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"sWhether or not avconv should be used instead of ffmpeg. If possible, it is recommended to use ffmpeg instead, ;TI" as it is better supported. ;TI"K@return [true, false] whether avconv should be used instead of ffmpeg.;T:
+@fileI"#lib/discordrb/voice/encoder.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::Encoder;TcRDoc::NormalClass0

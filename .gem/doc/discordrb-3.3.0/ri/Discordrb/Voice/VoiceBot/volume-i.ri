@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"volume:ETI"&Discordrb::Voice::VoiceBot#volume;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"tThe factor the audio's volume should be multiplied with. `1` is no change in volume, `0` is completely silent, ;TI"D`0.5` is half the default volume and `2` is twice the default. ;TI"E@return [Float] the volume for audio playback, `1.0` by default.;T:
+@fileI"%lib/discordrb/voice/voice_bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::VoiceBot;TcRDoc::NormalClass0

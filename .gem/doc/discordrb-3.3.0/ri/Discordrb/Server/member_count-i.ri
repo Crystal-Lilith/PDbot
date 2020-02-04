@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"member_count:ETI"#Discordrb::Server#member_count;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"U@return [Integer] the absolute number of members on this server, offline or not.;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Server;TcRDoc::NormalClass0

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"bot_account?:ETI"+Discordrb::UserAttributes#bot_account?;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"E@return [true, false] whether this user is a Discord bot account;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::UserAttributes;TcRDoc::NormalModule0

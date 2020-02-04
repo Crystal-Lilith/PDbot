@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"server_connection:ETI"4Discordrb::Light::Integration#server_connection;TI"R;T:publico:RDoc::Markup::Document:@parts[	o:RDoc::Markup::Paragraph;	[I"s@note The connection returned by this method will have no integrations itself, as Discord doesn't provide that;To:RDoc::Markup::Verbatim;	[I";data. Also, it will always be considered not revoked.
+;T:@format0o;
+;	[I"r@return [Connection] the server's underlying connection (for a Twitch subscriber-only server, it would be the;To;;	[I"4Twitch account connection of the server owner).;T;0:
+@fileI"(lib/discordrb/light/integrations.rb;T:0@omit_headings_from_table_of_contents_below0F@I""Discordrb::Light::Integration;TcRDoc::NormalClass0

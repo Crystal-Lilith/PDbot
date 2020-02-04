@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"old_channel:ETI"9Discordrb::Events::VoiceStateUpdateEvent#old_channel;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"h@return [Channel, nil] the old channel this user was on, or nil if the user is newly joining voice.;T:
+@fileI"/lib/discordrb/events/voice_state_update.rb;T:0@omit_headings_from_table_of_contents_below0F@I"-Discordrb::Events::VoiceStateUpdateEvent;TcRDoc::NormalClass0

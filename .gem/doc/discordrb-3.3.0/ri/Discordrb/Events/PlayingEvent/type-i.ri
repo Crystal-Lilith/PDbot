@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	type:ETI")Discordrb::Events::PlayingEvent#type;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=@return [Integer] the type of play. 0 = game, 1 = Twitch;T:
+@fileI"%lib/discordrb/events/presence.rb;T:0@omit_headings_from_table_of_contents_below0F@I"$Discordrb::Events::PlayingEvent;TcRDoc::NormalClass0

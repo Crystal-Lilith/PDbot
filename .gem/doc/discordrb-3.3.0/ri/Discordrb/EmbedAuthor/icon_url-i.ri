@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"icon_url:ETI"$Discordrb::EmbedAuthor#icon_url;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"P@return [String, nil] the icon of the author, or `nil` if there is no icon.;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::EmbedAuthor;TcRDoc::NormalClass0

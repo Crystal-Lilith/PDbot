@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"deprecated:ETI"&Discordrb::VoiceRegion#deprecated;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"_@return [true, false] whether this is a deprecated voice region (avoid switching to these);T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::VoiceRegion;TcRDoc::NormalClass0

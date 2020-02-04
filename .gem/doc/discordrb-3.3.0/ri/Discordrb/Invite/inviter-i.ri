@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"inviter:ETI"Discordrb::Invite#inviter;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"i@return [User, nil] the user that made this invite. May also be nil if the user can't be determined.;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Invite;TcRDoc::NormalClass0

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"member:ETI"*Discordrb::Events::TypingEvent#member;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"D@return [User, Member, Recipient] the user that started typing.;T:
+@fileI"#lib/discordrb/events/typing.rb;T:0@omit_headings_from_table_of_contents_below0F@I"#Discordrb::Events::TypingEvent;TcRDoc::NormalClass0

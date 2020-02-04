@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"key:ETI"Discordrb::Await#key;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"2The key that uniquely identifies this await. ;TI"%@return [Symbol] The unique key.;T:
+@fileI"lib/discordrb/await.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Await;TcRDoc::NormalClass0

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"discriminator:ETI",Discordrb::UserAttributes#discriminator;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"t@return [String] this user's discriminator which is used internally to identify users with identical usernames.;T:
+@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::UserAttributes;TcRDoc::NormalModule0

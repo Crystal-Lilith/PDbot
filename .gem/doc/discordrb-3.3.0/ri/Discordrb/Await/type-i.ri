@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	type:ETI"Discordrb::Await#type;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The class of the event that this await listens for. ;TI"%@return [Class] The event class.;T:
+@fileI"lib/discordrb/await.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Await;TcRDoc::NormalClass0

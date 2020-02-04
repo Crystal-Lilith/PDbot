@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"icon_url:ETI".Discordrb::Webhooks::EmbedAuthor#icon_url;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"M@return [String, nil] URL of the icon to be displayed next to the author;T:
+@fileI"%lib/discordrb/webhooks/embeds.rb;T:0@omit_headings_from_table_of_contents_below0F@I"%Discordrb::Webhooks::EmbedAuthor;TcRDoc::NormalClass0
