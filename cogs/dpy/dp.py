@@ -5,7 +5,7 @@ async def dp(ctx, projectname):
     role = get(ctx.guild.roles, name=f"{projectname} Dev")
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
     
-    if ctx.message.category == category:
+    if ctx.CategoryChannel == category:
         await role.delete()
 
         for i in channels:
