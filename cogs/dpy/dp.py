@@ -12,7 +12,7 @@ async def dp(ctx, projectname):
         channel = get(ctx.guild.text_channels, name=i, category=category)
         await channel.delete()
 
-    await get(ctx.guild.voice_channels, name='chat', category=category).delete()
+    # await get(ctx.guild.voice_channels, name='chat', category=category).delete()
     
     await category.delete()
 
