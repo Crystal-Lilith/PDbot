@@ -10,7 +10,7 @@ async def cp(ctx, projectname):
 
     await ctx.guild.create_category(f"{projectname} Dev")
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
-    # await category.set_permissions(role, read_message_history=True, send_messages=True)
+    await category.set_permissions(role, read_message_history=True, send_messages=True)
 
 
     for i in channels:

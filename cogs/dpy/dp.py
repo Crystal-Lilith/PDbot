@@ -1,4 +1,3 @@
-'''
 @client.command()
 async def dp(ctx, projectname):
     await ctx.channel.purge(limit=1)
@@ -10,9 +9,8 @@ async def dp(ctx, projectname):
     channels = get(ctx.guild.text_channels, name=i,category=category)
     await channels.delete()
 
-    get(ctx.guild.voice_channels, name='chat', category=category), category=category).delete()
+    await get(ctx.guild.voice_channels, name='chat', category=category), category=category).delete()
 
     await ctx.category.delete()
 
     await ctx.channel.send(f"Category {projectname} deleted!")
-'''
