@@ -20,4 +20,4 @@ async def dp(ctx, projectname):
 
         await ctx.author.send(f"Category **{projectname}** deleted!", delete_after=60)
     else:
-        ctx.channel.send('You must be the __founder__ of the project to delete it!')
+        await ctx.channel.send('You must be the __founder__ of the project to delete it!')
