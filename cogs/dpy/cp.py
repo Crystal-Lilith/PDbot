@@ -16,7 +16,7 @@ async def cp(ctx, projectname):
     bot = get(ctx.guild.roles, name='PDBot')
 
     overwrites = {
-        ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False)
+        ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
         role: discord.PermissionOverwrite(manage_channels = False,
                                         read_messages = True,
                                         view_channels = True,
@@ -28,7 +28,7 @@ async def cp(ctx, projectname):
                                         read_message_history = True,
                                         manage_roles = False,
                                         manage_permissions = False,
-                                        manage_webhooks = True)
+                                        manage_webhooks = True),
         bot: discord.PermissionOverwrite(manage_channels = True,
                                         read_messages = True,
                                         view_channels = True,
