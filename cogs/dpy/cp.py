@@ -5,7 +5,7 @@ async def cp(ctx, projectname):
     overwrites = {
         guild.default_role: discord.PermissionOverwrite(read_messages=False)
     }
-    userPerms = {
+    userPerms = [
         manage_channels = False,
         read_messages = True,
         view_channels = True,
@@ -18,8 +18,8 @@ async def cp(ctx, projectname):
         manage_roles = False,
         manage_permissions = False,
         manage_webhooks = True,
-    }
-    botPerms = {
+    ]
+    botPerms = [
         manage_channels = True,
         read_messages = True,
         view_channels = True,
@@ -32,7 +32,7 @@ async def cp(ctx, projectname):
         manage_roles = True,
         manage_permissions = True,
         manage_webhooks = True,
-    }
+    ]
 
     await ctx.guild.create_role(name=f"{projectname} Dev", mentionable=True)
     role = get(ctx.guild.roles, name=f"{projectname} Dev")
