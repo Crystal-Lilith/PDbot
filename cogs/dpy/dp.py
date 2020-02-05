@@ -16,8 +16,8 @@ async def dp(ctx, projectname):
         
         await category.delete()
 
-        await ctx.channel.send(f"Category {projectname} deleted!")
+        await ctx.author.send(f"Category **{projectname}** deleted!", delete_after=60)
     else:
         ctx.message.send('Please use this command in the category of the project you are trying to delete under **__bot-commands__**!')
 
-    
+

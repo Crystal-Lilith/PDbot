@@ -44,7 +44,6 @@ async def cp(ctx, projectname):
                                         )
     }
 
-    bot = get(ctx.guild.roles, name="PDBot")
     await ctx.guild.create_category(f"{projectname} Dev", overwrites=overwrites)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
     # await category.set_permissions(role, userPerms)
@@ -54,4 +53,4 @@ async def cp(ctx, projectname):
     for i in channels:
         await ctx.guild.create_text_channel(i, category=category)
     await ctx.guild.create_voice_channel('chat', category=category)
-    await ctx.channel.send(f"Category {projectname} created!")
+    await ctx.channel.send(f"Category **{projectname}** created!")
