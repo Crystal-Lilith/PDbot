@@ -3,7 +3,7 @@ async def cp(ctx, projectname):
     await ctx.channel.purge(limit=1)
     channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
     overwrites = {
-        guild.default_role: discord.PermissionOverwrite(read_messages=False)
+        ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False)
     }
     userPerms = [
         'manage_channels = False',
