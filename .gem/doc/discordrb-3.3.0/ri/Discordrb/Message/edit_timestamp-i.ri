@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"edit_timestamp:ETI"&Discordrb::Message#edit_timestamp;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"j@return [Time] the timestamp at which this message was edited. `nil` if the message was never edited.;T:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Message;TcRDoc::NormalClass0

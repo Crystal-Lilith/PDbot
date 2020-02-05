@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"stream_type:ETI" Discordrb::User#stream_type;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"s@return [String, Integer, nil] the type of the stream. Can technically be set to anything, most of the time it;To:RDoc::Markup::Verbatim;	[I"5will be 0 for no stream or 1 for Twitch streams.;T:@format0:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::User;TcRDoc::NormalClass0

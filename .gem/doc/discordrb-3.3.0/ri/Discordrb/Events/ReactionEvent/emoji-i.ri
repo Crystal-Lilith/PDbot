@@ -1,3 +1,0 @@
-U:RDoc::Attr[iI"
-emoji:ETI"+Discordrb::Events::ReactionEvent#emoji;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"5@return [Emoji] the emoji that was reacted with.;T:
-@fileI"&lib/discordrb/events/reactions.rb;T:0@omit_headings_from_table_of_contents_below0F@I"%Discordrb::Events::ReactionEvent;TcRDoc::NormalClass0

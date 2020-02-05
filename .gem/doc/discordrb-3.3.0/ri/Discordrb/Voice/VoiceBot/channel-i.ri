@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"channel:ETI"'Discordrb::Voice::VoiceBot#channel;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"0@return [Channel] the current voice channel;T:
-@fileI"%lib/discordrb/voice/voice_bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::VoiceBot;TcRDoc::NormalClass0

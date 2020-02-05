@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"encoder:ETI"'Discordrb::Voice::VoiceBot#encoder;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"b@return [Encoder] the encoder used to encode audio files into the format required by Discord.;T:
-@fileI"%lib/discordrb/voice/voice_bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::VoiceBot;TcRDoc::NormalClass0

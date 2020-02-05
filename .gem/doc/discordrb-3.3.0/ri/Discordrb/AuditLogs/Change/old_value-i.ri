@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"old_value:ETI"+Discordrb::AuditLogs::Change#old_value;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"i@return [String, Integer, true, false, Permissions, Overwrite, nil] the value that was changed from.;T:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"!Discordrb::AuditLogs::Change;TcRDoc::NormalClass0

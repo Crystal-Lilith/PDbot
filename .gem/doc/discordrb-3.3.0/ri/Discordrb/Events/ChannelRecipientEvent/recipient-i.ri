@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"recipient:ETI"7Discordrb::Events::ChannelRecipientEvent#recipient;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"L@return [Recipient] the recipient that was added/removed from the group;T:
-@fileI"%lib/discordrb/events/channels.rb;T:0@omit_headings_from_table_of_contents_below0F@I"-Discordrb::Events::ChannelRecipientEvent;TcRDoc::NormalClass0
