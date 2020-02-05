@@ -1,5 +1,5 @@
 # Random stuff
-*/.gem
+.gem/*
 .env
 
 # Byte-compiled / optimized / DLL files
