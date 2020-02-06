@@ -64,15 +64,10 @@ def add_extensions():
 add_extensions()
 EXTENSION_LOADER.load_all().syncwrap().wait()
 
-@on_command
-async def rrestart(client, message):
-    async with enter_executor():
-        os.system('pkill -f drbbot && bash -c "exec -a drbbot ruby rbot.rb"')
-
-@on_command
-async def drestart(client, message):
-    async with enter_executor():
-        os.system('pkill -f dpybot && bash -c "exec -a dpybot python3 dbot.py"')
+@on_commmand(case='restart-bot')
+async def restart_bot(client, message):
+    await client.message_create(message.channel, "Restarting bot...")
+    os.system('sh stop.sh')
 
 @on_command
 async def help(client, message):
