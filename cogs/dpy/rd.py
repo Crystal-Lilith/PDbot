@@ -11,5 +11,6 @@ async def rd(ctx, projectname, user):
                 await ctx.channel.send("That **user** does not exist!")
             else:
                 await user.remove_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
+                await ctx.channel.send(f"User **{user}** removed from **{projectname}** Dev!")
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to add devs!')
