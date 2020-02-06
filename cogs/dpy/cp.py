@@ -1,6 +1,6 @@
 @client.command()
 async def cp(ctx, projectname):
-    if get(ctx.guild.categories, name=f"{projectname} Dev") != None:
+    if get(ctx.guild.categories, name=f"{projectname} Dev") == None:
         channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
 
         await ctx.guild.create_role(name=f"{projectname} Founder", mentionable=True)
