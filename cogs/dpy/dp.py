@@ -6,15 +6,15 @@ async def dp(ctx, projectname):
         dev = get(ctx.guild.roles, name=f"{projectname} Dev")
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
-        while True:
-            asyncio.sleep(1)
-            try:
-                await ctx.get(category.channels).delete()
-            except:
-                break
+        # while True:
+            # asyncio.sleep(1)
+            # try:
+                await category.channels.delete()
+            # except:
+            #     break
        
-        await founder.delete()
-        await dev.delete()
+        # await founder.delete()
+        # await dev.delete()
 
         # for i in channels:
         #     channel = get(ctx.guild.text_channels, name=i, category=category)
