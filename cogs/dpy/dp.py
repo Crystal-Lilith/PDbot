@@ -6,12 +6,12 @@ async def dp(ctx, projectname):
         dev = get(ctx.guild.roles, name=f"{projectname} Dev")
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
-        # while True:
-        #     try:
-        channel = get(ctx.guild.channels, category=category)
-        await ctx.channel.send(channel)
-            # except:
-            #     break
+        while True:
+            try:
+                channel = get(ctx.guild.channels, category=category)
+                await channel.delete()
+            except:
+                break
        
         # await founder.delete()
         # await dev.delete()
