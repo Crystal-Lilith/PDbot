@@ -7,6 +7,7 @@ async def dp(ctx, projectname):
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
         while True:
+            asyncio.sleep(1)
             try:
                 await ctx.get(category.channels).delete()
             except:
@@ -21,7 +22,7 @@ async def dp(ctx, projectname):
 
         # await get(ctx.guild.voice_channels, name='chat', category=category).delete()
         
-        await category.delete()
+        # await category.delete()
 
         await ctx.channel.send(f"Category **{projectname}** deleted!")
     else:
