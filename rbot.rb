@@ -30,7 +30,7 @@ else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
 client.command(:setticketingchannel) do |event, chan|
-    chan = bot.parse_mention(chan)
+    chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
         serverticketchans[event.server.id] = chan.id
         event.respond "Set ticketing channel to <##{serverticketchans[event.server.id]}> (#{serverticketchans[event.server.id]})!"
