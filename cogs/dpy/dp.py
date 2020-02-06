@@ -8,7 +8,8 @@ async def dp(ctx, projectname):
     if get(ctx.author.roles, name=f"{projectname} Founder"):
         await founder.delete()
         await dev.delete()
-        await get(category.channels).delete()
+        for channel in get(category.channels):
+            await ctx.channel.delete()
 
         # for i in channels:
         #     channel = get(ctx.guild.text_channels, name=i, category=category)
