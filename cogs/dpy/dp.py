@@ -6,7 +6,7 @@ async def dp(ctx, projectname):
         dev = get(ctx.guild.roles, name=f"{projectname} Dev")
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
-        await ctx.message.send(get(category.channels))
+        await ctx.channel.send(get(category.channels))
        
         # await founder.delete()
         # await dev.delete()
