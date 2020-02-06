@@ -2,8 +2,11 @@ require 'discordrb'
 require 'dotenv'
 require 'json'
 require 'yaml'
-
-
+require 'fileutils'
+FileUtils.mkdir_p "config"
+FileUtils.touch(File.join("config", "serverticketchans.yaml"))
+FileUtils.touch(File.join("config", "latestticket.cfg"))
+FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
 client.remove_command(:help)
@@ -16,13 +19,14 @@ client.command(:sys, required_roles: [673405620527038478]) do |event, *cmd|
     nil
 	else
 		event.send_embed do |e|
-			e.color = '4287f5'
+			e.color = 0x4287f5
 			e.title = "Output:"
 			e.description = "```\n#{output}\n```"
 		end
 	end
 end
-FileUtils.mkdir_p "config"
+
+
 if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
     serverticketchans = Hash.new
     File.write(File.join('config', 'serverticketchans.yaml'), YAML.dump(serverticketchans))  
@@ -30,6 +34,11 @@ else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
 client.command(:setticketingchannel) do |event, chan|
+	if !event.author.role?(673405620527038478)  && !event.author.permission?(:manage_server)
+		event.respond "You do not have permission to set the ticket channel!"
+		break
+	else;
+	end
     chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
         serverticketchans[event.server.id] = chan.id
@@ -44,6 +53,19 @@ end
 client.command(:showticketingchannel) do |event|
     event.respond("The ticketing channel is <##{(YAML.load(File.read(File.join('config', 'serverticketchans.yaml')))[event.server.id])}>")
 end
+client.command(:openticket) do |event, *desc|
+	desc = desc.join(" ")
+	ticketnumber = (File.read(File.join('config', 'latestticket.cfg')).to_i) + 1
+	File.write(File.join('config', 'latestticket.cfg'), ticketnumber, mode: 'w+')
+	File.write(File.join('config', 'tickets.yaml'), YAML.dump({ticketnumber=>{'author'=>event.author.id, 'desc'=>desc}}), mode: 'a')
+	event.send_embed do |e|
+		e.color = 0x00FF00
+		e.title = "Opened ##{ticketnumber}!"
+		e.description = "**Author: #{event.author.mention}**\n#{desc}"
+	end
+end
+
+
 cmds = []
 for command in client.commands.keys
   cmds << command
