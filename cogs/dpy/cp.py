@@ -61,5 +61,5 @@ async def cp(ctx, projectname):
             await ctx.guild.create_text_channel(i, category=category)
         await ctx.guild.create_voice_channel('chat', category=category)
         await ctx.channel.send(f"Category **{projectname}** created!")
-else:
-    await ctx.channel.send("That project already exists!")
+    else:
+        await ctx.channel.send("That project already exists!")
