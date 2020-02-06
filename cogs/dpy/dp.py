@@ -8,7 +8,7 @@ async def dp(ctx, projectname):
 
         # while True:
         #     try:
-        channel = get(ctx.guild.text_channels, name=i, category=category)
+        channel = get(ctx.guild.channels, category=category)
         await ctx.channel.send(channel)
             # except:
             #     break
