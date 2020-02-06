@@ -4,6 +4,7 @@
 pyproject.toml
 poetry.lock
 pyproject.toml
+config/meme.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
