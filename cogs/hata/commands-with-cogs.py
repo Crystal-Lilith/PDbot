@@ -123,7 +123,7 @@ async def reloadall(client, message, content):
         await client.message_create(message.channel,'You are not allowed to do this!')
         return
     
-    await client.message_create(message.channel,'Restarting the bot now...')
+    await client.message_create(message.channel,'Reloading all cogs now...')
     try:
         await client.extension_loader.reload_all()
     except ExtensionError as err:
