@@ -7,9 +7,9 @@ async def dp(ctx, projectname):
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
         # while True:
-            # asyncio.sleep(1)
-            # try:
-                await category.channels.delete()
+        #     try:
+        channel = get(ctx.guild.text_channels, name=i, category=category)
+        await ctx.channel.send(channel)
             # except:
             #     break
        
