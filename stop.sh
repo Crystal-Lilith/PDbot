@@ -1,0 +1,1 @@
+killall ruby python3
