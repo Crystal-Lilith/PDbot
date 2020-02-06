@@ -11,7 +11,7 @@ async def rd(ctx, projectname, user):
                 await ctx.channel.send("That **user** does not exist!")
             else:
                 if get(user.roles, name=f"{projectname} Dev") == None:
-                    await ctx.channel.send(f"User **{user}** is not part the {projectname} Dev team!")
+                    await ctx.channel.send(f"User **{user}** is not part the **{projectname}** Dev team!")
                 else:
                     await user.remove_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
                     await ctx.channel.send(f"User **{user}** removed from **{projectname}** Dev!")

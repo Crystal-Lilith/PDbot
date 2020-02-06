@@ -14,6 +14,6 @@ async def ad(ctx, projectname, user):
                     await user.add_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
                     await ctx.channel.send(f"User **{user}** added to **{projectname}** Dev!")
                 else:
-                    await ctx.channel.send(f"This user is already a dev of **{projectname}**!")
+                    await ctx.channel.send(f"User **{user}** is already a dev of **{projectname}**!")
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to add devs!')
