@@ -1,5 +1,5 @@
 @client.command()
-async def dp(ctx, projectname):
+async def dp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.author.roles, name=f"{projectname} Founder"):
         founder = get(ctx.guild.roles, name=f"{projectname} Founder")

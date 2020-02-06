@@ -1,5 +1,5 @@
 @client.command()
-async def ad(ctx, user, projectname):
+async def ad(ctx, user, *, projectname):
     projectname = projectname.lower()
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
