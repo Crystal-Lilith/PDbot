@@ -8,16 +8,12 @@ async def dp(ctx, projectname):
 
         while True:
             try:
-                await ctx.channel.send(get(category.channels))
+                await ctx.get(category.channels).delete()
             except:
-                await ctx.channel.send("done!")
                 break
-        await ctx.channel.send("working!")
        
-        # await founder.delete()
-        # await dev.delete()
-        # for channel in channels:
-        #     await ctx.channel.delete()
+        await founder.delete()
+        await dev.delete()
 
         # for i in channels:
         #     channel = get(ctx.guild.text_channels, name=i, category=category)
@@ -25,8 +21,8 @@ async def dp(ctx, projectname):
 
         # await get(ctx.guild.voice_channels, name='chat', category=category).delete()
         
-        # await category.delete()
+        await category.delete()
 
-        # await ctx.channel.send(f"Category **{projectname}** deleted!")
+        await ctx.channel.send(f"Category **{projectname}** deleted!")
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to delete it!')
