@@ -16,15 +16,11 @@ client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=
 
 client.remove_command('help')
 
-@client.listen
-async def on_ready():
-    print('Bot online!')
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Ready to program!'))
 
 @client.event
 async def on_ready():
     print('Bot online!')
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Ready!'))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Ready to program!'))
 
 @client.command()
 async def help(ctx):
