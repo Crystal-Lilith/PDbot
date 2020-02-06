@@ -1,3 +1,4 @@
+#!/bin/bash
 clear
 export GEM_HOME=./.gem
 gem install discordrb dotenv
