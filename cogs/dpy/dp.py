@@ -7,10 +7,9 @@ async def dp(ctx, projectname):
         category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
         channels = []
-        # for server in Client.servers:
-        #     for channel in server.channels:
-        for channel in get(category.channels):
-            channels.append(channel)
+        for server in Client.servers:
+            for channel in server.channels:
+                channels.append(channel)
         # await founder.delete()
         # await dev.delete()
         for channel in channels:
