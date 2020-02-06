@@ -6,7 +6,7 @@ async def cp(ctx, projectname):
 
         await ctx.guild.create_role(name=f"{projectname} Founder", mentionable=True)
         await ctx.guild.create_role(name=f"{projectname} Dev", mentionable=True)
-        asyncio.sleep(3)
+        asyncio.sleep(4)
         founder = get(ctx.guild.roles, name=f"{projectname} Founder")
         dev = get(ctx.guild.roles, name=f"{projectname} Dev")
         await ctx.message.author.add_roles(founder)
