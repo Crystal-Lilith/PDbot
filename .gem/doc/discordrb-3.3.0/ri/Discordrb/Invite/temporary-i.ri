@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"temporary:ETI" Discordrb::Invite#temporary;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Ó@return [true, false] whether or not this invite grants temporary membership. If someone joins a server with this invite, they will be removed from the server when they go offline unless they've received a role.;T:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Invite;TcRDoc::NormalClass0

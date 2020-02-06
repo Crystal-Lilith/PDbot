@@ -1,3 +1,0 @@
-U:RDoc::Attr[iI"event_threads:ETI"!Discordrb::Bot#event_threads;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[
-I"JThe list of currently running threads used to parse and call events. ;TI"`The threads will have a local variable `:discordrb_name` in the format of `et-1234`, where ;TI"e"et" stands for "event thread" and the number is a continually incrementing number representing ;TI"+how many events were executed before. ;TI")@return [Array<Thread>] The threads.;T:
-@fileI"lib/discordrb/bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Bot;TcRDoc::NormalClass0

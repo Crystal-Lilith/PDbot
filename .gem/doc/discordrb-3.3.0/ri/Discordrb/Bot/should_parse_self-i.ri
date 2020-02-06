@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"should_parse_self:ETI"%Discordrb::Bot#should_parse_self;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"`@return [true, false] whether or not the bot should parse its own messages. Off by default.;T:
-@fileI"lib/discordrb/bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Bot;TcRDoc::NormalClass0

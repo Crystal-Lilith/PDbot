@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"avatar_id:ETI"(Discordrb::UserAttributes#avatar_id;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"c@return [String] the ID of this user's current avatar, can be used to generate an avatar URL. ;TI"@see #avatar_url;T:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::UserAttributes;TcRDoc::NormalModule0

@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"username:ETI"*Discordrb::Webhooks::Builder#username;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"vThe username the webhook will display as. If this is not set, the default username set in the webhook's settings ;TI"will be used instead. ;TI"#@return [String] the username.;T:
-@fileI"&lib/discordrb/webhooks/builder.rb;T:0@omit_headings_from_table_of_contents_below0F@I"!Discordrb::Webhooks::Builder;TcRDoc::NormalClass0

@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"stream_time:ETI"+Discordrb::Voice::VoiceBot#stream_time;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"t@return [Integer, nil] the amount of time the stream has been playing, or `nil` if nothing has been played yet.;T:
-@fileI"%lib/discordrb/voice/voice_bot.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::Voice::VoiceBot;TcRDoc::NormalClass0

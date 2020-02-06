@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"splash_hash:ETI"(Discordrb::InviteServer#splash_hash;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"r@return [String, nil] the hash of the server's invite splash screen (for partnered servers) or nil if none is;To:RDoc::Markup::Verbatim;	[I"present;T:@format0:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::InviteServer;TcRDoc::NormalClass0

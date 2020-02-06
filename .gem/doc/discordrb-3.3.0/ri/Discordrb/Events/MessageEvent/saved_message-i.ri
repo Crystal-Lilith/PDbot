@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"saved_message:ETI"2Discordrb::Events::MessageEvent#saved_message;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"t@return [String] the message that has been saved by calls to {#<<} and will be sent to Discord upon completion.;T:
-@fileI"$lib/discordrb/events/message.rb;T:0@omit_headings_from_table_of_contents_below0F@I"$Discordrb::Events::MessageEvent;TcRDoc::NormalClass0

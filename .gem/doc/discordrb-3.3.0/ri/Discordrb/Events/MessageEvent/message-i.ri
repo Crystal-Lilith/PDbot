@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"message:ETI",Discordrb::Events::MessageEvent#message;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">@return [Message] the message which triggered this event.;T:
-@fileI"$lib/discordrb/events/message.rb;T:0@omit_headings_from_table_of_contents_below0F@I"$Discordrb::Events::MessageEvent;TcRDoc::NormalClass0

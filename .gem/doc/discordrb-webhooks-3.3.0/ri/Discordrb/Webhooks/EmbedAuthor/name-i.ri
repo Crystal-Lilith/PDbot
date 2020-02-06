@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"	name:ETI"*Discordrb::Webhooks::EmbedAuthor#name;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-@return [String, nil] name of the author;T:
-@fileI"%lib/discordrb/webhooks/embeds.rb;T:0@omit_headings_from_table_of_contents_below0F@I"%Discordrb::Webhooks::EmbedAuthor;TcRDoc::NormalClass0

@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"	code:ETI"'Discordrb::Errors::CodeError::code;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"F@return [Integer] The error code represented by this error class.;T:
-@fileI"lib/discordrb/errors.rb;T:0@omit_headings_from_table_of_contents_below0T@I"!Discordrb::Errors::CodeError;TcRDoc::NormalClass0

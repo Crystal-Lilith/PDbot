@@ -1,2 +1,0 @@
-U:RDoc::Attr[iI"icon_url:ETI"$Discordrb::EmbedFooter#icon_url;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"1@return [String] the URL of the footer icon.;T:
-@fileI"lib/discordrb/data.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Discordrb::EmbedFooter;TcRDoc::NormalClass0
