@@ -1,5 +1,5 @@
 @client.command()
-async def ad(ctx, projectname, user):
+async def rd(ctx, projectname, user):
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
@@ -10,7 +10,6 @@ async def ad(ctx, projectname, user):
             if user == None:
                 await ctx.channel.send("That **user** does not exist!")
             else:
-                await user.add_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
-                await ctx.channel.send(f"User **{user}** added to **{projectname}** Dev!")
+                await user.remove_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to add devs!')

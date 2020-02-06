@@ -1,6 +1,5 @@
 @client.command()
 async def dp(ctx, projectname):
-    await ctx.channel.purge(limit=1)
     channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
     founder = get(ctx.guild.roles, name=f"{projectname} Founder")
     dev = get(ctx.guild.roles, name=f"{projectname} Dev")
