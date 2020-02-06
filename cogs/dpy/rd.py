@@ -1,5 +1,6 @@
 @client.command()
 async def rd(ctx, user, projectname):
+    projectname = projectname.lower()
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 

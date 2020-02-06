@@ -1,5 +1,6 @@
 @client.command()
 async def cp(ctx, projectname):
+    projectname = projectname.lower()
     if get(ctx.guild.categories, name=f"{projectname} Dev") == None:
         channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
 
