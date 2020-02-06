@@ -1,15 +1,14 @@
 @client.command()
 async def dp(ctx, projectname):
-    channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
+    #channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
     founder = get(ctx.guild.roles, name=f"{projectname} Founder")
     dev = get(ctx.guild.roles, name=f"{projectname} Dev")
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
     
     if get(ctx.author.roles, name=f"{projectname} Founder"):
-        channels = get(category.channels)
-        await ctx.channel.send(channels)
-        # await founder.delete()
-        # await dev.delete()
+        await founder.delete()
+        await dev.delete()
+        await get(category.channels).delete()
 
         # for i in channels:
         #     channel = get(ctx.guild.text_channels, name=i, category=category)
@@ -17,8 +16,8 @@ async def dp(ctx, projectname):
 
         # await get(ctx.guild.voice_channels, name='chat', category=category).delete()
         
-        # await category.delete()
+        await category.delete()
 
-        # await ctx.channel.send(f"Category **{projectname}** deleted!")
+        await ctx.channel.send(f"Category **{projectname}** deleted!")
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to delete it!')
