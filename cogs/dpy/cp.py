@@ -14,7 +14,7 @@ async def cp(ctx, projectname):
 
         overwrites = {
             ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
-            founder: discord.PermissionOverwrite(manage_channels = False,
+            founder: discord.PermissionOverwrite(manage_channels = True,
                                             read_messages = True,
                                             view_channel = True,
                                             send_messages = True,
@@ -24,7 +24,7 @@ async def cp(ctx, projectname):
                                             attach_files = True,
                                             read_message_history = True,
                                             manage_roles = False,
-                                            manage_permissions = False,
+                                            manage_permissions = True,
                                             manage_webhooks = True),
             dev: discord.PermissionOverwrite(manage_channels = False,
                                             read_messages = True,

@@ -12,7 +12,7 @@ async def ad(ctx, user, projectname):
             else:
                 if get(user.roles, name=f"{projectname} Dev") == None:
                     await user.add_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
-                    await ctx.channel.send(f"User **{user}** added to **{projectname}** Dev!")
+                    await ctx.channel.send(f"User **{user}** added to **{projectname} Dev**!")
                 else:
                     await ctx.channel.send(f"User **{user}** is already a dev of **{projectname}**!")
     else:
