@@ -21,6 +21,11 @@ async def on_ready():
     print('Bot online!')
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Ready to program!'))
 
+@client.event
+async def on_ready():
+    print('Bot online!')
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Ready!'))
+
 @client.command()
 async def help(ctx):
     cmds = []
