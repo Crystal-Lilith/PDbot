@@ -1,14 +1,14 @@
 @client.command()
-async def rd(ctx, projectname, user):
+async def rd(ctx, user, projectname):
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):
-        if category == None:
-            await ctx.channel.send("That **project** does not exist!")
+        if user == None:
+            await ctx.channel.send("That **user** does not exist!")
         else:
-            if user == None:
-                await ctx.channel.send("That **user** does not exist!")
+            if category == None:
+                await ctx.channel.send("That **project** does not exist!")
             else:
                 if get(user.roles, name=f"{projectname} Dev") == None:
                     await ctx.channel.send(f"User **{user}** is not part the **{projectname}** Dev team!")

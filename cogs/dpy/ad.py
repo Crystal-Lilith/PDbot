@@ -1,14 +1,14 @@
 @client.command()
-async def ad(ctx, projectname, user):
+async def ad(ctx, user, projectname):
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):
-        if category == None:
-            await ctx.channel.send("That **project** does not exist!")
+        if user == None:
+            await ctx.channel.send("That **user** does not exist!")
         else:
-            if user == None:
-                await ctx.channel.send("That **user** does not exist!")
+            if category == None:
+                await ctx.channel.send("That **project** does not exist!")
             else:
                 if get(user.roles, name=f"{projectname} Dev") == None:
                     await user.add_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
