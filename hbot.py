@@ -19,8 +19,9 @@ from pdaddons.python.hata.interpreter import Interpreter
 token = os.environ.get('TOKEN')
 pdbot = Client(token)
 
-on_command = pdbot.events(events.CommandProcesser(os.environ.get('PREFIX'))).shortcut
-
+prefix = os.environ.get('PREFIX')
+on_command = pdbot.events(events.CommandProcesser(prefix)).shortcut
+del(prefix)
 pdbot.events(ReactionAddWaitfor)
 pdbot.events(ReactionDeleteWaitfor)
 
