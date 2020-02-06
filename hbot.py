@@ -1,7 +1,6 @@
 import os
 import json
 
-
 try:
     import hata, flask
     del(hata, flask)
@@ -65,7 +64,7 @@ def add_extensions():
 add_extensions()
 EXTENSION_LOADER.load_all().syncwrap().wait()
 
-@on_command(case='restart-bot')
+@on_command(case='update-bot')
 async def restart_bot(client, message):
     await client.message_create(message.channel, "Restarting bot...")
     os.system('sh stop.sh')
@@ -107,7 +106,7 @@ async def help(client, message):
         result.append(embed)
 
     del pages
-    await Pagination(client,message.channel,result)
+    await Pagination(client, message.channel,result)
 
 app=Flask(__name__)
 

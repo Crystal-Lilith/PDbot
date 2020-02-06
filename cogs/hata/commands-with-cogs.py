@@ -117,8 +117,8 @@ async def unload(client, message, extension):
     await client.extension_loader.unload(f'cogs.{extension}')
     await client.message_create(message.channel,f'{extension} has been unloaded!')
 
-@commands
-async def restart(client, message, content):
+@commands(case='reload-all')
+async def reloadall(client, message, content):
     if message.author.id not in OIDs():
         await client.message_create(message.channel,'You are not allowed to do this!')
         return
