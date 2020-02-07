@@ -1,6 +1,7 @@
 @client.command()
-async def ad(ctx, user: discord.User, *, projectname):
+async def ad(ctx, user, *, projectname):
     projectname = projectname.lower()
+    user = ctx.guild.get_member_named(user)
     #user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
