@@ -64,9 +64,6 @@ client.command(:openticket) do |event, *desc|
 		e.description = "**Author: #{event.author.mention}**\n#{desc}"
 	end
 end
-client.command(:opentickets) do |event|
-    event.respond "#{for x in YAML.load(File.read(File.join('config', 'tickets.yaml'))); '#' + x + '\n'; end}"
-end
 
 cmds = []
 for command in client.commands.keys
