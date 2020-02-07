@@ -1,8 +1,7 @@
 @client.command()
 async def ad(ctx, user, *, projectname):
     projectname = projectname.lower()
-    user = ctx.guild.get_member_named(user)
-    #user = get(ctx.guild.members, name=user)
+    user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):
