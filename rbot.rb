@@ -57,14 +57,16 @@ client.command(:openticket) do |event, *desc|
 	desc = desc.join(" ")
 	ticketnumber = (File.read(File.join('config', 'latestticket.cfg')).to_i) + 1
 	File.write(File.join('config', 'latestticket.cfg'), ticketnumber, mode: 'w+')
-	File.write(File.join('config', 'tickets.yaml'), YAML.dump({ticketnumber=>{'author'=>event.author.id, 'desc'=>desc}}), mode: 'a')
+	File.write(File.join('config', 'tickets.yaml'), YAML.dump({ticketnumber=>{'author'=>event.author.id, 'desc'=>desc, 'opened'=>false}}), mode: 'a')
 	event.send_embed do |e|
 		e.color = 0x00FF00
 		e.title = "Opened ##{ticketnumber}!"
 		e.description = "**Author: #{event.author.mention}**\n#{desc}"
 	end
 end
-
+client.command(:opentickets) do |event|
+    event.respond "#{for x in YAML.load(File.read(File.join('config', 'tickets.yaml'))); '#' + x + '\n'; end}"
+end
 
 cmds = []
 for command in client.commands.keys

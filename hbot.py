@@ -80,6 +80,7 @@ async def help(client, message):
         for i in x:
             if i.lower() != 'help':
                 cmds.append(i)
+    cmds = sorted(cmds, key=str.lower) # Key positional argument is used to make sure uppercase commands don't take precedence.
     pages=[]
     part=[]
     index=0
