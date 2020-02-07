@@ -1,2 +1,2 @@
 #!/bin/bash
-killall start.sh ruby python3
+killall ruby python3
