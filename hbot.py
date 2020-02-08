@@ -71,7 +71,7 @@ async def restart_bot(client, message):
 
 @on_command
 async def help(client, message, content):
-    if content in [None, '']:
+    if content not in [None, '']:
         return
     cmds = []
     for i in pdbot.events.message_create.commands:
