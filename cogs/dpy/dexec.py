@@ -2,8 +2,8 @@ from hata import enter_executor
 
 @commands.has_role('PDBot Dev')
 @client.command()
-async def dexec(ctx, *, code):
-    output=exec(code)
+async def dexec(ctx):
+    output=exec(ctx.message.content.strip('$dexec '))
     if len(output) > 2000:
         async with enter_executor():
             with open('output.txt') as f:
