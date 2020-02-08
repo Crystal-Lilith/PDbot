@@ -9,7 +9,6 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.remove_command(:help)
 client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
@@ -69,7 +68,17 @@ client.commands.each do |name, command|
 	description = command.attributes[:description]
 	cmds[name] = {'desc' => description, 'perms' => [], 'roles' => []}
 end
-puts cmds
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
+client.command(:help, description: "A help command.") do |event, cmdname|
+	cmdname.downcase!
+	if cmdname == nil; # pass
+	else
+		if cmds.key? cmdname
+			event.respond("#{cmdname} | #{cmds[cmdname][description]}\nRequired roles: #{cmds[cmdname][roles].join ', '}\nRequired permissions: #{cmds[cmdname][roles].join ', '}")
+		else
+			event.respond("#{cmdname} isn't a valid command!")
+		end
+	end
+end
 client.run()
 
