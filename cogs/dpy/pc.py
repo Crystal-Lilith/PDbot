@@ -2,8 +2,7 @@
 async def pc(ctx, _hex, *, projectname):
     projectname = projectname.lower()
     _hex = _hex.replace('#', '')
-    _hex = tuple(int(_hex[i:i+2], 16) for i in (0, 2, 4))
-    color = discord.Color.from_rgb(_hex)
+    color = discord.Color.from_rgb(*tuple(int(_hex[i:i+2], 16) for i in (0, 2, 4)))
     founder = get(ctx.guild.roles, name=f"{projectname} Founder")
     dev = get(ctx.guild.roles, name=f"{projectname} Dev")
 
