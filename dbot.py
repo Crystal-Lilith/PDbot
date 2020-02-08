@@ -1,4 +1,5 @@
 import os, json, asyncio
+from random import randint
 
 try:
     import discord
