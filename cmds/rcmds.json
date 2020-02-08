@@ -1,1 +1,1 @@
-["sys","setticketingchannel","showticketingchannel","openticket"]
+{"sys":{"desc":"Run a system command.","perms":[],"roles":[]},"setticketingchannel":{"desc":"Set the default ticketing channel for this server.","perms":[],"roles":[]},"showticketingchannel":{"desc":"Show the default ticketing channel for this server.","perms":[],"roles":[]},"openticket":{"desc":"Open a ticket.","perms":[],"roles":[]}}

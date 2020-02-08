@@ -10,7 +10,7 @@ FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
 client.remove_command(:help)
-client.command(:sys, required_roles: [673405620527038478]) do |event, *cmd|
+client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
 		File.write("output.txt", output)
@@ -33,7 +33,7 @@ if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
 else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
-client.command(:setticketingchannel) do |event, chan|
+client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.") do |event, chan|
 	if !event.author.role?(673405620527038478)  && !event.author.permission?(:manage_server)
 		event.respond "You do not have permission to set the ticket channel!"
 		break
@@ -46,14 +46,14 @@ client.command(:setticketingchannel) do |event, chan|
         File.delete(File.join 'config', "serverticketchans.yaml")
         File.write(File.join("config", "serverticketchans.yaml"), YAML.dump(serverticketchans))
     else    
-        event.respond("Channel #{chan} is invalid! Please make sure it exists in this server.")
+		event.respond("Channel #{chan} is invalid! Please make sure it exists in this server.")
+		nil
     end
-    nil
 end
-client.command(:showticketingchannel) do |event|
+client.command(:showticketingchannel, description: "Show the default ticketing channel for this server.") do |event|
     event.respond("The ticketing channel is <##{(YAML.load(File.read(File.join('config', 'serverticketchans.yaml')))[event.server.id])}>")
 end
-client.command(:openticket) do |event, *desc|
+client.command(:openticket, description: "Open a ticket.") do |event, *desc|
 	desc = desc.join(" ")
 	ticketnumber = (File.read(File.join('config', 'latestticket.cfg')).to_i) + 1
 	File.write(File.join('config', 'latestticket.cfg'), ticketnumber, mode: 'w+')
@@ -64,7 +64,12 @@ client.command(:openticket) do |event, *desc|
 		e.description = "**Author: #{event.author.mention}**\n#{desc}"
 	end
 end
-
-
-File.write(File.join('cmds', 'rcmds.json'), client.commands.keys.to_json, mode: "w+")
+cmds = Hash.new
+client.commands.each do |name, command|
+	description = command.attributes[:description]
+	cmds[name] = {'desc' => description, 'perms' => [], 'roles' => []}
+end
+puts cmds
+File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
 client.run()
+
