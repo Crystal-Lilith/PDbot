@@ -1,5 +1,5 @@
 @client.command()
-async def(ctx, *, projectname):
+async def prc(ctx, *, projectname):
     projectname = projectname.lower()
     color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))
     founder = get(ctx.guild.roles, name=f"{projectname} Founder")
