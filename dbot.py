@@ -26,7 +26,7 @@ async def on_ready():
 async def help(ctx):
     cmds = {}
     for command in client.commands:
-        cmds[command.name] = f"desc:{{{discord.ext.commands.command.description}}},"
+        cmds[command.name] = "No description" # f"desc:{{{discord.ext.commands.command.description}}},"
     with open('./cmds/dcmds.json', 'w+') as f:
         json.dumps(cmds, f)
 
