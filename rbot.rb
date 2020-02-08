@@ -65,21 +65,19 @@ client.command(:openticket, description: "Open a ticket.") do |event, *desc|
 end
 cmds = Hash.new
 client.commands.each do |name, command|
-	description = command.attributes[:description]
-	cmds[name] = {'desc' => description, 'perms' => [], 'roles' => []}
+	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => [], 'roles' => []}
 end
-dpycmds = File.read(File.join('config', 'dcmds.json'))
+dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
 client.command(:help, description: "A help command.") do |event, cmdname|
-	cmdname.downcase!
-	event.respond "#{dpycmds}"
-	event.respond "#{cmds}"
-	if cmdname == nil; # pass
+	if cmdname == nil; break
 	else
+		cmdname.downcase!
+		puts dpycmds.class, cmds.class
 		if cmds.key?(cmdname) 
-			event.respond("#{cmdname} | #{cmds[cmdname][description]}\nRequired roles: #{cmds[cmdname][roles].join ', '}\nRequired permissions: #{cmds[cmdname][roles].join ', '}")
-		elsif dpycmds.key?(cmdname)
-			event.respond("#{cmdname} | #{dpycmds[cmdname][description]}\nRequired roles: #{dpycmds[cmdname][roles].join ', '}\nRequired permissions: #{dpycmds[cmdname][roles].join ', '}")
+			event.respond("#{cmdname} | #{(cmds[cmdname])['desc']}\nRequired roles: #{(cmds[cmdname])['roles'].join ', '}\nRequired permissions: #{cmds[cmdname]['perms'].join ', '}")
+		# elsif dpycmds.key?(cmdname)
+			# event.respond("#{cmdname} | #{dpycmds[cmdname][description]}\nRequired roles: #{dpycmds[cmdname][roles].join ', '}\nRequired permissions: #{dpycmds[cmdname][roles].join ', '}")
 		else
 			event.respond("#{cmdname} isn't a valid command!")
 		end
