@@ -70,7 +70,9 @@ async def restart_bot(client, message):
     os.system('sh stop.sh')
 
 @on_command
-async def help(client, message):
+async def help(client, message, content):
+    if content in [None, '']:
+        return
     cmds = []
     for i in pdbot.events.message_create.commands:
         cmds.append(i)
