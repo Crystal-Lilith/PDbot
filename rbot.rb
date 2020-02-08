@@ -67,6 +67,4 @@ end
 
 
 File.write(File.join('cmds', 'rcmds.json'), client.commands.keys.to_json, mode: "w+")
-
-client.message
 client.run()
