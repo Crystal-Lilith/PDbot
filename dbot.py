@@ -1,4 +1,4 @@
-import os, json, asyncio, ast
+import os, json, asyncio
 from random import randint
 
 try:
