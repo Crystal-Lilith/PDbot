@@ -27,7 +27,7 @@ async def help(ctx):
     cmds = {}
     for command in client.commands:
         cmds.append(command.name)
-        cmds.append(f"desc:{{{discord.ext.commands.command.description}, }}")
+        cmds.append(f"desc:{{{discord.ext.commands.command.description}}},")
     with open('./cmds/dcmds.json', 'w+') as f:
         json.dump(cmds, f)
 
