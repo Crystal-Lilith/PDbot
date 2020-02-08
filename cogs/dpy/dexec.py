@@ -4,7 +4,9 @@ from hata import enter_executor
 @client.command()
 async def dexec(ctx):
     output=exec(ctx.message.content.strip('$dexec '))
-    if len(output) > 2000:
+    if output == None:
+        await ctx.send('No output')
+    elif len(output) > 2000:
         async with enter_executor():
             with open('output.txt') as f:
                 f.write(output)
