@@ -2,8 +2,8 @@ from hata import enter_executor
 
 @commands.has_role('PDBot Dev')
 @client.command()
-async def dexec(ctx):
-    output=exec(ctx.message.content.strip('$dexec '))
+async def dexec(ctx, *, cmds):
+    output = exec(cmds)
     if output == None:
         await ctx.send('No output')
     elif len(output) > 2000:
