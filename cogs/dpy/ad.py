@@ -18,6 +18,6 @@ async def ad(ctx, user: discord.User, *, projectname):
                     else:
                         await ctx.channel.send(f"User **{user}** is already a dev of **{projectname}**!")
         else:
-            await ctx.channel.send("You cannot add yourself as Dev!")
+            await ctx.channel.send("You cannot add **yourself** as Dev!")
     else:
         await ctx.channel.send('You must be the **__founder__** of the project to add devs!')
