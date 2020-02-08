@@ -3,8 +3,9 @@ async def ad(ctx, projectname, *):
     projectname = projectname.lower()
     # user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
-    users =  ctx.author.message.raw_mentions()
-    await ctx.channel.send(users)
+    users =  ctx.author.message.raw_mentions
+    for user in users:
+        await ctx.channel.send(user)
 
     # if get(ctx.author.roles, name=f"{projectname} Founder"):
     #     if user == None:
