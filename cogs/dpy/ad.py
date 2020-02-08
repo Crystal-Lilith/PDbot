@@ -2,7 +2,7 @@
 async def ad(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
 
-    user = get(ctx.guild.get_member(), user_id=user.id)
+    user = ctx.guild.get_member(user.id)
     # category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     await ctx.channel.send(user)
