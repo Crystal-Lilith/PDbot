@@ -68,13 +68,18 @@ client.commands.each do |name, command|
 	description = command.attributes[:description]
 	cmds[name] = {'desc' => description, 'perms' => [], 'roles' => []}
 end
+dpycmds = File.read(File.join('config', 'dcmds.json'))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
 client.command(:help, description: "A help command.") do |event, cmdname|
 	cmdname.downcase!
+	event.respond "#{dpycmds}"
+	event.respond "#{cmds}"
 	if cmdname == nil; # pass
 	else
-		if cmds.key? cmdname
+		if cmds.key?(cmdname) 
 			event.respond("#{cmdname} | #{cmds[cmdname][description]}\nRequired roles: #{cmds[cmdname][roles].join ', '}\nRequired permissions: #{cmds[cmdname][roles].join ', '}")
+		elsif dpycmds.key?(cmdname)
+			event.respond("#{cmdname} | #{dpycmds[cmdname][description]}\nRequired roles: #{dpycmds[cmdname][roles].join ', '}\nRequired permissions: #{dpycmds[cmdname][roles].join ', '}")
 		else
 			event.respond("#{cmdname} isn't a valid command!")
 		end
