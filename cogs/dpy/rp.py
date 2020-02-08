@@ -8,9 +8,9 @@ async def rp(ctx, projectname, *, newprojectname):
             dev = get(ctx.guild.roles, name=f"{projectname} Dev")
             category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
-            founder.edit(name=f"{newprojectname} Founder")
-            dev.edit(name=f"{newprojectname} Dev")
-            category.edit(name=f"{newprojectname} Dev")
+            await founder.edit(name=f"{newprojectname} Founder")
+            await dev.edit(name=f"{newprojectname} Dev")
+            await category.edit(name=f"{newprojectname} Dev")
             
             await ctx.channel.send(f"Project **{projectname}** changed to **{newprojectname}**!")
         else:
