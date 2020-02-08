@@ -1,5 +1,6 @@
 @client.command()
 async def dp(ctx, *, projectname):
+    """Deletes project"""
     projectname = projectname.lower()
     if get(ctx.author.roles, name=f"{projectname} Founder"):
         founder = get(ctx.guild.roles, name=f"{projectname} Founder")
