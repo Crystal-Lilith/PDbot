@@ -9,8 +9,8 @@ async def rp(ctx, newprojectname, *, projectname):
             category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
             founder.edit(name=f"{newprojectname} Founder")
-            dev.edit(f"{newprojectname} Dev")
-            category.edit(f"{newprojectname} Dev")
+            dev.edit(name=f"{newprojectname} Dev")
+            category.edit(name=f"{newprojectname} Dev")
             
             await ctx.channel.send(f"Project **{projectname}** changed to **{newprojectname}**!")
         else:
