@@ -3,7 +3,7 @@ async def cp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.guild.categories, name=f"{projectname} Dev") == None:
         channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
-        color = discord.Color.from_rgb((randint(0,255), randint(0,255), randint(0,255)))
+        color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))
 
         await ctx.guild.create_role(name=f"{projectname} Founder", mentionable=True, color=color)
         await ctx.guild.create_role(name=f"{projectname} Dev", mentionable=True, color=color)
