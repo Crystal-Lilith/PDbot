@@ -26,7 +26,7 @@ async def on_ready():
 async def help(ctx):
     cmds = {}
     for command in client.commands:
-        desc = {"desc":command.description, "perms":[]} #We need a way to fill in perms, maybe a perm handler?
+        desc = {"desc":command.description, "perms":[], "roles":[]} #We need a way to fill in perms, maybe a perm handler?
         cmds[command.name] = desc
     with open('./cmds/dcmds.json', 'w+') as f:
         json.dump(cmds, f)
