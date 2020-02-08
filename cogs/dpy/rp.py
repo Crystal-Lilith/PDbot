@@ -2,7 +2,7 @@
 async def rp(ctx, newprojectname, *, projectname):
     newprojectname = newprojectname.lower()
     projectname = projectname.lower()
-    if get(ctx.guild.categories, name=f"{newprojectname} Dev") != None:
+    if get(ctx.guild.categories, name=f"{newprojectname} Dev") == None:
         if get(ctx.author.roles, name=f"{projectname} Founder"):
             founder = get(ctx.guild.roles, name=f"{projectname} Founder")
             dev = get(ctx.guild.roles, name=f"{projectname} Dev")
