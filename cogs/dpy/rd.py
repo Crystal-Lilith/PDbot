@@ -1,7 +1,7 @@
 @client.command()
-async def rd(ctx, user, *, projectname):
+async def rd(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
-    user = get(ctx.guild.members, name=user)
+    user = ctx.guild.get_member(user.id)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):

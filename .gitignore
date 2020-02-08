@@ -5,6 +5,7 @@ pyproject.toml
 poetry.lock
 pyproject.toml
 config/meme.json
+start.sh
 output.txt
 
 # Byte-compiled / optimized / DLL files
