@@ -1,5 +1,5 @@
 @client.command()
-async def ad(ctx, user, *, projectname):
+async def ad(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
 
     await ctx.channel.send(user.id)
