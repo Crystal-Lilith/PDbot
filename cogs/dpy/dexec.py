@@ -8,6 +8,6 @@ async def dexec(ctx, *, code):
         async with enter_executor():
             with open('output.txt') as f:
                 f.write(output)
-        await ctx.send(content='Output was too long, here is the output in a file', file='output.txt')
+        await ctx.channel.send('Output was too long, here is the output in a file', file='output.txt')
     else:
-        await ctx.send(output)
+        await ctx.channel.send(output)
