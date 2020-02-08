@@ -11,6 +11,8 @@ async def rp(ctx, newprojectname, *, projectname):
             founder.edit(name=f"{newprojectname} Founder")
             dev.edit(f"{newprojectname} Dev")
             category.edit(f"{newprojectname} Dev")
+            
+            await ctx.channel.send(f"Project **{projectname}** changed to **{newprojectname}**!")
         else:
             await ctx.channel.send('You must be the **__founder__** of the project to change the project name!')
 
