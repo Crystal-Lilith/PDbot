@@ -1,8 +1,6 @@
 @client.command()
 async def ad(ctx, user, *, projectname):
     projectname = projectname.lower()
-    for i in ['<', '!', '@', '>']:
-        user.replace(i, '')
     user = get(ctx.guild.members, name=user)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
