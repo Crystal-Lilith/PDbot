@@ -1,7 +1,7 @@
 @client.command()
 async def pc(ctx, red, green, blue, *, projectname):
     projectname = projectname.lower()
-    color = discord.Color.from_rgb(red, gree, blue)
+    color = discord.Color.from_rgb(red, green, blue)
     founder = get(ctx.guild.roles, name=f"{projectname} Founder")
     dev = get(ctx.guild.roles, name=f"{projectname} Dev")
 
