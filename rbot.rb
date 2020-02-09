@@ -76,8 +76,8 @@ client.command(:help, description: "A help command.") do |event, cmdname|
 		puts dpycmds.class, cmds.class
 		if cmds.key?(cmdname) 
 			event.respond("#{cmdname} | #{(cmds[cmdname])['desc']}\nRequired roles: #{(cmds[cmdname])['roles'].join ', '}\nRequired permissions: #{cmds[cmdname]['perms'].join ', '}")
-		# elsif dpycmds.key?(cmdname)
-			# event.respond("#{cmdname} | #{dpycmds[cmdname][description]}\nRequired roles: #{dpycmds[cmdname][roles].join ', '}\nRequired permissions: #{dpycmds[cmdname][roles].join ', '}")
+		elsif dpycmds.key?(cmdname)
+			event.respond("#{cmdname} | #{dpycmds[cmdname]['description']}\nRequired roles: #{dpycmds[cmdname]['roles'].join ', '}\nRequired permissions: #{dpycmds[cmdname]['perms'].join ', '}")
 		else
 			event.respond("#{cmdname} isn't a valid command!")
 		end
