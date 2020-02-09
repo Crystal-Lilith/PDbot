@@ -1,4 +1,4 @@
-@client.command()
+@client.command(description='Renames project')
 async def rp(ctx, projectname, *, newprojectname):
     projectname = projectname.lower()
     newprojectname = newprojectname.lower()

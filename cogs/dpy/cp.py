@@ -1,4 +1,4 @@
-@client.command()
+@client.command(description='Creates project')
 async def cp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.guild.categories, name=f"{projectname} Dev") == None:

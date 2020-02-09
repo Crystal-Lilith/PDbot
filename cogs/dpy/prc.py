@@ -1,4 +1,4 @@
-@client.command()
+@client.command(description='Updates project color with a new random color')
 async def prc(ctx, *, projectname):
     projectname = projectname.lower()
     color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))

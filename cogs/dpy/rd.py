@@ -1,4 +1,4 @@
-@client.command()
+@client.command(description='Removes a dev from a project')
 async def rd(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
     user = ctx.guild.get_member(user.id)

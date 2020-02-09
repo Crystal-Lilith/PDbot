@@ -1,7 +1,7 @@
 from hata import enter_executor
 
 @commands.has_role('PDBot Dev')
-@client.command()
+@client.command(description='Executes python code')
 async def dexec(ctx, *, cmds):
     output = eval(cmds)
     if output == None:
