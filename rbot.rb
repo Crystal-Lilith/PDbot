@@ -73,13 +73,65 @@ client.command(:help, description: "A help command.") do |event, cmdname|
 	if cmdname == nil; break
 	else
 		cmdname.downcase!
-		puts dpycmds.class, cmds.class
 		if cmds.key?(cmdname) 
-			event.respond("#{cmdname} | #{(cmds[cmdname])['desc']}\nRequired roles: #{(cmds[cmdname])['roles'].join ', '}\nRequired permissions: #{cmds[cmdname]['perms'].join ', '}")
+			r = Array.new; p = Array.new
+			for c in (cmds[cmdname])['roles']
+				if event.author.role?(c)
+					r << c.to_sym
+				end
+			end
+			for c in (cmds[cmdname])['perms']
+				if event.author.permission?(c.to_sym)
+					p << c.to_sym
+				end
+			end
+			if c.length == 0 && r.length == 0
+				event.send_embed do |e|
+					e.title = "Error"
+					e.description = "You do not have the required permissions to access this command."
+					e.color = 0x7C0A02
+				end
+				break
+			else
+				event.send_embed do |e|
+					e.title = cmdname
+					e.description = "**Description**: #{(cmds[cmdname])['desc']}"
+					e.color = 0x0a7187
+				end
+			end
 		elsif dpycmds.key?(cmdname)
-			event.respond("#{cmdname} | #{dpycmds[cmdname]['desc']}\nRequired roles: #{dpycmds[cmdname]['roles'].join ', '}\nRequired permissions: #{dpycmds[cmdname]['perms'].join ', '}")
+			r = Array.new; p = Array.new
+			for c in (dpycmds[cmdname])['roles']
+				if event.author.role?(c)
+					r << c.to_sym
+				end
+			end
+			for c in (dpycmds[cmdname])['perms']
+				if event.author.permission?(c.to_sym)
+					p << c.to_sym
+				end
+			end
+			if c.length == 0 && r.length == 0
+				event.send_embed do |e|
+					e.title = "Error"
+					e.description = "You do not have the required permissions to access this command."
+					e.color = 0x7C0A02
+				end
+				break
+			else
+				event.send_embed do |e|
+					e.title = cmdname
+					e.description = "**Description**: #{(dpycmds[cmdname])['desc']}"
+					e.color = 0x0a7187
+				end
+			end
+			
 		else
-			event.respond("#{cmdname} isn't a valid command!")
+			event.send_embed do |e|
+				e.title = "Error"
+				e.description = "Command not found! Please make sure you spelled it right. See $help to see available commands."
+				e.color = 0x7C0A02
+			end
 		end
 	end
 end
