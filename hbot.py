@@ -64,9 +64,9 @@ def add_extensions():
 add_extensions()
 EXTENSION_LOADER.load_all().syncwrap().wait()
 
-@on_command(case='update-bot')
+@on_command(case='update')
 async def restart_bot(client, message):
-    await client.message_create(message.channel, "Restarting bot...")
+    await client.message_create(message.channel, "Updating bot...")
     os.system('sh stop.sh')
 
 @on_command
