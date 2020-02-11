@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
+client.command(:sys, required_roles: ['PDBot Dev'], description: "Run a system command.") do |event, *cmd|
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
 		File.write("output.txt", output)
@@ -32,12 +32,7 @@ if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
 else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
-client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.") do |event, chan|
-	if !event.author.role?(673405620527038478)  && !event.author.permission?(:manage_server)
-		event.respond "You do not have permission to set the ticket channel!"
-		break
-	else;
-	end
+client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.", required_permissions: [:manage_server]) do |event, chan|
     chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
         serverticketchans[event.server.id] = chan.id
@@ -65,7 +60,7 @@ client.command(:openticket, description: "Open a ticket.") do |event, *desc|
 end
 cmds = Hash.new
 client.commands.each do |name, command|
-	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => [], 'roles' => []}
+	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => command.attributes[:required_permissions], 'roles' => command.attributes[:required_roles]}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
@@ -73,34 +68,15 @@ client.command(:help, description: "A help command.") do |event, cmdname|
 	if cmdname == nil; break
 	else
 		cmdname.downcase!
-		if cmds.key?(cmdname) 
-			r = Array.new; p = Array.new
-			for c in (cmds[cmdname])['roles']
-				if event.author.role?(c)
-					r << c.to_sym
-				end
+		if cmds.member?(cmdname) 
+			event.send_embed do |e|
+				e.title = cmdname
+				e.description = "**Description:** #{(cmds[cmdname])['desc']}\n**Required roles:** #{((cmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((cmds[cmdname])['perms']).join(',')}"
+				e.color = 0x0a7187
 			end
-			for c in (cmds[cmdname])['perms']
-				if event.author.permission?(c.to_sym)
-					p << c.to_sym
-				end
-			end
-			if c.length == 0 && r.length == 0
-				event.send_embed do |e|
-					e.title = "Error"
-					e.description = "You do not have the required permissions to access this command."
-					e.color = 0x7C0A02
-				end
-				break
-			else
-				event.send_embed do |e|
-					e.title = cmdname
-					e.description = "**Description**: #{(cmds[cmdname])['desc']}"
-					e.color = 0x0a7187
-				end
-			end
-		elsif dpycmds.key?(cmdname)
-			r = Array.new; p = Array.new
+		elsif dpycmds.member?(cmdname)
+			r = []
+			c = []
 			for c in (dpycmds[cmdname])['roles']
 				if event.author.role?(c)
 					r << c.to_sym
