@@ -1,4 +1,4 @@
-@client.command(description='Deletes project')
+@client.command(description=str({"pc":{"desc":"Deletes project", "required_roles":None, "required_perms":None}}))
 async def dp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.author.roles, name=f"{projectname} Founder"):

@@ -1,4 +1,4 @@
-@client.command(description='Adds a dev to your project')
+@client.command(description=str({"pc":{"desc":"Adds a dev to your project", "required_roles":None, "required_perms":None}}))
 async def ad(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
     user = ctx.guild.get_member(user.id)
