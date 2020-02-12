@@ -1,4 +1,4 @@
-@client.command(description=json.dumps({"desc":"Updates project color by Hex", "required_roles":[], "required_perms":[]}))
+@client.command(description='{"desc":"Updates project color by Hex", "required_roles":[], "required_perms":[]}')
 async def pc(ctx, _hex, *, projectname):
     projectname = projectname.lower()
     _hex = _hex.replace('#', '')
