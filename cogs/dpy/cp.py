@@ -1,7 +1,7 @@
-@client.command(description=json.dumps({"desc":"Creates new project", "required_roles":None, "required_perms":None}))
+@client.command(description=json.dumps({"desc":"Creates new project", "required_roles":[], "required_perms":[]}))
 async def cp(ctx, *, projectname):
     projectname = projectname.lower()
-    if get(ctx.guild.categories, name=f"{projectname} Dev") == None:
+    if get(ctx.guild.categories, name=f"{projectname} Dev") == []:
         channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
         color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))
 

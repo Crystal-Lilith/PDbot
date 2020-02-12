@@ -1,8 +1,8 @@
-@client.command(description=json.dumps({"desc":"Renames project", "required_roles":None, "required_perms":None}))
+@client.command(description=json.dumps({"desc":"Renames project", "required_roles":[], "required_perms":[]}))
 async def rp(ctx, projectname, *, newprojectname):
     projectname = projectname.lower()
     newprojectname = newprojectname.lower()
-    if get(ctx.guild.categories, name=f"{newprojectname} Dev") == None:
+    if get(ctx.guild.categories, name=f"{newprojectname} Dev") == []:
         if get(ctx.author.roles, name=f"{projectname} Founder"):
             founder = get(ctx.guild.roles, name=f"{projectname} Founder")
             dev = get(ctx.guild.roles, name=f"{projectname} Dev")

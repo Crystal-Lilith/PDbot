@@ -1,4 +1,4 @@
-@client.command(description=json.dumps({"desc":"Updates project with new random color", "required_roles":None, "required_perms":None}))
+@client.command(description=json.dumps({"desc":"Updates project with new random color", "required_roles":[], "required_perms":[]}))
 async def prc(ctx, *, projectname):
     projectname = projectname.lower()
     color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))
