@@ -60,7 +60,7 @@ client.command(:openticket, description: "Open a ticket.") do |event, *desc|
 end
 cmds = Hash.new
 client.commands.each do |name, command|
-	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').capitalize}
+	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
 	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => command.attributes[:required_roles]}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
