@@ -1,4 +1,4 @@
-@client.command(description=str({"pc":{"desc":"Renames project", "required_roles":None, "required_perms":None}}))
+@client.command(description=str({"desc":"Renames project", "required_roles":None, "required_perms":None}))
 async def rp(ctx, projectname, *, newprojectname):
     projectname = projectname.lower()
     newprojectname = newprojectname.lower()
