@@ -1,4 +1,4 @@
-@client.command(description=json.dumps({"desc":"Renames project", "required_roles":[], "required_perms":[]}))
+@client.command(description='{"desc":"Renames project", "required_roles":[], "required_perms":[]}')
 async def rp(ctx, projectname, *, newprojectname):
     projectname = projectname.lower()
     newprojectname = newprojectname.lower()
