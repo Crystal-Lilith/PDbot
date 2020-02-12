@@ -1,4 +1,4 @@
-@client.command(description=str({"desc":"Deletes project", "required_roles":None, "required_perms":None}))
+@client.command(description=json.dumps({"desc":"Deletes project", "required_roles":None, "required_perms":None}))
 async def dp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.author.roles, name=f"{projectname} Founder"):
