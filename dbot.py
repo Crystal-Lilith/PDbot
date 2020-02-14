@@ -26,7 +26,7 @@ async def on_ready():
 async def help(ctx):
     cmds = {}
     for command in client.commands:
-        cmds[command.name] = json.loads(command.description)
+        cmds[command.name] = command.description
     with open('./cmds/dcmds.json', 'w+') as f:
         json.dump(cmds, f)
 
