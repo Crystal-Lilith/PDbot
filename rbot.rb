@@ -66,13 +66,13 @@ client.commands.each do |name, command|
     end
 	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => roles}
 end
-dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
+dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')), :quirks_mode => true)
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
 client.command(:help, description: "A help command.") do |event, cmdname|
 	if cmdname == nil; break
 	else
 		cmdname.downcase!
-		if cmds.member?(cmdname) 
+		if cmds.member?(cmdname)
 			event.send_embed do |e|
 				e.title = cmdname
 				e.description = "**Description:** #{(cmds[cmdname])['desc']}\n**Required roles:** #{((cmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((cmds[cmdname])['perms']).join(',')}"
