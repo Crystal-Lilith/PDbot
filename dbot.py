@@ -26,10 +26,11 @@ async def on_ready():
 async def help(ctx):
     cmds = {}
     open('./cmds/dcmds.json', 'w').close()  # just create the file
-    with open('./cmds/dcmds.json', 'a') as f:
+    with open('./cmds/dcmds.json', 'w+') as f:
         for command in client.commands:
           	cmds[command.name] = {"desc": command.description, 'required_roles': [], 'required_perms': []}
-               json.dumps(cmds, f)
+        json.dumps(cmds)
+        f.close()
 
 for i in os.listdir('./cogs/dpy'):
     if i.endswith('.py'):
