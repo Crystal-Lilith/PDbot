@@ -66,7 +66,7 @@ client.commands.each do |name, command|
     end
 	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => roles}
 end
-dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')), :quirks_mode => true)
+dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
 client.command(:help, description: "A help command.") do |event, cmdname|
 	if cmdname == nil; break
