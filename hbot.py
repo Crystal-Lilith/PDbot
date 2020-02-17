@@ -78,7 +78,8 @@ async def help(client, message, content):
         cmds.append(i)
     for y in os.listdir('./cmds/'):
         with open('./cmds/'+y, 'r') as f:
-            x = json.load(str(f))
+            x = json.load(f)
+            await client.message_create(message.channel, x)
         for i in x:
             if i.lower() != 'help':
                 cmds.append(i)
