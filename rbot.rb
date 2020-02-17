@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: ['PDBot Dev'], description: "Run a system command.") do |event, *cmd|
+client.command(:sys, required_roles: [:'PDBot Dev'], description: "Run a system command.") do |event, *cmd|
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
 		File.write("output.txt", output)
