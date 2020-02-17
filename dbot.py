@@ -27,9 +27,8 @@ async def help(ctx):
     cmds = {}
     for command in client.commands:
         cmds[command.name] = command.description
-    cmds = json.loads(cmds)
     with open('./cmds/dcmds.json', 'w+') as f:
-        json.dump(cmds, f)
+        json.dump(json.loads(cmds), f)
 
 for i in os.listdir('./cogs/dpy'):
     if i.endswith('.py'):
