@@ -29,7 +29,7 @@ async def help(ctx):
         cmds[command.name] = command.description
     await ctx.channel.send(cmds)
     with open('./cmds/dcmds.json', 'w+') as f:
-        json.dump(cmds, f, sort_keys=True)
+        json.dump(cmds, f)
 
 for i in os.listdir('./cogs/dpy'):
     if i.endswith('.py'):
