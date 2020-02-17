@@ -1,2 +1,2 @@
 #!/bin/bash
-killall ruby python3
+clear && killall ruby python3
