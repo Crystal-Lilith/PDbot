@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: [:'PDBot Dev'], description: "Run a system command.") do |event, *cmd|
+client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
 		File.write("output.txt", output)
@@ -61,7 +61,9 @@ end
 cmds = Hash.new
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
-	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => command.attributes[:required_roles]}
+  	roles = command.attributes[:required_roles].map {|x| x = client.parse_mention("<@&#{x}>").name if x.is_a? Integer
+  	roles = roles.map
+	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => roles}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
