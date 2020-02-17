@@ -62,7 +62,7 @@ cmds = Hash.new
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
   	roles = command.attributes[:required_roles].map do |x|
-      x = client.role(x).name if x.is_a? Integer
+      x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer
     end
 	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => roles}
 end
