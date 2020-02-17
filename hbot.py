@@ -79,9 +79,9 @@ async def help(client, message, content):
     for y in os.listdir('./cmds/'):
         with open('./cmds/'+y, 'r') as f:
             x = json.load(f)
-            for i in x:
-                if i.lower() != 'help':
-                    cmds.append(i)
+        for i in x:
+            if i.lower() != 'help':
+                cmds.append(i)
     cmds = sorted(cmds, key=str.lower) # Key positional argument is used to make sure uppercase commands don't take precedence.
     pages=[]
     part=[]
