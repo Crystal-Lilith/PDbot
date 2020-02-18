@@ -15,7 +15,7 @@ except:
 client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
                       status=discord.Status.idle, activity=discord.Game(name='Compiling'))
 
-client.remove_command('help')
+client.remove_command('help') # hata and D.rb handle that
 
 
 @client.event
@@ -29,7 +29,7 @@ async def help(ctx):
     with open('./cmds/dcmds.json', 'w+') as f:
         for command in client.commands:
           	cmds[command.name] = {"desc": command.description, 'required_roles': [], 'required_perms': []}
-        json.dumps(cmds)
+        f.write(json.dumps(cmds))
         f.close()
 
 for i in os.listdir('./cogs/dpy'):
