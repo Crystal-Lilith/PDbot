@@ -26,10 +26,10 @@ async def on_ready():
 async def help(ctx):
     cmds = {}
     open('./cmds/dcmds.json', 'w').close()
-    with open('./cmds/dcmds.json', 'w') as f:
+    with open('./cmds/dcmds.json', 'a') as f:
         for command in client.commands:
             cmds[command.name] = json.loads(command.description)
-        json.dump(cmds, f)
+            json.dump(cmds, f)
         f.close()
 
 for i in os.listdir('./cogs/dpy'):
