@@ -24,12 +24,12 @@ async def on_ready():
 
 @client.command()
 async def help(ctx):
-    cmds = {}
     open('./cmds/dcmds.json', 'w').close()
     with open('./cmds/dcmds.json', 'w') as f:
+        cmds = {}
         for command in client.commands:
             cmds[command.name] = json.loads(command.description)
-            await ctx.channel.send(cmds)
+        await ctx.channel.send(cmds)
         json.dump(cmds, f)
         f.close()
 
