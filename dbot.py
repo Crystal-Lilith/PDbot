@@ -25,11 +25,10 @@ async def on_ready():
 @client.command()
 async def help(ctx):
     cmds = {}
-    open('./cmds/dcmds.json', 'w').close()  # just create the file
     with open('./cmds/dcmds.json', 'w+') as f:
         for command in client.commands:
-            cmds[command.name] = json.loads(command.description)
-            json.dump(cmds, f)
+            cmds[command.name] = command.description
+            json.dump(json.loads(cmds), f)
         f.close()
 
 for i in os.listdir('./cogs/dpy'):
