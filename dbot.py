@@ -29,7 +29,7 @@ async def help(ctx):
     with open('./cmds/dcmds.json', 'w+') as f:
         for command in client.commands:
           	cmds[command.name] = json.dumps(command.description)
-        f.write(cmds)
+        f.write(str(cmds))
         f.close()
 
 for i in os.listdir('./cogs/dpy'):
