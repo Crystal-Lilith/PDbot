@@ -28,7 +28,7 @@ async def help(ctx):
     open('./cmds/dcmds.json', 'w').close()  # just create the file
     with open('./cmds/dcmds.json', 'w+') as f:
         for command in client.commands:
-          	cmds[command.name] = {"desc": command.description, 'required_roles': [], 'required_perms': []}
+          	cmds[command.name] = command.description
         f.write(json.dumps(cmds))
         f.close()
 
