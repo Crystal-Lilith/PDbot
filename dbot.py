@@ -28,7 +28,7 @@ async def help(ctx):
     open('./cmds/dcmds.json', 'w').close()
     with open('./cmds/dcmds.json', 'w') as f:
         for command in client.commands:
-            cmds[command.name] = json.loads(str({"desc": command.description, 'required_roles': [], 'required_perms': []}))
+            cmds[command.name] = json.loads({"desc": command.description, "required_roles": [], "required_perms": []})
             json.dump(cmds, f)
         f.close()
 
