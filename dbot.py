@@ -28,7 +28,7 @@ async def help(ctx):
     with open('./cmds/dcmds.json', 'w') as f:
         for command in client.commands:
             cmds[command.name] = {"desc": command.description, 'required_roles': [], 'required_perms': []}
-            json.dump(cmds, f)
+        json.dump(cmds, f)
         f.close()
 
 for i in os.listdir('./cogs/dpy'):
