@@ -3,6 +3,6 @@
 async def ca(ctx, option, title, *, message):
     announce = get(ctx.guild.channels, name='📢server-announcements')
     embed = discord.Embed(title=f'**+**[{title}]', color=discord.Color.from_rgb(0, 191, 255), description=message)
-    embed.set_footer(text=ctx.message.author)
+    embed.set_footer(text=f'Author: {ctx.message.author}')
     await announce.send(embed=embed)
     await ctx.channel.send('Announcement posted!')
