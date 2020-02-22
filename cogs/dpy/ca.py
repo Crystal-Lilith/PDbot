@@ -1,5 +1,5 @@
 @client.command(description='Creates announcement')
-@client.has_role('Owner')
+@commands.has_role('Owner')
 async def ac(ctx, option, title, *, message):
     announce = get(ctx.guild.channels, name='📢server-announcements')
     await ctx.announce.embed(title=f'**+**[{title}]', color=discord.Color.from_rgb(0, 191, 255), description=message)
