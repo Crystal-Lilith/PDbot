@@ -20,7 +20,7 @@ client.command(:sys, required_roles: [673405620527038478], description: "Run a s
 	else
 		event.send_embed do |e|
 			e.color = 0x4287f5
-			e.title = "Got the output, <@#{event.author.id}> 😎"
+			e.title = "Got the output, <@#{event.author.name}> 😎"
 			e.description = "```\n#{output}\n```"
 		end
 	end
