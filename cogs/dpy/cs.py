@@ -8,4 +8,4 @@ async def cs(ctx, status, *, desc):
             await client.change_presence(activity=discord.Streaming(name=desc))
         await ctx.channel.send('Bot status changed!')
     else:
-        print('Not a valid status!')
+        await ctx.channel.send('Not a valid status!')
