@@ -10,6 +10,7 @@ FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
 client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
+  	event.respond "Getting output..."
 	output = `#{cmd.join ' '}`
 	if output.length >= 2000
 		File.write("output.txt", output)
@@ -19,7 +20,7 @@ client.command(:sys, required_roles: [673405620527038478], description: "Run a s
 	else
 		event.send_embed do |e|
 			e.color = 0x4287f5
-			e.title = "Output:"
+			e.title = "Got the output, <@#{event.author.id}> 😎"
 			e.description = "```\n#{output}\n```"
 		end
 	end
@@ -61,9 +62,7 @@ end
 cmds = Hash.new
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
-  	roles = command.attributes[:required_roles].map do |x|
-      x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer
-    end
+  	roles = command.attributes[:required_roles].map { |x| x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer }
 	cmds[name.to_s] = {'desc' => command.attributes[:description], 'perms' => perms, 'roles' => roles}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
