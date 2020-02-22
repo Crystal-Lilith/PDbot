@@ -11,16 +11,21 @@ Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
 client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
   	event.respond "Getting output..."
-	output = `#{cmd.join ' '}`
+	begin
+      output = `#{cmd.join ' '}`
+      failed = false
+    rescue StandardError => e
+      output = e
+      failed = true
 	if output.length >= 2000
 		File.write("output.txt", output)
-		event.send_file(File.open("output.txt", "r"), caption: "Output was too long (over 2000 characters). Uploading as a file:")
+		event.send_file(File.open("output.txt", "r"), caption: "Output was too long (over 2000 characters).#{' There was also an error in it.' if failed==true} Uploading as a file:")
 		File.delete("output.txt")
     nil
-	else
+    else
 		event.send_embed do |e|
 			e.color = 0x4287f5
-			e.title = "Got the output, #{event.author.name}##{event.author.tag} 😎"
+			e.title = "Got the output, #{event.author.name}##{event.author.tag} 😎 #{'There was an error in it' if failed==true}"
 			e.description = "```\n#{output}\n```"
 		end
 	end
