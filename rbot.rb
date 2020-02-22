@@ -15,7 +15,7 @@ client.command(:sys, required_roles: [673405620527038478], description: "Run a s
       output = `#{cmd.join ' '}`
       failed = false
     rescue StandardError => e
-      output = e
+      output = e.to_s
       failed = true
     end
 	if output.length >= 2000
