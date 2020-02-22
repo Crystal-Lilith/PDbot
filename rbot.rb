@@ -17,6 +17,7 @@ client.command(:sys, required_roles: [673405620527038478], description: "Run a s
     rescue StandardError => e
       output = e
       failed = true
+    end
 	if output.length >= 2000
 		File.write("output.txt", output)
 		event.send_file(File.open("output.txt", "r"), caption: "Output was too long (over 2000 characters).#{' There was also an error in it.' if failed==true} Uploading as a file:")
