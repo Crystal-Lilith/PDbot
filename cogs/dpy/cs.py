@@ -14,8 +14,8 @@ async def cs(ctx, mode, *, desc):
             desc = desc.split()
             await ctx.channel.send('Bot status changed!')
             bot_status_task = client.loop.create_task(status_task(desc))
-        else:
-            await ctx.channel.send('Not a valid mode!')
+    else:
+        await ctx.channel.send('Not a valid mode!')
 
 async def status_task(desc):
     while True:
