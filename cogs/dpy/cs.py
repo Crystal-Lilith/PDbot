@@ -11,4 +11,4 @@ async def cs(ctx, mode, *, desc):
             while True:
                 for i in desc:
                     await client.change_presence(activity=discord.Game(name=i))
-                    asyncio.sleep(10)
+                    asyncio.sleep(50)
