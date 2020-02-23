@@ -7,7 +7,7 @@ async def cs(ctx, mode, *, desc):
         if mode == 'static':
             await client.change_presence(activity=discord.Game(name=desc))
             await ctx.channel.send('Bot status changed!')
-        if mode == 'dynamic':
+        elif mode == 'dynamic':
             desc = desc.split()
             await ctx.channel.send('Bot status changed!')
             task = client.loop.create_task(status_task(desc))
