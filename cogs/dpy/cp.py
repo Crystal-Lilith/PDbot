@@ -62,8 +62,7 @@ async def cp(ctx, *, projectname):
         for i in channels:
             await ctx.guild.create_text_channel(i, category=category)
         await ctx.guild.create_voice_channel('chat', category=category)
-        embed = discord.Embed(title=f'Success!', color=discord.Color.from_rgb(0, 255, 0),
-                                description=f'Category **{projectname}** created!')
+        embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0), description=f'Category **{projectname}** created!')
         embed.set_footer(text=f'Created By: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     else:

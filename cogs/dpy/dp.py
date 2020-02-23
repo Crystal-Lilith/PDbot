@@ -19,6 +19,11 @@ async def dp(ctx, *, projectname):
         asyncio.sleep(4)
         await category.delete()
 
-        await ctx.channel.send(f"Category **{projectname}** deleted!")
+        embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34), description=f'Deleted {projectname}!')
+        embed.set_footer(text=f'Deleted By: {ctx.message.author}')
+        await ctx.channel.send(embed=embed)
     else:
-        await ctx.channel.send('You must be the **__founder__** of the project to delete it!')
+        embed = discord.Embed(title=f'Error!', color=discord.Color.from_rgb(255, 255, 51),
+                                description='You must be the **__founder__** of the project to delete it!')
+        embed.set_footer(text=f'Attempted By: {ctx.message.author}')
+        await ctx.channel.send(embed=embed)
