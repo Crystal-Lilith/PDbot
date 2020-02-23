@@ -4,6 +4,8 @@ async def cs(ctx, mode, *, desc):
     if mode == 'static' or mode == 'dynamic':
         if 'task' in locals():
             task.cancel()
+        else:
+            await ctx.channel.send('var dont exit')
         if mode == 'static':
             await client.change_presence(activity=discord.Game(name=desc))
             await ctx.channel.send('Bot status changed!')
