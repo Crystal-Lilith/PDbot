@@ -16,6 +16,7 @@ async def dp(ctx, *, projectname):
         await founder.delete()
         await dev.delete()
         
+        asyncio.sleep(4)
         await category.delete()
 
         await ctx.channel.send(f"Category **{projectname}** deleted!")
