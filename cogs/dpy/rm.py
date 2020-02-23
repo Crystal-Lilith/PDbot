@@ -3,7 +3,7 @@
 async def rm(ctx, amount):
     try:
         int(amount)
-        ctx.channel.purge(amount+1)
+        await ctx.channel.purge(amount+1)
         await ctx.channel.send(f'Deleted {amount+1} messages!', delete_after=10)
     except:
         await ctx.channel.send('Amount must be an integer!')
