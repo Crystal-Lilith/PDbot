@@ -4,4 +4,6 @@ async def on_command_error(ctx, error):
         pass
     else:
         print(error)
-        await ctx.send(error)
+        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+                                description=error)
+        await ctx.channel.send(embed=embed)
