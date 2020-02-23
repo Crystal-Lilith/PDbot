@@ -1,9 +1,10 @@
 @client.command(description='Changes bot status')
 @commands.has_role('PDBot Dev')
 async def cs(ctx, mode, *, desc):
+    global bot_status_task
     if mode == 'static' or mode == 'dynamic':
-        if 'task' in locals():
-            task.cancel()
+        if 'bot_status_task' in globals():
+            bot_status_task.cancel()
         else:
             await ctx.channel.send('var dont exit')
         if mode == 'static':
@@ -12,7 +13,7 @@ async def cs(ctx, mode, *, desc):
         elif mode == 'dynamic':
             desc = desc.split()
             await ctx.channel.send('Bot status changed!')
-            task = client.loop.create_task(status_task(desc))
+            bot_status_task = client.loop.create_task(status_task(desc))
         else:
             await ctx.channel.send('Not a valid mode!')
 
