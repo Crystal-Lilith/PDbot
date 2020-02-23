@@ -2,6 +2,7 @@
 @commands.has_role('PDBot Dev')
 async def cs(ctx, mode, *, desc):
     if mode == 'static' or mode == 'dynamic':
+        client.loop.stop()
         if mode == 'static':
             await client.change_presence(activity=discord.Game(name=desc))
             await ctx.channel.send('Bot status changed!')
