@@ -24,4 +24,4 @@ async def status_task(desc):
     while True:
         for i in desc:
             await client.change_presence(activity=discord.Game(name=i))
-            await asyncio.sleep(4)
+            await asyncio.sleep(3.8)
