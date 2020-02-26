@@ -1,5 +1,5 @@
 @client.command(description='Changes bot status')
-@commands.has_role(*['PDBot Mod', 'PDBot Dev'])
+@commands.has_any_role('PDBot Mod', 'PDBot Dev')
 async def cs(ctx, mode, *, desc):
     global bot_status_task
     if mode == 'static' or mode == 'dynamic':
