@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: [673405620527038478], description: "Run a system command.") do |event, *cmd|
+client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.") do |event, *cmd|
   	event.respond "Getting output..."
 	begin
       output = `#{cmd.join ' '}`
