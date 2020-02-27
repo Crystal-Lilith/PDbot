@@ -27,8 +27,9 @@ async def cv(ctx, timer, *, desc):
     await asyncio.sleep(float(timer) * 60)
 
     class EmojiCount:
-        yes = 0
-        no = 0
+        def __init__(self):
+            yes = 0
+            no = 0
 
     emojis = EmojiCount()
     for i in vote.reactions:
