@@ -9,21 +9,8 @@ async def cs(ctx, mode, status, *, desc):
 
             if 'bot_status_task' in globals():
                 bot_status_task.cancel()
-
-            if status == 'online':
-                status = 'discord.Status.online'
-            elif status == 'idle':
-                status = 'discord.Status.idle'
-            elif status == 'dnd':
-                status = 'discord.Status.dnd'
-
-            if mode == 'static':
-                await client.change_presence(status=status, activity=discord.Game(name=desc))
-                await ctx.channel.send(embed=embed)
-            elif mode == 'dynamic':
-                desc = desc.split()
-                await ctx.channel.send(embed=embed)
-                bot_status_task = client.loop.create_task(status_task(status, desc))
+            
+            change_status(mode, status, desc, embed)
         else:
             embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
                                     description='Not a valid status!')
@@ -36,8 +23,28 @@ async def cs(ctx, mode, status, *, desc):
         await ctx.channel.send(embed=embed)
 
 
+async def change_status(mode, status, desc, embed):
+    if mode == 'static':
+        if status == 'online':
+            await client.change_presence(status=discord.Status.online, activity=discord.Game(name=desc))
+        elif status == 'idle':
+            await client.change_presence(status=discord.Status.idle, activity=discord.Game(name=desc))
+        elif status == 'dnd':
+            await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name=desc))
+
+    elif mode == 'dynamic':
+        desc = desc.split()
+        bot_status_task = client.loop.create_task(status_task(status, desc))
+
+    await ctx.channel.send(embed=embed)
+
 async def status_task(status, desc):
     while True:
         for i in desc:
-            await client.change_presence(status=status, activity=discord.Game(name=i))
+            if status == 'online':
+                await client.change_presence(status=discord.Status.online, activity=discord.Game(name=i))
+            elif status == 'idle':
+                await client.change_presence(status=discord.Status.idle, activity=discord.Game(name=i))
+            elif status == 'dnd':
+                await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name=i))
             await asyncio.sleep(4)
