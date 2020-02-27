@@ -29,9 +29,9 @@ async def cv(ctx, timer, *, desc):
     vote = await vote_channel.fetch_message(vote.id)
     for i in vote.reactions:
         if i.emoji == '✅':
-            yes = vote.reactions.count(i)
+            yes = get(vote.reactions, emoji=i.emoji).count
         elif i.emoji == '🚫':
-            no = vote.reactions.count(i)
+            no = get(vote.reactions, emoji=i.emoji).count
         else:
             pass
     embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description=f'Vote ended!\n✅: {yes}\n🚫: {no}')
