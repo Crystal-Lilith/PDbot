@@ -5,8 +5,8 @@ async def cv(ctx, timer, *, desc):
     if 'vote_amount' in globals():
         pass
     else:
-        vote_amount = 1
-    embed = discord.Embed(title=f'#{vote_amount} Vote [{timer}min]', color=discord.Color.from_rgb(0, 255, 0), description=desc)
+        vote_amount = 0
+    embed = discord.Embed(title=f'#{vote_amount+1} Vote [{timer}min]', color=discord.Color.from_rgb(0, 255, 0), description=desc)
     embed.set_footer(text=f'Vote started by: {ctx.message.author}')
     vote = await ctx.channel.send(embed=embed)
 
