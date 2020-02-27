@@ -11,20 +11,20 @@ async def cv(ctx, timer, *, desc):
         return
 
     global vote_amount
+    vote_channel = get(ctx.guild.channels, name='📢server-announcements')
     if 'vote_amount' in globals():
         pass
     else:
         vote_amount = 0
     embed = discord.Embed(title=f'#{vote_amount+1} Vote [{timer}min]', color=discord.Color.from_rgb(0, 255, 0), description=f'{desc}\n✅: Yes\n🚫: No')
     embed.set_footer(text=f'Vote started by: {ctx.message.author}')
-    vote = await ctx.channel.send(embed=embed)
+    vote = await vote_channel.send(embed=embed)
 
     vote_amount += 1
 
     for i in ['✅', '🚫']:
         await vote.add_reaction(i)
     vote = await ctx.channel.fetch_message(vote.id)
-    vote_channel = get(ctx.guild.channels, name='📢server-announcements')
     await asyncio.sleep(float(timer) * 60)
 
     for i in vote.reactions:
@@ -36,4 +36,4 @@ async def cv(ctx, timer, *, desc):
             pass
     embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description=f'Vote ended!\n✅: {yes}\n🚫: {no}')
     embed.set_footer(text=f'Ended the vote made by: {ctx.message.author}')
-    await ctx.channel.send(embed=embed)
+    await vote_channel.send(embed=embed)
