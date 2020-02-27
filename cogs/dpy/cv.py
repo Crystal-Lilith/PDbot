@@ -1,6 +1,15 @@
 @client.command(description='Creates a vote')
 @commands.has_role('Owner')
 async def cv(ctx, timer, *, desc):
+    try:
+        float(timer)
+    except:
+        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+                                description='Timer must be a int or float!')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        await ctx.channel.send(embed=embed)
+        break
+
     global vote_amount
     if 'vote_amount' in globals():
         pass
