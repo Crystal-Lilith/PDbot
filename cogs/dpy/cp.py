@@ -66,7 +66,7 @@ async def cp(ctx, *, projectname):
         embed.set_footer(text=f'Project created by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     else:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='That project already exists!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)

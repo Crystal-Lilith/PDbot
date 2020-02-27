@@ -17,6 +17,6 @@ async def ca(ctx, option, title, *, message):
         embed.set_footer(text=f'Announcement posted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     else:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51), description='Invalid option!')
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51), description='Invalid option!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)

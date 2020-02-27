@@ -8,6 +8,6 @@ async def rm(ctx, amount):
         await ctx.channel.purge(limit=(amount + 1))
         await ctx.channel.send(embed=embed, delete_after=10)
     except:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51), description='Amount must be an integer!')
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51), description='Amount must be an integer!')
         embed.set_footer(text=f'Attempted By: {ctx.message.author}')
         await ctx.channel.send(embed=embed)

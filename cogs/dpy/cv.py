@@ -4,7 +4,7 @@ async def cv(ctx, timer, *, desc):
     try:
         float(timer)
     except:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='Timer must be a int or float!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)

@@ -15,7 +15,7 @@ async def cs(ctx, mode, *, desc):
             await ctx.channel.send(embed=embed)
             bot_status_task = client.loop.create_task(status_task(desc))
     else:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='Not a valid mode!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)

@@ -23,7 +23,7 @@ async def dp(ctx, *, projectname):
         embed.set_footer(text=f'Project deleted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     else:
-        embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
+        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to delete it!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
