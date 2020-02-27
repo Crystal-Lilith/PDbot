@@ -1,5 +1,4 @@
 import os, json, asyncio
-from os import listdir
 from random import randint
 
 try:

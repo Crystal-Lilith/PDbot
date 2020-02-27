@@ -4,8 +4,12 @@ async def ls(ctx, *, directory):
     # for x in directory.lower().split('/'):
     #     if x == '.env' or if x == 'start.sh':
     #         return
-    for i in listdir(directory):
-        x = f"{x}{i}\n"
-    embed = discord.Embed(title=f'List of files in {directory}', color=discord.Color.from_rgb(0, 191, 255), description=f'```{x[:-1]}```')
+    f = []
+    for (dirpath, dirnames, filenames) in walk(directory):
+        f.extend(filenames)
+        break
+    # for i in os.listdir(directory):
+    #     x = f"{x}{i}\n"
+    embed = discord.Embed(title=f'List of files in {directory}', color=discord.Color.from_rgb(0, 191, 255), description=f'```{f[:-1]}```')
     await ctx.channel.send(embed=embed)
     del embed
