@@ -10,7 +10,7 @@ async def cs(ctx, mode, status, *, desc):
             if 'bot_status_task' in globals():
                 bot_status_task.cancel()
             
-            change_status(mode, status, desc, embed)
+            await change_status(mode, status, desc, embed)
         else:
             embed = discord.Embed(title='Error!', color=discord.Color.from_rgb(255, 255, 51),
                                     description='Not a valid status!')
