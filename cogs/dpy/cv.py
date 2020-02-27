@@ -26,8 +26,6 @@ async def cv(ctx, timer, *, desc):
     vote = await ctx.channel.fetch_message(vote.id)
     await asyncio.sleep(float(timer) * 60)
 
-    yes = 0
-    no = 0
     for i in vote.reactions:
         if i.emoji == '✅':
             yes = vote.reactions.count(i)
