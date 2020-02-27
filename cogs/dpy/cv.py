@@ -23,7 +23,7 @@ async def cv(ctx, timer, *, desc):
 
     for i in ['✅', '⛔']:
         await vote.add_reaction(i)
-    vote = get(ctx.channel.fetch_message, id=vote.id)
+    vote = ctx.channel.fetch_message(vote.id)
     await asyncio.sleep(float(timer) * 60)
 
     await ctx.channel.send(vote.reactions)
