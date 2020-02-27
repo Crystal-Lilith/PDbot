@@ -48,3 +48,4 @@ async def cv(ctx, timer, *, desc):
 
     embed.set_footer(text=f'Ended the vote made by: {ctx.message.author}')
     await vote_channel.send(embed=embed)
+    vote_amount -= 1
