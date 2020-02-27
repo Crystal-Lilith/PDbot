@@ -28,8 +28,8 @@ async def cv(ctx, timer, *, desc):
 
     yes = 0
     no = 0
-    # for i in vote.reactions:
-    await ctx.channel.send(vote.reactions.emoji)
+    for i in vote.reactions:
+        await ctx.channel.send(i.emoji)
         # if i == '✅':
         #     yes = vote.reactions.count(i)
         # elif i == '🚫':
