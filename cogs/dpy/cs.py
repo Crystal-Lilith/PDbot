@@ -7,15 +7,15 @@ async def cs(ctx, mode, status, *, desc):
             embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0), description='Bot status changed!')
             embed.set_footer(text=f'Status changed by: {ctx.message.author}')
 
-            if status == 'online':
-                status = discord.Status.online
-            elif status == 'idle':
-                status = discord.Status.idle
-            elif status == 'dnd':
-                status = discord.Status.dnd
-
             if 'bot_status_task' in globals():
                 bot_status_task.cancel()
+
+            if status == 'online':
+                status = 'discord.Status.online'
+            elif status == 'idle':
+                status = 'discord.Status.idle'
+            elif status == 'dnd':
+                status = 'discord.Status.dnd'
 
             if mode == 'static':
                 await client.change_presence(status=status, activity=discord.Game(name=desc))
