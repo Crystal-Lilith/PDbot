@@ -10,6 +10,7 @@ async def ls(ctx, *, directory):
 #         break
 #     # for i in os.listdir(directory):
 #     #     x = f"{x}{i}\n"
-    embed = discord.Embed(title=f'List of files in {directory}', color=discord.Color.from_rgb(0, 191, 255), description=f'```{os.listdir('.')[:-1]}```')
+    files = os.listdir('.')[:-1]
+    embed = discord.Embed(title=f'List of files in {directory}', color=discord.Color.from_rgb(0, 191, 255), description=f'```{files}```')
     await ctx.channel.send(embed=embed)
 
