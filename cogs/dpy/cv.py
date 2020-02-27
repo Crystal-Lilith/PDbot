@@ -28,8 +28,8 @@ async def cv(ctx, timer, *, desc):
 
     class EmojiCount:
         def __init__(self):
-            yes = 0
-            no = 0
+            self.yes = 0
+            self.no = 0
 
     emojis = EmojiCount()
     for i in vote.reactions:
