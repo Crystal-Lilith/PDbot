@@ -8,7 +8,7 @@ async def cv(ctx, timer, *, desc):
                                 description='Timer must be a int or float!')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
-        break
+        return
 
     global vote_amount
     if 'vote_amount' in globals():
