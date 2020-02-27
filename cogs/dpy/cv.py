@@ -11,7 +11,7 @@ async def cv(ctx, timer, *, desc):
         return
 
     global vote_amount
-    vote_channel = get(ctx.guild.channels, name='📢server-announcements')
+    vote_channel = get(ctx.guild.channels, name='✅vote')
     if 'vote_amount' in globals():
         pass
     else:
@@ -24,7 +24,7 @@ async def cv(ctx, timer, *, desc):
 
     for i in ['✅', '🚫']:
         await vote.add_reaction(i)
-    vote = await ctx.channel.fetch_message(vote.id)
+    vote = await vote_channel.fetch_message(vote.id)
     await asyncio.sleep(float(timer) * 60)
 
     for i in vote.reactions:
