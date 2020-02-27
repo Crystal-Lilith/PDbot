@@ -24,6 +24,7 @@ async def cv(ctx, timer, *, desc):
     for i in ['✅', '🚫']:
         await vote.add_reaction(i)
     vote = await ctx.channel.fetch_message(vote.id)
+    vote_channel = get(ctx.guild.channels, name='📢server-announcements')
     await asyncio.sleep(float(timer) * 60)
 
     for i in vote.reactions:
@@ -32,7 +33,7 @@ async def cv(ctx, timer, *, desc):
         elif i.emoji == '🚫':
             no = vote.reactions.count(i)
         else:
-            await ctx.channel.send('not working')
+            pass
     embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description=f'Vote ended!\n✅: {yes}\n🚫: {no}')
     embed.set_footer(text=f'Ended the vote made by: {ctx.message.author}')
     await ctx.channel.send(embed=embed)
