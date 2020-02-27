@@ -27,7 +27,7 @@ async def cv(ctx, timer, *, desc):
     await asyncio.sleep(float(timer) * 60)
 
     for i in vote.reactions:
-    await ctx.channel.send(vote.reactions.count(i))
+        await ctx.channel.send(vote.reactions.count(i))
     embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description='Vote ended!')
     embed.set_footer(text=f'Ended the vote by: {ctx.message.author}')
     await ctx.channel.send(embed=embed)
