@@ -16,7 +16,8 @@ async def cv(ctx, timer, *, desc):
         pass
     else:
         vote_amount = 0
-    embed = discord.Embed(title=f'#{vote_amount+1} Vote [{timer}min]', color=discord.Color.from_rgb(0, 255, 0),
+    current_vote_count = vote_amount
+    embed = discord.Embed(title=f'Vote #{current_vote_count+1} [{timer}min]', color=discord.Color.from_rgb(0, 255, 0),
                             description=f'{desc}\n\n```✅: Yes\n🚫: No```')
     embed.set_footer(text=f'Vote started by: {ctx.message.author}')
     vote = await vote_channel.send(embed=embed)
@@ -26,7 +27,7 @@ async def cv(ctx, timer, *, desc):
     for i in ['✅', '🚫']:
         await vote.add_reaction(i)
     await asyncio.sleep(float(timer) * 60)
-    
+
     vote = await vote_channel.fetch_message(vote.id)
     for i in vote.reactions:
         if i.emoji == '✅':
@@ -36,14 +37,14 @@ async def cv(ctx, timer, *, desc):
         else:
             pass
     if yes > no:
-        embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0),
-                                description=f'Vote ended!\n✅ had {yes - no} votes!\n\n```✅: {yes}\n🚫: {no}```')
+        embed = discord.Embed(title=f'Vote #{current_vote_count} ✅', color=discord.Color.from_rgb(0, 255, 0),
+                                description=f'Vote ended!\n\n`✅ had` {yes - no} more vote(s)!\n\n```✅: {yes}\n🚫: {no}```')
     elif no > yes:
-        embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(178, 34, 34),
-                                description=f'Vote ended!\n🚫 had {no - yes} more votes!\n\n```✅: {yes}\n🚫: {no}```')
+        embed = discord.Embed(title=f'Vote #{current_vote_count} 🚫', color=discord.Color.from_rgb(178, 34, 34),
+                                description=f'Vote ended!\n\n`🚫 had` {no - yes} more vote(s)!\n\n```✅: {yes}\n🚫: {no}```')
     else:
-        embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 191, 255),
-                                description=f'Vote ended!\nVote tied!\n\n```✅: {yes}\n🚫: {no}```')
+        embed = discord.Embed(title=f'Vote #{current_vote_count} ❗', color=discord.Color.from_rgb(0, 191, 255),
+                                description=f'Vote ended!\n\n`Vote tied!`\n\n```✅: {yes}\n🚫: {no}```')
 
     embed.set_footer(text=f'Ended the vote made by: {ctx.message.author}')
     await vote_channel.send(embed=embed)
