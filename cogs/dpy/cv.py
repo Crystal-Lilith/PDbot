@@ -30,13 +30,14 @@ async def cv(ctx, timer, *, desc):
         yes = 0
         no = 0
 
+    emojis = EmojiCount()
     for i in vote.reactions:
         if i == '✅':
-            EmojiCount.yes = vote.reactions.count(i)
+            emojis.yes = vote.reactions.count(i)
         elif i == '🚫':
-            EmojiCount.yes = vote.reactions.count(i)
+            emojis.no = vote.reactions.count(i)
         else:
             pass
-    embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description=f'Vote ended!\n✅: {EmojiCount.yes}\n🚫: {EmojiCount.yes}')
+    embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description=f'Vote ended!\n✅: {emojis.yes}\n🚫: {emojis.no}')
     embed.set_footer(text=f'Ended the vote made by: {ctx.message.author}')
     await ctx.channel.send(embed=embed)
