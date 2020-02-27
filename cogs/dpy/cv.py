@@ -14,7 +14,7 @@ async def cv(ctx, timer, *, desc):
 
     for i in ['✅', '⛔']:
         await vote.add_reaction(i)
-    await asyncio.sleep(int(timer) * 60)
+    await asyncio.sleep(float(timer) * 60)
 
     embed = discord.Embed(title=f'Vote #{vote_amount}', color=discord.Color.from_rgb(0, 255, 0), description='Vote ended!')
     embed.set_footer(text=f'Ended the vote by: {ctx.message.author}')
