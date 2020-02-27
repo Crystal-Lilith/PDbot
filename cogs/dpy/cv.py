@@ -19,6 +19,7 @@ async def cv(ctx, timer, *, desc):
     embed = discord.Embed(title=f'#{vote_amount+1} Vote [{timer}min]', color=discord.Color.from_rgb(0, 255, 0), description=f'{desc}\n✅: Yes\n🚫: No')
     embed.set_footer(text=f'Vote started by: {ctx.message.author}')
     vote = await vote_channel.send(embed=embed)
+    vote = await vote_channel.fetch_message(vote.id)
 
     vote_amount += 1
 
@@ -26,7 +27,6 @@ async def cv(ctx, timer, *, desc):
         await vote.add_reaction(i)
     await asyncio.sleep(float(timer) * 60)
     
-    vote = await vote_channel.fetch_message(vote.id)
     for i in vote.reactions:
         if i.emoji == '✅':
             yes = vote.reactions.count(i)
