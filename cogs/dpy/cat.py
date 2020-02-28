@@ -10,10 +10,11 @@ async def cat(ctx, *, directory):
             await ctx.channel.send(embed=embed)
         else:
             with open(directory, 'r') as f:
+                i = i.lower().split('.')
                 lang = ''
-                if i[-1] == '.py':
+                if i[-1] == 'py':
                     lang = 'python'
-                elif i[-1] == '.rb':
+                elif i[-1] == 'rb':
                     lang = 'ruby'
                 else:
                     pass
