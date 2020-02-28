@@ -16,7 +16,7 @@ async def dp(ctx, *, projectname):
         await founder.delete()
         await dev.delete()
         
-        await asyncio.sleep(5)
+        await asyncio.sleep(4)
         await category.delete()
 
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34), description=f'Deleted {projectname}!')
