@@ -1,6 +1,6 @@
 @client.command(description='Shows you all files in the specified directory')
 @commands.has_any_role('PDBot Mod', 'PDBot Dev')
-async def ls(ctx, *, directory=None):
+async def ls(ctx, *, directory='.'):
     try:
         x = ''
         split_directory = directory.split('/')
