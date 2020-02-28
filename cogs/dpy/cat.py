@@ -30,13 +30,10 @@ async def cat(ctx, *, directory):
                 embed.set_footer(text=f'Requested by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
             else:
-                with open('output.txt', 'w') as o:
-                    o.write(f.read())
-                    embed = discord.Embed(title=f'Contents in `{directory}` was too long ❗', color=discord.Color.from_rgb(0, 191, 255),
-                                            description='File contents was over 2000 characters! Sent as output.txt')
-                    embed.set_footer(text=f'Requested by: {ctx.message.author}')
-                    await ctx.channel.send(embed=embed, file=discord.File('output.txt'))
-                os.remove('output.txt')
+                embed = discord.Embed(title=f'Contents in `{directory}` was too long ❗', color=discord.Color.from_rgb(0, 191, 255),
+                                        description='File contents was over 2000 characters! Sent as output.txt')
+                embed.set_footer(text=f'Requested by: {ctx.message.author}')
+                await ctx.channel.send(embed=embed, file=discord.File(f, 'output.txt'))
     except:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='File doesn\'t exist!')
