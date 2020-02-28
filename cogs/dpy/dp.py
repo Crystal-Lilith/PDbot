@@ -10,14 +10,14 @@ async def dp(ctx, *, projectname):
             try:
                 channel = get(ctx.guild.channels, category=category)
                 await channel.delete()
-                await asyncio.sleep(1)
+                await asyncio.sleep(0.5)
             except:
                 break
        
         await founder.delete()
         await dev.delete()
         
-        await asyncio.sleep(4)
+        await asyncio.sleep(1)
         await category.delete()
 
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34), description=f'Deleted {projectname}!')
