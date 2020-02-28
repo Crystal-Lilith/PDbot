@@ -14,14 +14,14 @@ async def cat(ctx, *, directory):
                 await ctx.channel.send(embed=embed)
         else:
             lang = ''
-            if split_directory[-1] == '.py':
+            if split_directory[-1].split('.')[-1] == 'py':
                 lang = 'python'
-            elif split_directory[-1] == '.rb':
+            elif split_directory[-1].split('.')[-1] == 'rb':
                 lang = 'ruby'
-            elif split_directory[-1] == '.json':
+            elif split_directory[-1].split('.')[-1] == 'json':
                 lang = 'json'
             else:
-                await ctx.channel.send(split_directory[-1])
+                await ctx.channel.send(split_directory[-1].split('.')[-1])
             with open(directory, 'r') as f:
                 embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
                 embed.set_footer(text=f'Requested by: {ctx.message.author}')
