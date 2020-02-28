@@ -18,7 +18,7 @@ async def cat(ctx, *, directory):
             lang = 'python'
         elif split_directory[-1] == '.rb':
             lang = 'ruby'
-        elif split.directorysplit_directory[-1] == 'json':
+        elif split.directory[-1] == 'json':
             lang = 'json'
         else:
             pass
