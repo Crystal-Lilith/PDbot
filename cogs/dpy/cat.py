@@ -16,7 +16,7 @@ async def cat(ctx, *, directory):
                         lang = 'ruby'
                     else:
                         pass
-                    embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```css\n{f.read()}```')
+                    embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
                     embed.set_footer(text=f'Requested by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
     except:
