@@ -13,18 +13,19 @@ async def cat(ctx, *, directory):
             embed.set_footer(text=f'Attempted by: {ctx.message.author}')
             await ctx.channel.send(embed=embed)
     else:
-        for i in split_directory:
-            with open(directory, 'r') as f:
-                lang = ''
-                if i.endswith('.py'):
-                    lang = 'python'
-                elif i.endswith('.rb'):
-                    lang = 'ruby'
-                else:
-                    pass
-                embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
-                embed.set_footer(text=f'Requested by: {ctx.message.author}')
-                await ctx.channel.send(embed=embed)
+        lang = ''
+        if split_directory[-1] == '.py':
+            lang = 'python'
+        elif split_directory[-1] == '.rb':
+            lang = 'ruby'
+        elif split.directorysplit_directory[-1] == 'json':
+            lang = 'json'
+        else:
+            pass
+        with open(directory, 'r') as f:
+            embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
+            embed.set_footer(text=f'Requested by: {ctx.message.author}')
+            await ctx.channel.send(embed=embed)
 # except:
     embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                             description='File doesn\'t exist!')
