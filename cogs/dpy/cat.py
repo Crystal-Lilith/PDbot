@@ -26,7 +26,7 @@ async def cat(ctx, *, directory):
         with open(directory, 'r') as f:
             ctx.channel.send(f.read())
             if len(f.read()) < 2000:
-                ctx.channel.send(f.read())
+                await ctx.channel.send(f.read())
             #     embed = discord.Embed(title=f'Contents in `{directory}` ✅', color=discord.Color.from_rgb(0, 191, 255),
             #                             description=f'```{lang}\n{f.read()}```')
             #     embed.set_footer(text=f'Requested by: {ctx.message.author}')
