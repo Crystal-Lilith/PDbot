@@ -4,16 +4,16 @@ async def cat(ctx, *, directory):
     if directory.startswith("./"):
         pass
     else:
-        directory = f"./{directory}"
+        directory = f'./{directory}'
     try:
         split_directory = directory.split('/')
-        for i in split_directory:
-            if split_directory in ['..', '.env', 'start.sh']:
+        if split_directory in ['..', '.env', 'start.sh']:
                 embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not cat this file!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
-            else:
+        else:
+            for i in split_directory:
                 with open(directory, 'r') as f:
                     lang = ''
                     if i.endswith('.py'):
