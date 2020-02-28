@@ -3,6 +3,14 @@
 async def ls(ctx, *, directory=None):
     try:
         x = ''
+        split_directory = directory.split('/')
+        for i in ['..']:
+            if i in split_directory:
+                embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
+                                description='You may not ls this directory!')
+                embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+                await ctx.channel.send(embed=embed)
+                break
         for i in os.listdir(directory):
             if i.lower() not in ['.env', 'start.sh']:
                 x = f"{x}{i}\n"
