@@ -7,6 +7,7 @@ async def cat(ctx, *, directory):
         directory = f'./{directory}'
     try:
         split_directory = directory.split('/')
+        await ctx.channel.send(split_directory)
         if split_directory in ['..', '.env', 'start.sh']:
                 embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not cat this file!')
@@ -21,7 +22,7 @@ async def cat(ctx, *, directory):
             elif split_directory[-1].split('.')[-1] == 'json':
                 lang = 'json'
             else:
-                await ctx.channel.send(split_directory[-1].split('.')[-1])
+                pass
             with open(directory, 'r') as f:
                 embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
                 embed.set_footer(text=f'Requested by: {ctx.message.author}')
