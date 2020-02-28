@@ -10,6 +10,7 @@ async def dp(ctx, *, projectname):
             try:
                 channel = get(ctx.guild.channels, category=category)
                 await channel.delete()
+                await asyncio.sleep(1)
             except:
                 break
        
