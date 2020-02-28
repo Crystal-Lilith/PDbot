@@ -11,7 +11,7 @@ async def cs(ctx, mode, *, desc):
             await client.change_presence(activity=discord.Game(name=desc))
             await ctx.channel.send(embed=embed)
         elif mode == 'dynamic':
-            desc = desc.split()
+            desc = desc.split('|')
             await ctx.channel.send(embed=embed)
             bot_status_task = client.loop.create_task(status_task(desc))
     else:
