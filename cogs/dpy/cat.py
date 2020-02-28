@@ -13,7 +13,7 @@ async def cat(ctx, *, directory):
                                 description='You may not cat this file!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
-                break
+                return
         lang = ''
         if split_directory[-1].split('.')[-1] == 'py':
             lang = 'python'
