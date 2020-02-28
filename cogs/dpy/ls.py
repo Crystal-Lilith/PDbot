@@ -10,7 +10,7 @@ async def ls(ctx, *, directory=None):
                                 description='You may not ls this directory!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
-                break
+                return
         for i in os.listdir(directory):
             if i.lower() not in ['.env', 'start.sh']:
                 x = f"{x}{i}\n"
