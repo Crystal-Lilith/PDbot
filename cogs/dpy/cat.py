@@ -4,7 +4,7 @@ async def cat(ctx, *, directory):
     try:
         for i in directory.split('/'):
             if i.lower() in [".env", "start.sh"]:
-                embed = discord.Embed(title='Warning! ❗', color=discord.Color.from_rgb(178, 34, 34),
+                embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not cat this file!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)

@@ -10,7 +10,7 @@ async def ls(ctx, *, directory='.'):
                 embed.set_footer(text=f'Requested by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
             else:
-                embed = discord.Embed(title='Warning! ❗', color=discord.Color.from_rgb(178, 34, 34),
+                embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not ls this directory!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
     except:
