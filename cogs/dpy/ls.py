@@ -6,7 +6,8 @@ async def ls(ctx, *, directory=None):
         for i in os.listdir(directory):
             if i.lower() not in ['.env', 'start.sh']:
                 x = f"{x}{i}\n"
-        embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```css\n{x}```')
+        embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), 
+                                description=f'```css\n{x}```')
         embed.set_footer(text=f'Requested by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     except:
