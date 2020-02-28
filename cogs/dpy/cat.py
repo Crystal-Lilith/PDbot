@@ -21,7 +21,7 @@ async def cat(ctx, *, directory):
             elif split_directory[-1] == '.json':
                 lang = 'json'
             else:
-                pass
+                await ctx.channel.send(split_directory[-1])
             with open(directory, 'r') as f:
                 embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```{lang}\n{f.read()}```')
                 embed.set_footer(text=f'Requested by: {ctx.message.author}')
