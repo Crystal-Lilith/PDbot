@@ -10,6 +10,12 @@ async def cat(ctx, *, directory):
                 await ctx.channel.send(embed=embed)
             else:
                 with open(directory, 'r') as f:
+                    if i[-1] == '.py':
+                        lang = 'python'
+                    elif i[-1] == '.rb':
+                        lang = 'ruby'
+                    else:
+                        pass
                     embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), description=f'```css\n{f.read()}```')
                     embed.set_footer(text=f'Requested by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
