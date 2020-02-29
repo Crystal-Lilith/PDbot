@@ -9,7 +9,7 @@ while True:
         from bs4 import BeautifulSoup
         break
     except:
-        os.system('pip3 -r install requirements.txt')
+        os.system('pip3 install -r requirements.txt')
 
 
 
