@@ -6,19 +6,19 @@ async def ad(ctx, user: discord.User, *, projectname):
 
     if get(ctx.author.roles, name=f'{projectname} Founder'):
         if user != ctx.message.author:
-            if user == []:
+            if user:
                 embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                         description='That **user** does not exist!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
             else:
-                if category == []:
+                if category:
                     embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                             description='That **project** does not exist!')
                     embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
                 else:
-                    if get(user.roles, name=f'{projectname} Dev') == []:
+                    if get(user.roles, name=f'{projectname} Dev'):
                         await user.add_roles(get(ctx.guild.roles, name=f'{projectname} Dev'))
                         embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0),
                                                 description=f'User **{user}** added to **{projectname} Dev**!')
