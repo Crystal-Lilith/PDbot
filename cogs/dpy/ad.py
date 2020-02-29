@@ -18,7 +18,7 @@ async def ad(ctx, user: discord.User, *, projectname):
                     embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
                 else:
-                    if get(user.roles, name=f'{projectname} Dev'):
+                    if not get(user.roles, name=f'{projectname} Dev'):
                         await user.add_roles(get(ctx.guild.roles, name=f'{projectname} Dev'))
                         embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0),
                                                 description=f'User **{user}** added to **{projectname} Dev**!')
