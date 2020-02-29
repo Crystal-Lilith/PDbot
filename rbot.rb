@@ -69,7 +69,7 @@ cmds = Hash.new
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
   	roles = command.attributes[:required_roles].map { |x| x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer }
-	cmds[name.to_s] = {'desc' => (command.attributes[:description].split('||'))[0], 'syntax' => (command.attributes[:description].split('||'))[1]}
+	cmds[name.to_s] = {'desc' => (command.attributes[:description].split('||'))[0], 'syntax' => (command.attributes[:description].split('||'))[1], 'required_roles'=>roles, 'required_perms'=>perms}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
