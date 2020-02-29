@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.") do |event, *cmd|
+client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.||$sys <command>") do |event, *cmd|
   	event.respond "Getting output..."
 	begin
       output = `#{cmd.join ' '}`
@@ -39,7 +39,7 @@ if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
 else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
-client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.", required_permissions: [:manage_server]) do |event, chan|
+client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.||$setticketingchannel <#channelinserver>", required_permissions: [:manage_server]) do |event, chan|
     chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
         serverticketchans[event.server.id] = chan.id
@@ -51,10 +51,10 @@ client.command(:setticketingchannel, description: "Set the default ticketing cha
 		nil
     end
 end
-client.command(:showticketingchannel, description: "Show the default ticketing channel for this server.") do |event|
+client.command(:showticketingchannel, description: "Show the default ticketing channel for this server.||$showticketingchannel") do |event|
     event.respond("The ticketing channel is <##{(YAML.load(File.read(File.join('config', 'serverticketchans.yaml')))[event.server.id])}>")
 end
-client.command(:openticket, description: "Open a ticket.") do |event, *desc|
+client.command(:openticket, description: "Open a ticket.||$openticket <description goes here>") do |event, *desc|
 	desc = desc.join(" ")
 	ticketnumber = (File.read(File.join('config', 'latestticket.cfg')).to_i) + 1
 	File.write(File.join('config', 'latestticket.cfg'), ticketnumber, mode: 'w+')
@@ -73,7 +73,7 @@ client.commands.each do |name, command|
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
-client.command(:help, description: "A help command.") do |event, cmdname|
+client.command(:help, description: "A help command.||$help, or $help <cmdname> for help on a specific command.") do |event, cmdname|
 	if cmdname == nil; break
 	else
 		cmdname.downcase!
@@ -85,7 +85,7 @@ client.command(:help, description: "A help command.") do |event, cmdname|
 			end
 		elsif dpycmds.member?(cmdname)
 			event.send_embed do |e|
-				e.title = "#{cmdname} #{dpycmds[cmdname]['syntax']}"
+				e.title = "#{cmdname}"
 				e.description = "**Description:** #{(dpycmds[cmdname])['desc']}\n**Required roles:** #{((dpycmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((dpycmds[cmdname])['perms']).join(',')}"
 				e.color = 0x0a7187
 			end
