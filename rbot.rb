@@ -85,8 +85,8 @@ client.command(:help, description: "A help command.") do |event, cmdname|
 			end
 		elsif dpycmds.member?(cmdname)
 			event.send_embed do |e|
-				e.title = cmdname
-				e.description = "**Description:** #{(dpycmds[cmdname])['desc']}\n**Command syntax:** #{(dpycmds[cmdname])['syntax']}).join(',')}"
+				e.title = "#{cmdname} #{dpycmds[cmdname]['syntax']}"
+				e.description = "**Description:** #{(dpycmds[cmdname])['desc']}\n**Required roles:** #{((dpycmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((dpycmds[cmdname])['perms']).join(',')}"
 				e.color = 0x0a7187
 			end
 		else
