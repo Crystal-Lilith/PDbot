@@ -69,7 +69,7 @@ cmds = Hash.new
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
   	roles = command.attributes[:required_roles].map { |x| x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer }
-	cmds[name.to_s] = {'desc' => command.attributes[:description], 'syntax' => command.attributes[:syntax]}
+	cmds[name.to_s] = {'desc' => (command.attributes[:description].split('||'))[0], 'syntax' => (command.attributes[:description].split('||'))[1]}
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
@@ -79,14 +79,14 @@ client.command(:help, description: "A help command.||$help, or $help <cmdname> f
 		cmdname.downcase!
 		if cmds.member?(cmdname)
 			event.send_embed do |e|
-				e.title = cmdname
+				e.title = "#{cmdname} (#{(cmds[cmdname])['syntax']}).join(',')})"
 				e.description = "**Description:** #{(cmds[cmdname])['desc']}\n**Required roles:** #{((cmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((cmds[cmdname])['perms']).join(',')}"
 				e.color = 0x0a7187
 			end
 		elsif dpycmds.member?(cmdname)
 			event.send_embed do |e|
-				e.title = cmdname
-              	e.description = "**Description:** #{(dpycmds[cmdname])['desc']}\n**Command syntax:** #{(dpycmds[cmdname])['syntax']}).join(',')}"
+				e.title = "#{cmdname} (#{(dpycmds[cmdname])['syntax']}).join(',')})"
+              	e.description = "**Description:** #{(dpycmds[cmdname])['desc']}"
 				e.color = 0x0a7187
 			end
 		else
