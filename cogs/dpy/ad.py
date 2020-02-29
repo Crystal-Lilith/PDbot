@@ -2,9 +2,9 @@
 async def ad(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
     user = ctx.guild.get_member(user.id)
-    category = get(ctx.guild.categories, name=f"{projectname} Dev")
+    category = get(ctx.guild.categories, name=f'{projectname} Dev')
 
-    if get(ctx.author.roles, name=f"{projectname} Founder"):
+    if get(ctx.author.roles, name=f'{projectname} Founder'):
         if user != ctx.message.author:
             if user == []:
                 embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
@@ -18,15 +18,15 @@ async def ad(ctx, user: discord.User, *, projectname):
                     embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
                 else:
-                    if get(user.roles, name=f"{projectname} Dev") == []:
-                        await user.add_roles(get(ctx.guild.roles, name=f"{projectname} Dev"))
+                    if get(user.roles, name=f'{projectname} Dev') == []:
+                        await user.add_roles(get(ctx.guild.roles, name=f'{projectname} Dev'))
                         embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0),
                                                 description=f'User **{user}** added to **{projectname} Dev**!')
                         embed.set_footer(text=f'Dev added by: {ctx.message.author}')
                         await ctx.channel.send(embed=embed)
                     else:
                         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
-                                                description='User **{user}** is already a dev of **{projectname}**!')
+                                                description=f'User **{user}** is already a dev of **{projectname}**!')
                         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                         await ctx.channel.send(embed=embed)
         else:
