@@ -19,7 +19,7 @@ async def rd(ctx, user: discord.User, *, projectname):
             else:
                 if not get(user.roles, name=f"{projectname} Dev"):
                     embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
-                                            description=f'User **{user}** is not part the **{projectname}** Dev team!')
+                                            description=f'User **{user}** is not part of the **{projectname}** Dev team!')
                     embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                     await ctx.channel.send(embed=embed)
                 else:
