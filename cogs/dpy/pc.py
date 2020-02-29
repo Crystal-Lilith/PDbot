@@ -1,4 +1,4 @@
-@client.command(description='Updates project color by Hex')
+@client.command(description='Updates project color by Hex||$pc <hex> <project-name>')
 async def pc(ctx, _hex, *, projectname):
     projectname = projectname.lower()
     _hex = _hex.replace('#', '')

@@ -1,4 +1,4 @@
-@client.command(description='Changes bot status')
+@client.command(description='Changes bot status||$cs <static/dynamic> <desc>')
 @commands.has_any_role('PDBot Mod', 'PDBot Dev')
 async def cs(ctx, mode, *, desc):
     global bot_status_task

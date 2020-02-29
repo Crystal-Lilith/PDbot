@@ -1,4 +1,4 @@
-@client.command(description='Creates announcement')
+@client.command(description='Creates announcement||$ca <general/add/remove/modify> <title> <desc>')
 @commands.has_role('Owner')
 async def ca(ctx, option, title, *, message):
     if option == 'general' or option == 'add' or option == 'remove' or option == 'modify':
