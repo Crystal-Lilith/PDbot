@@ -4,7 +4,7 @@ async def wyr(ctx):
     page = requests.get('https://www.signupgenius.com/groups/would-you-rather.cfm')
     soup = BeautifulSoup(page.content, 'html.parser')
     questions = soup.find('ol').find_all('li')
-    question = get_text() # random.choice(questions).
+    #question = questions.get_text() # random.choice(questions).
 
     embed = discord.Embed(title='Would you rather?', color=discord.Color.from_rgb(0, 191, 255), 
                             description=questions)
