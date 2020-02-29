@@ -12,5 +12,4 @@ def page_loader(path):
     with open("./"+path) as f:
         return f.read()
 
-app.run("0.0.0.0")
-
+app.run("0.0.0.0", 9000)
