@@ -117,40 +117,5 @@ on_command(Interpreter(locals().copy()), case='execute')
 
 start_clients()
 
-@app.route('/paginate', methods=['POST'])
-def pagination_for_other_libs():
-    if request.method != 'POST': return 401
-    data = request.json
-    pages=[]
-    part=[]
-    index=0
-    for element in data['lines']:
-        if index==60:
-            pages.append('\n'.join(part))
-            part.clear()
-            index=0
-        part.append(f'{element}')
-        index+=1
-
-    pages.append('\n'.join(part))
-
-    del part
-
-    result=[]
-
-    limit=len(pages)
-    index=0
-    while index<limit:
-        embed=Embed('Pagination',color='029320',description=pages[index])
-        index+=1
-        embed.add_field(f"{index} pages in total", f'page {index}/{limit}')
-        result.append(embed)
-
-    del pages
-    pdbot.loop.create_task_threadsafe(Pagination(pdbot, CHANNELS[int(data['channel'])],result))
-
-@app.route('/')
-def index():
-    return 'pong'
-
-app.run('0.0.0.0')
+from os import system
+system("cd web && python3 server.py")
