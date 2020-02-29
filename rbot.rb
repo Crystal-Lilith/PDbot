@@ -80,7 +80,10 @@ client.command(:help, description: "A help command.||$help, or $help <cmdname> f
 		if cmds.member?(cmdname)
 			event.send_embed do |e|
 				e.title = "#{cmdname} (#{(cmds[cmdname])['syntax']})"
-				e.description = "**Description:** #{(cmds[cmdname])['desc']}\n**Required roles:** #{((cmds[cmdname])['roles']).join(',')}\n**Required permissions:** #{((cmds[cmdname])['perms']).join(',')}"
+				e.description = '''**Description:** #{(cmds[cmdname])['desc']}
+**Required roles:** #{((cmds[cmdname])['required_roles']).join(',')}
+**Required permissions:** #{((cmds[cmdname])['required_perms']).join(',')}"
+'''
 				e.color = 0x0a7187
 			end
 		elsif dpycmds.member?(cmdname)
