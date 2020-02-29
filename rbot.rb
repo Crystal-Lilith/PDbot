@@ -9,7 +9,7 @@ FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.||$sys <command>") do |event, *cmd|
+client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.||<command>") do |event, *cmd|
   	event.respond "Getting output..."
 	begin
       output = `#{cmd.join ' '}`
@@ -39,7 +39,7 @@ if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
 else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
-client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.||$setticketingchannel <#channelinserver>", required_permissions: [:manage_server]) do |event, chan|
+client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.||<#channelinserver>", required_permissions: [:manage_server]) do |event, chan|
     chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
         serverticketchans[event.server.id] = chan.id
@@ -51,7 +51,7 @@ client.command(:setticketingchannel, description: "Set the default ticketing cha
 		nil
     end
 end
-client.command(:showticketingchannel, description: "Show the default ticketing channel for this server.||$showticketingchannel") do |event|
+client.command(:showticketingchannel, description: "Show the default ticketing channel for this server.||No arguments") do |event|
     event.respond("The ticketing channel is <##{(YAML.load(File.read(File.join('config', 'serverticketchans.yaml')))[event.server.id])}>")
 end
 client.command(:openticket, description: "Open a ticket.||$openticket <description goes here>") do |event, *desc|
@@ -73,7 +73,7 @@ client.commands.each do |name, command|
 end
 dpycmds = JSON.parse(File.read(File.join('cmds', 'dcmds.json')))
 File.write(File.join('cmds', 'rcmds.json'), cmds.to_json, mode: "w+")
-client.command(:help, description: "A help command.||$help, or $help <cmdname> for help on a specific command.") do |event, cmdname|
+client.command(:help, description: "A help command.||<cmdname> for help on specific command") do |event, cmdname|
 	if cmdname == nil; break
 	else
 		cmdname.downcase!
