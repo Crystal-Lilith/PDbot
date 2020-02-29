@@ -4,9 +4,9 @@ async def wyr(ctx):
         page = requests.get('https://conversationstartersworld.com/would-you-rather-questions/')
         soup = BeautifulSoup(page.content, 'html.parser')
         questions = soup.find(class_='post-456 page type-page status-publish has-post-thumbnail entry').find_all('h3')
-        question = random.choice(questions).get_text()[5:]
+        question = random.choice(questions).get_text()[4:]
 
-        embed = discord.Embed(title='Would you rather?', color=discord.Color.from_rgb(0, 191, 255), 
+        embed = discord.Embed(title='Would you rather? 🤔', color=discord.Color.from_rgb(0, 191, 255), 
                                 description=f'```css\n{question}```')
         embed.set_footer(text=f'Requested by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
