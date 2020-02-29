@@ -1,4 +1,4 @@
-@client.command(description='Shows you all files in the specified directory||$ls <dir>')
+@client.command(description='Shows you all files in the specified directory||<dir>')
 @commands.has_any_role('PDBot Mod', 'PDBot Dev')
 async def ls(ctx, *, directory='.'):
     try:

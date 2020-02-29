@@ -1,4 +1,4 @@
-@client.command(description='Outputs file content||$cat <file>')
+@client.command(description='Outputs file content||<file>')
 @commands.has_any_role('PDBot Mod', 'PDBot Dev')
 async def cat(ctx, *, directory):
     if directory.startswith("./"):

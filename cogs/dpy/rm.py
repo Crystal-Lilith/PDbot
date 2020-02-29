@@ -1,4 +1,4 @@
-@client.command(description='Deletes messages in a channel||$rm <amount>')
+@client.command(description='Deletes messages in a channel||<amount>')
 @commands.has_role('Owner')
 async def rm(ctx, amount):
     try:

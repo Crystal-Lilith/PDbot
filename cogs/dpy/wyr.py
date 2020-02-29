@@ -1,4 +1,4 @@
-@client.command(description='Gives a would you rather question||$wr')
+@client.command(description='Gives a would you rather question||None')
 async def wyr(ctx):
     try:
         page = requests.get('https://conversationstartersworld.com/would-you-rather-questions/')

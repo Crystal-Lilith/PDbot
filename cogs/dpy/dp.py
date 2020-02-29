@@ -1,4 +1,4 @@
-@client.command(description='Deletes project||$dp <project-name>')
+@client.command(description='Deletes project||<project-name>')
 async def dp(ctx, *, projectname):
     projectname = projectname.lower()
     if get(ctx.author.roles, name=f"{projectname} Founder"):

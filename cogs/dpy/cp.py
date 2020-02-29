@@ -1,4 +1,4 @@
-@client.command(description='Creates new project||$cp <project-name>')
+@client.command(description='Creates new project||<project-name>')
 async def cp(ctx, *, projectname):
     projectname = projectname.lower()
     if not get(ctx.guild.categories, name=f"{projectname} Dev"):

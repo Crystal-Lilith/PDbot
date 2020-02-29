@@ -1,4 +1,4 @@
-@client.command(description='Creates a vote||$cv <timer> <desc>')
+@client.command(description='Creates a vote||<timer> <desc>')
 @commands.has_role('Owner')
 async def cv(ctx, timer, *, desc):
     try:
