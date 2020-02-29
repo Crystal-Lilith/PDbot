@@ -6,7 +6,7 @@ async def ad(ctx, user: discord.User, *, projectname):
 
     if get(ctx.author.roles, name=f'{projectname} Founder'):
         if user != ctx.message.author:
-            if user:
+            if not user:
                 embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                         description='That **user** does not exist!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
