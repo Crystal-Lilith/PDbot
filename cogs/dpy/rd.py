@@ -1,7 +1,7 @@
 @client.command(description='Removes dev from a project')
 async def rd(ctx, user: discord.User, *, projectname):
     projectname = projectname.lower()
-    # user = ctx.guild.get_member(user.id)
+    user = ctx.guild.get_member(user.id)
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):
