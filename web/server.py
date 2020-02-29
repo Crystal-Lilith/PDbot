@@ -11,19 +11,25 @@ from flask import Flask
 app=Flask(__name__)
 
 def html_format(file):
-    with open(file) as f:
-        return eval(f"f'''"+f.read()+"'''") 
+    try:
+        with open(file) as f:
+            try:
+                return eval(f"f'''"+f.read()+"'''")  
+            except: # Catching all errors so we can have this working no matter what
+                return f.read()
+    except FileNotFoundError:
+        return "The page you were looking for could not be found, is it valid?", 404
 
 @app.route("/")
 def index():
-    f=open("./index.html")
-    return f.read();f.close()
+    try:
+        with open("./index.html") as f:
+            return f.read()
+    except FileNotFoundError:
+        return "No index.html file"
 
 @app.route("/<path:filepath>")
 def page_loader(filepath):
-    try:
-        return html_format("./"+filepath)
-    except Exception as e:
-        return str(e)
+    return html_format("./"+filepath)
 
 WSGIServer(('0.0.0.0',9000), app).serve_forever()
