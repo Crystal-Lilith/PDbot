@@ -1,15 +1,16 @@
 import os, json, asyncio
 from random import randint
 
-try:
-    import discord
-    from discord.ext import commands
-    from discord.utils import get
-except:
-    os.system('pip3 install discord')
-    import discord
-    from discord.ext import commands
-    from discord.utils import get
+while True:
+    try:
+        import discord, requests, random
+        from discord.ext import commands
+        from discord.utils import get
+        from bs4 import BeautifulSoup
+        break
+    except:
+        os.system('pip3 -r install requirements.txt')
+
 
 
 client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
