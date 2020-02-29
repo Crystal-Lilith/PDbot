@@ -1,22 +1,29 @@
 try:
-    import flask
-    del(flask)
+    import flask, gevent
+    del(flask, gevent)
 except:
     import os
-    os.system("pip3 install flask")
+    os.system("pip3 install flask gevent")
 
+from gevent.pywsgi import WSGIServer
 from flask import Flask
 
 app=Flask(__name__)
 
+def html_format(file):
+    with open(file) as f:
+        return eval(f"f'''"+f.read()+"'''") 
+
 @app.route("/")
 def index():
-    with open("./index.html") as f:
-        return f.read()
+    f=open("./index.html")
+    return f.read();f.close()
 
 @app.route("/<path:filepath>")
 def page_loader(filepath):
-    with open("./"+filepath) as f:
-        return f.read()
+    try:
+        return html_format("./"+filepath)
+    except Exception as e:
+        return str(e)
 
-app.run("0.0.0.0", 9000)
+WSGIServer(('0.0.0.0',9000), app).serve_forever()
