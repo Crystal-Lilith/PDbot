@@ -5,7 +5,7 @@ async def rd(ctx, user: discord.User, *, projectname):
     category = get(ctx.guild.categories, name=f"{projectname} Dev")
 
     if get(ctx.author.roles, name=f"{projectname} Founder"):
-        if user:
+        if not user:
             embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                     description='That **user** does not exist!')
             embed.set_footer(text=f'Attempted by: {ctx.message.author}')
