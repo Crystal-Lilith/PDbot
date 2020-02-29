@@ -11,7 +11,7 @@ async def rd(ctx, user: discord.User, *, projectname):
             embed.set_footer(text=f'Attempted by: {ctx.message.author}')
             await ctx.channel.send(embed=embed)
         else:
-            if category:
+            if not category:
                 embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                         description='That **project** does not exist!')
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
