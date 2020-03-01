@@ -15,10 +15,6 @@ def html_format(file):
         with open(file) as f:
             try:
                 return eval(f"f'''"+f.read()+"'''")
-            except NameError as e:
-                e=e[:-16][6:]
-                exec(f"{e} = '{e}'")
-                return eval(f"f'''"+f.read()+"'''")
             except: # Catching all errors so we can have this working no matter what
                 return f.read()
     except FileNotFoundError:
