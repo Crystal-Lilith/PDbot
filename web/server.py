@@ -36,4 +36,4 @@ def page_loader(filepath):
 
 # WSGIServer(('0.0.0.0',9000), app).serve_forever()
 app = Flask(__name__)
-app.run(debug=True)
+app.run(host= '0.0.0.0', port=9000, debug=True)
