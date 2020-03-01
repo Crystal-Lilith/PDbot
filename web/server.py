@@ -1,6 +1,6 @@
 while True:
     try:
-        from gevent.pywsgi import WSGIServer
+        # from gevent.pywsgi import WSGIServer
         from flask import Flask, url_for, render_template
         break
     except:
@@ -35,5 +35,4 @@ def page_loader(filepath):
     return html_format("./"+filepath)
 
 # WSGIServer(('0.0.0.0',9000), app).serve_forever()
-app = Flask(__name__)
 app.run(host= '0.0.0.0', port=9000, debug=True)
