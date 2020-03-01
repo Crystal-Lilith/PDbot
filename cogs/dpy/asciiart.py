@@ -1,5 +1,5 @@
-@client.command(description='Creates ascii art||<message>')
-async def asciiart(ctx, *, font, message):
+@client.command(description='Creates ascii art||<font> <message>')
+async def asciiart(ctx, font, *, message):
     try:
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34),
                                 description=pyfiglet.figlet_format(message, font=font))
