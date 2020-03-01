@@ -15,7 +15,8 @@ def html_format(file):
         with open(file) as f:
             try:
                 return eval(f"f'''"+f.read()+"'''")
-            except: # Catching all errors so we can have this working no matter what
+            except Exception as e: # Catching all errors so we can have this working no matter what
+                print(e)
                 return f.read()
     except FileNotFoundError:
         return "The page you were looking for could not be found, is it valid?", 404
