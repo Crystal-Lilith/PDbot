@@ -1,12 +1,12 @@
-try:
-    import flask, gevent
-    del(flask, gevent)
-except:
-    import os
-    os.system("pip3 install flask gevent")
+while True:
+    try:
+        from gevent.pywsgi import WSGIServer
+        from flask import Flask, url_for, render_template,
+        break
+    except:
+        import os
+        os.system("pip3 install flask gevent")
 
-from gevent.pywsgi import WSGIServer
-from flask import Flask
 
 app=Flask(__name__)
 
@@ -23,11 +23,11 @@ def html_format(file):
     except FileNotFoundError:
         return "The page you were looking for could not be found, is it valid?", 404
 
-@app.route("/")
+@app.route('/')
 def index():
     try:
         with open("./index.html") as f:
-            return f.read()
+            return render_template('index.html')
     except FileNotFoundError:
         return "No index.html file"
 
