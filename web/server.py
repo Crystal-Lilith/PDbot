@@ -30,6 +30,13 @@ def index():
     except FileNotFoundError:
         return "No index.html file"
 
+@app.route('contact')
+def contact():
+    try:
+        return render_template('Contact.html')
+    except FileNotFoundError:
+        return "No Contact.html file"
+
 @app.route("/<path:filepath>")
 def page_loader(filepath):
     return html_format("./"+filepath)
