@@ -45,11 +45,12 @@ token = os.environ.get('TOKEN')
 
 app=Flask("Private API")
 
-@app.route("/guild_count", methods=["GET"])
+@app.route("/guild_count", methods=['GET'])
 def guild_count():
-    if request.method != "GET":
-        return "You have to use GET requests not "+str(request.method)+" requests!"
+    if request.method != 'GET':
+        return f'You have to use GET requests not {str(request.method)} requests!'
     return str(len(client.guilds))
+
 
 threading.Thread(target=WSGIServer, args=((('0.0.0.0',9010), app).serve_forever()).start()
 client.run(token)
