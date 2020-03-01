@@ -42,4 +42,3 @@ def page_loader(filepath):
     return html_format("./"+filepath)
 
 WSGIServer(('0.0.0.0', 9000), app).serve_forever()
-# app.run(host= '0.0.0.0', port=9000, debug=True)
