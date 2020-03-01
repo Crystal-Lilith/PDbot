@@ -1,4 +1,4 @@
-import os, json, asyncio
+import os, json, asyncio, threading
 from random import randint
 
 while True:
@@ -7,6 +7,7 @@ while True:
         from discord.ext import commands
         from discord.utils import get
         from bs4 import BeautifulSoup
+        from flask import Flask, request
         break
     except:
         os.system('pip3 install -r requirements.txt')
@@ -40,4 +41,15 @@ for i in os.listdir('./cogs/dpy'):
             exec(f.read())
 
 token = os.environ.get('TOKEN')
+
+app=Flask("Private API")
+
+@app.route("/guild_count", methods=["GET"])
+def guild_count():
+    if request.method != "GET":
+        return "You have to use GET requests not "+str(request.method)+" requests!"
+    return str(len(client.guilds))
+
+app.run("0.0.0.0", 9010)
+  
 client.run(token)
