@@ -5,10 +5,10 @@
   <title>PD</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="3.80.194.0:9000/CSS/Index.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./CSS/Index.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./Header/styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./CSS/Index.css./Header/styles.css') }}">
   <style>
     .img {
       height: 200px;
@@ -59,7 +59,7 @@
     <div class="col-sm-4">
       <h2>About Our Team</h2>
       <h5>Our newset staff:</h5>
-      <img class="img" src="./Images/RedLogo.png">
+      <img class="img" src="{{ url_for('static', filename='./Images/RedLogo.png') }}">
       <p>We are a 8-man team that maintains the PDBot</p>
       <hr class="hidden-sm hidden-md hidden-lg">
     </div>
@@ -78,7 +78,7 @@
   </div>
 </div>
 
-<script src="./Header/app.js"></script>
+<script src="{{ url_for('static', filename='./Header/app.js') }}"></script>
 </body>
 
 </html>
