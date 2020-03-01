@@ -8,6 +8,7 @@ while True:
         from discord.utils import get
         from bs4 import BeautifulSoup
         from flask import Flask, request
+        from gevent.pywsgi import WSGIServer
         break
     except:
         os.system('pip3 install -r requirements.txt')
@@ -50,6 +51,6 @@ def guild_count():
         return "You have to use GET requests not "+str(request.method)+" requests!"
     return str(len(client.guilds))
 
-threading.Thread(target=app.run, args=("0.0.0.0", 9010)).start()
+threading.Thread(target=WSGIServer, args=((('0.0.0.0',9010), app).serve_forever()).start()
   
 client.run(token)
