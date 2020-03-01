@@ -1,7 +1,7 @@
 @client.command(description='Creates ascii art||<font> <message>')
 async def asciiart(ctx, font, *, message):
     try:
-        embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34),
+        embed = discord.Embed(color=discord.Color.from_rgb(0, 191, 255),
                                 description=f'```{pyfiglet.figlet_format(message, font=font)}```')
         embed.set_footer(text=f'Requested by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
