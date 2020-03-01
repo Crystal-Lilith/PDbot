@@ -26,8 +26,7 @@ def html_format(file):
 @app.route('/')
 def index():
     try:
-        with open("./index.html") as f:
-            return render_template('index.html')
+        return render_template('index.html')
     except FileNotFoundError:
         return "No index.html file"
 
