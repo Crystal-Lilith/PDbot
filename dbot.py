@@ -50,6 +50,6 @@ def guild_count():
         return "You have to use GET requests not "+str(request.method)+" requests!"
     return str(len(client.guilds))
 
-app.run("0.0.0.0", 9010)
+threading.Thread(target=app.run, args=("0.0.0.0", 9010)).start()
   
 client.run(token)
