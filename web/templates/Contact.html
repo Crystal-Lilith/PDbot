@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Header/styles.css">
-    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/Header/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <title>PD | Conctacts</title>
 </head>
@@ -14,12 +14,12 @@
     <header>
         <nav>
             <ul class="nav__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Minecraft.html">Forums</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Forums</a></li>
                 <li><a href="#">PDBot</a></li>
             </ul>
         </nav>
-        <a class="cta" href="Contact.html">Contact</a>
+        <a class="cta" href="contact">Contact</a>
         <div class="selector">
             <div class="l1"></div>
             <div class="l2"></div>
@@ -31,12 +31,12 @@
         <div class="in">
             <div class="deg">
                 <a class="cont" href="#">
-                    <img src="Images/email.png" alt="discord">
+                    <img src="{{ url_for('static', filename='src/Images/email.png') }}" alt="discord">
                     <h2>Email</h2>
                     <h5>Email <strong>skane@criptext.com</strong> to contact us</h5>
                 </a>
                 <a class="cont" href="https://discord.gg/Ws37MKy">
-                    <img src="Images/discord-logo-png-7617.png" alt="discord">
+                    <img src="{{ url_for('static', filename='src/Images/discord-logo-png-7617.png') }}" alt="discord">
                     <h2>Discord</h2>
                     <h5>Join our discord server!</h5>
                 </a>
