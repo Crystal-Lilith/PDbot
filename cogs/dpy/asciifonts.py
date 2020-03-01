@@ -12,7 +12,7 @@ async def asciifonts(ctx):
                 font = f'{font}{text}\n'
 
         embed = discord.Embed(title='Fonts', color=discord.Color.from_rgb(0, 191, 255), 
-                                description=text)
+                                description=font)
         embed.set_footer(text=f'Requested by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
     except:
