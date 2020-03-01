@@ -34,4 +34,6 @@ def index():
 def page_loader(filepath):
     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0',9000), app).serve_forever()
+# WSGIServer(('0.0.0.0',9000), app).serve_forever()
+app = Flask(__name__)
+app.run(debug=True)
