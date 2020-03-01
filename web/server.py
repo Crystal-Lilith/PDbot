@@ -13,6 +13,8 @@ app=Flask(__name__)
 def html_format(file):
     try:
         with open(file) as f:
+            if not file.endswith(".html"):
+                return f.read()
             try:
                 return eval(f"f'''"+f.read()+"'''")
             except Exception as e: # Catching all errors so we can have this working no matter what
