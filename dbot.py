@@ -52,5 +52,4 @@ def guild_count():
     return str(len(client.guilds))
 
 threading.Thread(target=WSGIServer, args=((('0.0.0.0',9010), app).serve_forever()).start()
-  
 client.run(token)
