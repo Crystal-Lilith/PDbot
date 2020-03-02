@@ -36,6 +36,13 @@ def contact():
         return render_template('Contact.html')
     except FileNotFoundError:
         return "No Contact.html file"
+    
+@app.route('/dashboard')
+def dashboard():
+    try:
+        return render_template('dashboard.html')
+    except FileNotFoundError:
+        return "No dashboard.html file"
 
 @app.route("/<path:filepath>")
 def page_loader(filepath):

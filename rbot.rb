@@ -3,14 +3,16 @@ require 'dotenv'
 require 'json'
 require 'yaml'
 require 'fileutils'
+
 FileUtils.mkdir_p "config"
 FileUtils.touch(File.join("config", "serverticketchans.yaml"))
 FileUtils.touch(File.join("config", "latestticket.cfg"))
 FileUtils.touch(File.join("config", "tickets.yaml"))
+
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
 client.command(:sys, required_roles: [682105898642047233], description: "Run a system command.||<command>") do |event, *cmd|
-  	event.respond "Getting output..."
+  	event.respond "Getting output... please hold"
 	begin
       output = `#{cmd.join ' '}`
       failed = false
@@ -39,6 +41,7 @@ if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
 else
     serverticketchans = YAML.load(File.read(File.join("config", "serverticketchans.yaml")))
 end
+
 client.command(:setticketingchannel, description: "Set the default ticketing channel for this server.||<#channelinserver>", required_permissions: [:manage_server]) do |event, chan|
     chan = client.parse_mention(chan)
     if chan.class == Discordrb::Channel
@@ -65,7 +68,7 @@ client.command(:openticket, description: "Open a ticket.||$openticket <descripti
 		e.description = "**Author: #{event.author.mention}**\n#{desc}"
 	end
 end
-cmds = Hash.new
+cmds = {}
 client.commands.each do |name, command|
 	perms = command.attributes[:required_permissions].map {|x| x=x.to_s.gsub('_', ' ').split.map(&:capitalize).join(' ')}
   	roles = command.attributes[:required_roles].map { |x| x = (client.server(668000598221651975)).role(x).name if x.is_a? Integer }
