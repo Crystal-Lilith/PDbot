@@ -15,7 +15,7 @@ def html_format(file):
             if file.lower().endswith(".css"):
                 return f.read()
             try:
-                return eval(f"f'''"+f.read()+"'''")
+                return eval(f"f'''"+f.read().replace("{", "|~~").replace("}", "~~|").replace("$>", "{").replace("}", "<$")+"'''").replace("|~~", "{").replace("~~|", "}")
             except Exception as e: # Catching all errors so we can have this working no matter what
                 print(e)
                 return f.read()
