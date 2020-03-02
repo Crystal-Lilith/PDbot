@@ -7,7 +7,6 @@ while True:
         import os
         os.system("pip3 install flask gevent")
 
-
 app=Flask(__name__)
 
 def html_format(file):
