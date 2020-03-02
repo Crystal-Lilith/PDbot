@@ -1,4 +1,5 @@
 discord
+git+https://github.com/HuyaneMatsu/hata.git
 flask
 beautifulsoup4
 requests
