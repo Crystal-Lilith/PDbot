@@ -1,0 +1,6 @@
+discord
+flask
+beautifulsoup4
+requests
+pandas
+pyfiglet
