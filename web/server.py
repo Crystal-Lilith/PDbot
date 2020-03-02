@@ -39,7 +39,7 @@ def contact():
 @app.route('/dashboard')
 def dashboard():
     try:
-        return render_template('dashboard.html')
+        return html_format('templates/dashboard.html')
     except FileNotFoundError:
         return "No dashboard.html file"
 
