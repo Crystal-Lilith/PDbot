@@ -5,7 +5,6 @@ pyproject.toml
 poetry.lock
 pyproject.toml
 config/meme.json
-start.sh
 output.txt
 quick-upload.sh
 
