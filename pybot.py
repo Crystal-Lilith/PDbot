@@ -20,6 +20,7 @@ while True:
 prefix = os.environ.get('PREFIX')
 token = os.environ.get('TOKEN')
 
+global client
 client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
                         status=discord.Status.idle, activity=discord.Game(name='Compiling'))
 
