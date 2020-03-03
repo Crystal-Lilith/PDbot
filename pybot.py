@@ -20,6 +20,11 @@ while True:
 prefix = os.environ.get('PREFIX')
 token = os.environ.get('TOKEN')
 
+client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
+                        status=discord.Status.idle, activity=discord.Game(name='Compiling'))
+
+client.remove_command('help')
+
 pdbot = Client(token)
 
 on_command = pdbot.events(events.CommandProcesser(prefix)).shortcut
@@ -39,12 +44,6 @@ async def help(client, message, content):
     if content not in [None, '']:
         return
     await Pagination(client, message.channel, HelpPages(client, message))
-
-client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
-                        status=discord.Status.idle, activity=discord.Game(name='Compiling'))
-
-client.remove_command('help')
-
 
 @client.event
 async def on_ready():
