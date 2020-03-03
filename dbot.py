@@ -1,5 +1,6 @@
 import os, json, asyncio, threading
 from random import randint
+from pdaddons.python.hata.interpreter import Interpreter
 
 while True:
     try:
@@ -7,11 +8,35 @@ while True:
         from discord.ext import commands
         from discord.utils import get
         from bs4 import BeautifulSoup
+        from hata import Client, start_clients, events, Embed, enter_executor
+        from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
+        from hata.extension_loader import ExtensionLoader, ExtensionError
         break
     except:
         os.system('pip3 install -r requirements.txt')
 
+prefix = os.environ.get('PREFIX')
+token = os.environ.get('TOKEN')
 
+pdbot = Client(token)
+
+on_command = pdbot.events(events.CommandProcesser(prefix)).shortcut
+
+pdbot.events(ReactionAddWaitfor)
+pdbot.events(ReactionDeleteWaitfor)
+
+EXTENSION_LOADER(pdbot).load_all().syncwrap().wait()
+
+@on_command(case='update')
+async def restart_bot(client, message):
+    await client.message_create(message.channel, "Updating bot...")
+    os.system('sh stop.sh')
+
+@on_command
+async def help(client, message, content):
+    if content not in [None, '']:
+        return
+    await Pagination(client, message.channel, HelpPages(client, message))
 
 client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
                         status=discord.Status.idle, activity=discord.Game(name='Compiling'))
@@ -41,7 +66,8 @@ for i in os.listdir('./cogs/dpy'):
         with open(f"./cogs/dpy/{i}") as f:
             exec(f.read())
 
-token = os.environ.get('TOKEN')
+on_command(Interpreter(locals().copy()), case='execute')
 
+start_clients()
 client.run(token)
 
