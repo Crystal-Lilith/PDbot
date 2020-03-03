@@ -1,6 +1,8 @@
 import os, json, asyncio, threading
 from random import randint
 from pdaddons.python.hata.interpreter import Interpreter
+from pdaddons.python.hata.extension_loader import EXTENSION_LOADER
+from pdaddons.python.hata.ext import HelpPages
 
 while True:
     try:
