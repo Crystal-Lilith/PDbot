@@ -1,8 +1,6 @@
-from hata import ExtensionLoader
+from hata.extension_loader import ExtensionLoader, ExtensionError
 
-
-
-def add_extensions(client):
+def EXTENSION_LOADER(client):
     EXTENSION_LOADER = ExtensionLoader(client)
     async def entry(client, lib):
         commands=getattr(lib,'commands',None)
