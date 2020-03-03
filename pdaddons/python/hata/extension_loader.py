@@ -1,6 +1,9 @@
 from hata import ExtensionLoader
 
-def add_extensions():
+
+
+def add_extensions(client):
+    EXTENSION_LOADER = ExtensionLoader(client)
     async def entry(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
@@ -33,4 +36,4 @@ def add_extensions():
         if filename.endswith('.py'):
             module_name='cogs.hata.'+filename[:-3]
             EXTENSION_LOADER.add(module_name, entry_point=entry, exit_point=exit)
-    return ExtensionLoader()
+    return EXTENSION_LOADER
