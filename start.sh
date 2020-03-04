@@ -10,11 +10,8 @@ export PREFIX
 gem install discordrb dotenv
 while :
 do
-    ruby rbot.rb &
-    python3 web/server.py &
-    python3 pybot.py
+    ruby rbot.rb && python3 web/server.py && python3 
+    killall python3 ruby
     git fetch
     git pull
-    killall python3 ruby
 done
- 
