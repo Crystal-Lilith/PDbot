@@ -1,11 +1,11 @@
 from hata import Embed
-
+from os import listdir
 def HelpPages(client, message):
     cmds = []
     for i in client.events.message_create.commands:
         cmds.append(i)
-    for y in listdir('./cmds/'):
-        with open('./cmds/'+y,) as f:
+    for y in listdir('cmds/'):
+        with open('cmds/'+y,) as f:
             x = json.load(f)
         for i in x:
             if i.lower() != 'help':
