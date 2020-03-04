@@ -1,4 +1,5 @@
 from hata.extension_loader import ExtensionLoader, ExtensionError
+from os import listdir
 
 def EXTENSION_LOADER(client):
     EXTENSION_LOADER = ExtensionLoader(client)
@@ -30,7 +31,7 @@ def EXTENSION_LOADER(client):
 
         print(f'Hata: {lib.__name__} extension has been unloaded!')
 
-    for filename in os.listdir('./cogs/hata/'):
+    for filename in listdir('cogs/hata/'):
         if filename.endswith('.py'):
             module_name='cogs.hata.'+filename[:-3]
             EXTENSION_LOADER.add(module_name, entry_point=entry, exit_point=exit)
