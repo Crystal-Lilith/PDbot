@@ -64,6 +64,9 @@ on_command(Interpreter(locals().copy()), case='execute')
 
 PDBot = pdbot
 
-threading.Thread(target=os.system, args=('python .hworkaround.py')).start()
+def hrun():
+    os.system("python3 .hworkaround.py")
+  
+threading.Thread(target=hrun).start()
 client.run(token)
 
