@@ -1,7 +1,6 @@
 import os, json, asyncio, threading
 from random import randint
 from pdaddons.python.hata.interpreter import Interpreter
-from pdaddons.python.hata.extension_loader import EXTENSION_LOADER
 from pdaddons.python.hata.ext import HelpPages
 
 import discord, requests, random, pyfiglet
@@ -105,8 +104,5 @@ on_command(Interpreter(locals().copy()), case='execute')
 
 PDBot = pdbot
 
-def hrun():
-    os.system("python3 .hworkaround.py")
-  
-threading.Thread(target=hrun).start()
+start_clients()
 client.run(token)
