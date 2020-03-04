@@ -1,5 +1,6 @@
 from hata import Embed
 from os import listdir
+from json import load as jload
 def HelpPages(client, message):
     cmds = []
     for i in client.events.message_create.commands:
