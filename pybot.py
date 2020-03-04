@@ -1,38 +1,33 @@
-import os, json, asyncio, threading
-from random import randint
-from pdaddons.python.hata.interpreter import Interpreter
-from pdaddons.python.hata.ext import HelpPages
+import os
+import json
 
-import discord, requests, random, pyfiglet
-from discord.ext import commands
-from discord.utils import get
-from bs4 import BeautifulSoup
+try:
+    import hata, flask
+    del(hata, flask)
+except:
+    os.system('pip3 install https://github.com/HuyaneMatsu/hata/archive/master.zip flask')
+
+from flask import Flask, request
+import json
 from hata import Client, start_clients, events, Embed, enter_executor
 from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
 from hata.extension_loader import ExtensionLoader, ExtensionError
 
-prefix = os.environ.get('PREFIX')
-token = os.environ.get('TOKEN')
+from pdaddons.python.hata.interpreter import Interpreter
 
+token = os.environ.get('TOKEN')
 pdbot = Client(token)
 
+prefix = os.environ.get('PREFIX')
 on_command = pdbot.events(events.CommandProcesser(prefix)).shortcut
-
-client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
-                        status=discord.Status.idle, activity=discord.Game(name='Compiling'))
-
-client.remove_command('help')
-
+del(prefix)
 pdbot.events(ReactionAddWaitfor)
 pdbot.events(ReactionDeleteWaitfor)
 
-from hata.extension_loader import ExtensionLoader, ExtensionError
-from os import listdir
 
-EXTENSION_LOADER = ExtensionLoader(client)
+EXTENSION_LOADER = ExtensionLoader(pdbot)
 
 def add_extensions():
-    EXTENSION_LOADER = ExtensionLoader(client)
     async def entry(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
@@ -61,11 +56,11 @@ def add_extensions():
 
         print(f'Hata: {lib.__name__} extension has been unloaded!')
 
-    for filename in listdir('cogs/hata/'):
+    for filename in os.listdir('./cogs/hata/'):
         if filename.endswith('.py'):
             module_name='cogs.hata.'+filename[:-3]
             EXTENSION_LOADER.add(module_name, entry_point=entry, exit_point=exit)
-            
+
 add_extensions()
 EXTENSION_LOADER.load_all().syncwrap().wait()
 
@@ -78,31 +73,46 @@ async def restart_bot(client, message):
 async def help(client, message, content):
     if content not in [None, '']:
         return
-    await Pagination(client, message.channel, HelpPages(client, message))
+    cmds = []
+    for i in pdbot.events.message_create.commands:
+        cmds.append(i)
+    for y in os.listdir('./cmds/'):
+        with open('./cmds/'+y, 'r') as f:
+            x = json.load(f)
+        for i in x:
+            if i.lower() != 'help':
+                cmds.append(i)
+    cmds = sorted(cmds, key=str.lower) # Key positional argument is used to make sure uppercase commands don't take precedence.
+    pages=[]
+    part=[]
+    index=0
+    for element in cmds:
+        if index==16:
+            pages.append('\n'.join(part))
+            part.clear()
+            index=0
+        part.append(f'**>>** {element}')
+        index+=1
 
-@client.listen()
-async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
+    pages.append('\n'.join(part))
 
-@client.command()
-async def help(ctx):
-    cmds = {}
-    with open('./cmds/dcmds.json', 'w') as f:
-        for command in client.commands:
-            desc = command.description.split('||')
-            if command.name != "help":
-                cmds[command.name] = {"desc": desc[0], 'syntax': desc[-1], 'required_roles': [], 'required_perms': []}
-        json.dump(cmds, f)
-        f.close()
+    del part
 
-for i in os.listdir('./cogs/dpy'):
-    if i.endswith('.py'):
-        with open(f"./cogs/dpy/{i}") as f:
-            exec(f.read())
+    result=[]
+
+    limit=len(pages)
+    index=0
+    while index<limit:
+        embed=Embed('Commands:',color='029320',description=pages[index])
+        index+=1
+        embed.add_field("Do $meme for some funny memes!", f'page {index}/{limit}')
+        result.append(embed)
+
+    del pages
+    await Pagination(client, message.channel,result)
+
+app=Flask(__name__)
 
 on_command(Interpreter(locals().copy()), case='execute')
 
-PDBot = pdbot
-
 start_clients()
-client.run(token)
