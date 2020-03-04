@@ -11,12 +11,10 @@ async def cp(ctx, *, projectname):
             if get(ctx.guild.roles, name=f"{projectname} Founder"):
                 founder = get(ctx.guild.roles, name=f"{projectname} Founder")
                 break
-            asyncio.sleep(0.5)
         while True:
             if get(ctx.guild.roles, name=f"{projectname} Dev"):
                 dev = get(ctx.guild.roles, name=f"{projectname} Dev")
                 break
-            asyncio.sleep(0.5)
         await ctx.message.author.add_roles(founder)
 
         bot = get(ctx.guild.roles, name='PDBot')
@@ -63,8 +61,10 @@ async def cp(ctx, *, projectname):
         }
 
         await ctx.guild.create_category(f"{projectname} Dev", overwrites=overwrites)
-        category = get(ctx.guild.categories, name=f"{projectname} Dev")
-
+        while True:
+            if get(ctx.guild.categories, name=f"{projectname} Dev")
+                category = get(ctx.guild.categories, name=f"{projectname} Dev")
+                break
 
         for i in channels:
             await ctx.guild.create_text_channel(i, category=category)
