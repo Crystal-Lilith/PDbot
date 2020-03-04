@@ -1,12 +1,14 @@
 from hata.extension_loader import ExtensionLoader, ExtensionError
 from os import listdir
 
-def EXTENSION_LOADER(client):
+EXTENSION_LOADER = ExtensionLoader(client)
+
+def add_extensions():
     EXTENSION_LOADER = ExtensionLoader(client)
     async def entry(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
-            client.events.message_create.shortcut.extend(commands)
+            pdbot.events.message_create.shortcut.extend(commands)
         
         entry=getattr(lib,'entry',None)
         if entry is not None:
@@ -20,7 +22,7 @@ def EXTENSION_LOADER(client):
     async def exit(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
-            client.events.message_create.shortcut.unextend(commands)
+            pdbot.events.message_create.shortcut.unextend(commands)
         
         exit=getattr(lib,'exit',None)
         if exit is not None:
@@ -35,4 +37,3 @@ def EXTENSION_LOADER(client):
         if filename.endswith('.py'):
             module_name='cogs.hata.'+filename[:-3]
             EXTENSION_LOADER.add(module_name, entry_point=entry, exit_point=exit)
-    return EXTENSION_LOADER
