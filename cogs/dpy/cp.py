@@ -1,3 +1,4 @@
+
 @client.command(description='Creates new project||<project-name>')
 async def cp(ctx, *, projectname):
     projectname = projectname.lower()
@@ -7,18 +8,13 @@ async def cp(ctx, *, projectname):
 
         await ctx.guild.create_role(name=f"{projectname} Founder", mentionable=True, color=color)
         await ctx.guild.create_role(name=f"{projectname} Dev", mentionable=True, color=color)
-        while True:
-            if get(ctx.guild.roles, name=f"{projectname} Founder"):
-                founder = get(ctx.guild.roles, name=f"{projectname} Founder")
-                break
-        while True:
-            if get(ctx.guild.roles, name=f"{projectname} Dev"):
-                dev = get(ctx.guild.roles, name=f"{projectname} Dev")
-                break
+        await asyncio.sleep(4)
+        founder = get(ctx.guild.roles, name=f"{projectname} Founder")
+        dev = get(ctx.guild.roles, name=f"{projectname} Dev")
         await ctx.message.author.add_roles(founder)
 
         bot = get(ctx.guild.roles, name='PDBot')
-        
+
         overwrites = {
             ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
             founder: discord.PermissionOverwrite(manage_channels = True,
@@ -61,10 +57,8 @@ async def cp(ctx, *, projectname):
         }
 
         await ctx.guild.create_category(f"{projectname} Dev", overwrites=overwrites)
-        while True:
-            if get(ctx.guild.categories, name=f"{projectname} Dev")
-                category = get(ctx.guild.categories, name=f"{projectname} Dev")
-                break
+        category = get(ctx.guild.categories, name=f"{projectname} Dev")
+
 
         for i in channels:
             await ctx.guild.create_text_channel(i, category=category)
