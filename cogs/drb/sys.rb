@@ -1,5 +1,5 @@
 require 'discordrb'
-module Sys
+module Cogs_Sys
   	extend Discordrb::Commands::CommandContainer
 
 	command(:sys, required_roles: [682105898642047233], description: "Run a system command.||<command>") do |event, *cmd|
