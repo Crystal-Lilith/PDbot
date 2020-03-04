@@ -6,7 +6,7 @@ def EXTENSION_LOADER(client):
     async def entry(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
-            pdbot.events.message_create.shortcut.extend(commands)
+            client.events.message_create.shortcut.extend(commands)
         
         entry=getattr(lib,'entry',None)
         if entry is not None:
@@ -20,7 +20,7 @@ def EXTENSION_LOADER(client):
     async def exit(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
-            pdbot.events.message_create.shortcut.unextend(commands)
+            client.events.message_create.shortcut.unextend(commands)
         
         exit=getattr(lib,'exit',None)
         if exit is not None:
