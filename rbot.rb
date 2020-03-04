@@ -11,10 +11,11 @@ FileUtils.touch(File.join("config", "tickets.yaml"))
 
 Dotenv.load
 client = Discordrb::Commands::CommandBot.new(prefix: ENV["PREFIX"], token: ENV["TOKEN"])
-,
+
 for cog in (Dir::entries(File.join('cogs', 'drb')) - %w(. .. $))
   require_relative File.join('cogs', 'drb', cog)
   eval("client.include!('Cogs_#{cog.upcase}'")
+end
 
 if YAML.load(File.read(File.join("config", "serverticketchans.yaml"))) == false
     serverticketchans = Hash.new
