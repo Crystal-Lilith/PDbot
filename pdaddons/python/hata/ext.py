@@ -7,7 +7,7 @@ def HelpPages(client, message):
         cmds.append(i)
     for y in listdir('cmds/'):
         with open('cmds/'+y,) as f:
-            x = json.load(f)
+            x = jload(f)
         for i in x:
             if i.lower() != 'help':
                 cmds.append(i)
