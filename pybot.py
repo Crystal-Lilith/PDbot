@@ -62,6 +62,8 @@ for i in os.listdir('./cogs/dpy'):
 
 on_command(Interpreter(locals().copy()), case='execute')
 
-start_clients()
+PDBot = pdbot
+
+threading.Thread(target=os.system, args=('python .hworkaround.py')).start()
 client.run(token)
 
