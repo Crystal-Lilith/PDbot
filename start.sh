@@ -11,8 +11,7 @@ gem install discordrb dotenv
 while :
 do
     ruby rbot.rb &
-    cd ./web && python3 server.py &
-    cd ..
+    python3 web/server.py &
     python3 pybot.py
     git fetch
     git pull
