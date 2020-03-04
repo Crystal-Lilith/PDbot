@@ -1,6 +1,6 @@
 from hata import Embed
 
-def HelpPages(client, message)
+def HelpPages(client, message):
     cmds = []
     for i in client.events.message_create.commands:
         cmds.append(i)

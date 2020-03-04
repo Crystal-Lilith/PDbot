@@ -4,18 +4,13 @@ from pdaddons.python.hata.interpreter import Interpreter
 from pdaddons.python.hata.extension_loader import EXTENSION_LOADER
 from pdaddons.python.hata.ext import HelpPages
 
-while True:
-    try:
-        import discord, requests, random, pyfiglet
-        from discord.ext import commands
-        from discord.utils import get
-        from bs4 import BeautifulSoup
-        from hata import Client, start_clients, events, Embed, enter_executor
-        from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
-        from hata.extension_loader import ExtensionLoader, ExtensionError
-        break
-    except:
-        os.system('pip3 install -r requirements.txt')
+import discord, requests, random, pyfiglet
+from discord.ext import commands
+from discord.utils import get
+from bs4 import BeautifulSoup
+from hata import Client, start_clients, events, Embed, enter_executor
+from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
+from hata.extension_loader import ExtensionLoader, ExtensionError
 
 prefix = os.environ.get('PREFIX')
 token = os.environ.get('TOKEN')
