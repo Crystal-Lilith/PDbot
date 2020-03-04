@@ -40,11 +40,9 @@ async def help(client, message, content):
         return
     await Pagination(client, message.channel, HelpPages(client, message))
 
-@client.event
+@client.listen()
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
-    global bot
-    bot = get(ctx.guild.roles, name='PDBot')
 
 @client.command()
 async def help(ctx):
