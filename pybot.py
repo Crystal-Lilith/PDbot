@@ -67,5 +67,5 @@ PDBot = pdbot
 def hrun():
     os.system("python3 .hworkaround.py")
   
-threading.Thread(target=hrun()).start()
+threading.Thread(target=hrun).start()
 client.run(token)
