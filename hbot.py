@@ -75,7 +75,7 @@ async def help(client, message, content):
         return
     cmds = []
     for i in pdbot.events.message_create.commands:
-        cmds.append(i)
+        cmds.append(i.name)
     for y in os.listdir('./cmds/'):
         with open('./cmds/'+y, 'r') as f:
             x = json.load(f)
