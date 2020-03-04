@@ -19,6 +19,8 @@ async def cp(ctx, *, projectname):
             asyncio.sleep(0.5)
         await ctx.message.author.add_roles(founder)
 
+        bot = get(ctx.guild.roles, name='PDBot')
+        
         overwrites = {
             ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
             founder: discord.PermissionOverwrite(manage_channels = True,
