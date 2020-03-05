@@ -2,9 +2,9 @@ import os
 import json
 
 import json
-from .hata import Client, start_clients, events, Embed, enter_executor
-from .hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
-from .hata.extension_loader import ExtensionLoader, ExtensionError
+from hata import Client, start_clients, events, Embed, enter_executor
+from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
+from hata.extension_loader import ExtensionLoader, ExtensionError
 
 from pdaddons.python.hata.interpreter import Interpreter
 
