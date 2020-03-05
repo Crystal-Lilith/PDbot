@@ -1,17 +1,10 @@
 import os
 import json
 
-try:
-    import hata, flask
-    del(hata, flask)
-except:
-    os.system('pip3 install https://github.com/HuyaneMatsu/hata/archive/master.zip flask')
-
-from flask import Flask, request
 import json
-from hata import Client, start_clients, events, Embed, enter_executor
-from hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
-from hata.extension_loader import ExtensionLoader, ExtensionError
+from .hata import Client, start_clients, events, Embed, enter_executor
+from .hata.events import Pagination, ReactionAddWaitfor, ReactionDeleteWaitfor
+from .hata.extension_loader import ExtensionLoader, ExtensionError
 
 from pdaddons.python.hata.interpreter import Interpreter
 
@@ -110,8 +103,6 @@ async def help(client, message, content):
 
     del pages
     await Pagination(client, message.channel,result)
-
-app=Flask(__name__)
 
 on_command(Interpreter(locals().copy()), case='execute')
 
