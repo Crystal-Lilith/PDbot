@@ -1,18 +1,11 @@
 import os, json, asyncio, threading
 from random import randint
 
-while True:
-    try:
-        import discord, requests, random, pyfiglet
-        from discord.ext import commands
-        from discord.utils import get
-        from bs4 import BeautifulSoup
-        from flask import Flask, request
-        break
-    except:
-        os.system('pip3 install -r requirements.txt')
-
-
+import discord, requests, random, pyfiglet
+from discord.ext import commands
+from discord.utils import get
+from bs4 import BeautifulSoup
+from flask import Flask, request
 
 client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=True, description='PDBot - v 0.9.0', 
                         status=discord.Status.idle, activity=discord.Game(name='Compiling'))
