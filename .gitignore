@@ -141,3 +141,6 @@ dmypy.json
 
 config/*.yaml
 config/*.cfg
+
+# ssl
+.well-known
