@@ -47,4 +47,4 @@ def dashboard():
 def page_loader(filepath):
     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0', 80), app).serve_forever()
+WSGIServer(('0.0.0.0', 9000), app).serve_forever()
