@@ -1,11 +1,5 @@
-while True:
-    try:
-        from gevent.pywsgi import WSGIServer
-        from flask import Flask, url_for, render_template
-        break
-    except:
-        import os
-        os.system("pip3 install flask gevent pyopenssl")
+from gevent.pywsgi import WSGIServer
+from flask import Flask, url_for, render_template
 
 app=Flask(__name__)
 
