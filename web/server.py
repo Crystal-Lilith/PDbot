@@ -1,11 +1,5 @@
-while True:
-    try:
-        from gevent.pywsgi import WSGIServer
-        from flask import Flask, url_for, render_template
-        break
-    except:
-        import os
-        os.system("pip3 install flask gevent")
+from gevent.pywsgi import WSGIServer
+from flask import Flask, url_for, render_template
 
 app=Flask(__name__)
 
@@ -47,4 +41,4 @@ def dashboard():
 def page_loader(filepath):
     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0', 9000), app).serve_forever()
+WSGIServer((ssl_context='adhoc', '0.0.0.0', 9000), app).serve_forever()
