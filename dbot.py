@@ -8,7 +8,6 @@ while True:
         from discord.utils import get
         from bs4 import BeautifulSoup
         from flask import Flask, request
-        from gevent.pywsgi import WSGIServer
         break
     except:
         os.system('pip3 install -r requirements.txt')
