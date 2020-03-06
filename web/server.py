@@ -5,7 +5,7 @@ while True:
         break
     except:
         import os
-        os.system("pip3 install flask gevent")
+        os.system("pip3 install flask gevent pyopenssl")
 
 app=Flask(__name__)
 
@@ -47,4 +47,4 @@ def dashboard():
 def page_loader(filepath):
     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0', 9000), app).serve_forever()
+WSGIServer((ssl_context='adhoc', '0.0.0.0', 9000), app).serve_forever()
