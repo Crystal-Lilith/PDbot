@@ -1,11 +1,11 @@
 fs = require 'fs'
 Discord = require 'discord.js'
-config = require 'dotenv'.config()
+config = require('dotenv').config()
 
 client = new Discord.Client()
 client.commands = new Discord.Collection()
 
-for file in fs.readdirSync(path.join('.', 'cogs', 'coffeescript'))
+for file in fs.readdirSync(path.join('.', 'cogs', 'djs'))
 
   cmd = require "./cmds/#{file}"
   client.commands.set(cmd.name, cmd)
