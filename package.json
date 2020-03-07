@@ -1,0 +1,23 @@
+{
+  "name": "PDBot",
+  "version": "1.0.0",
+  "description": "A bot for The Programmer's Den server! It's opensource, and free to commit, what more could you want!",
+  "main": "index.js",
+  "dependencies": {
+    "coffee": "^5.2.2",
+    "coffeescript": "^2.5.1",
+    "discord.js": "^12.0.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/PD/PDBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
