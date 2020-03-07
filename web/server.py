@@ -37,8 +37,8 @@ def dashboard():
     except FileNotFoundError:
         return "No dashboard.html file"
 
-@app.route("/<path:filepath>")
-def page_loader(filepath):
-    return html_format("./"+filepath)
+# @app.route("/<path:filepath>")
+# def page_loader(filepath):
+#     return html_format("./"+filepath)
 
 WSGIServer(('0.0.0.0', 8080), app, keyfile='keys/private.key', certfile='keys/certificate.crt').serve_forever()
