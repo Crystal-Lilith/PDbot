@@ -26,7 +26,7 @@ def index():
 @app.route('/contact')
 def contact():
     try:
-        return render_template('Contact.html')
+        return render_template('contact.html')
     except FileNotFoundError:
         return "No Contact.html file"
     
