@@ -7,7 +7,7 @@ client = new Discord.Client()
 client.commands = new Discord.Collection()
 
 for file in fs.readdirSync(path.join('.', 'cogs', 'djs')) 
-  cmd = require(path.join('.', 'cogs', 'djs', file))
+  cmd = require "./cogs/djs/#{file}" 
   client.commands.set(cmd.name, cmd)
 
 client.once 'ready', () -> console.log 'Ready!'
