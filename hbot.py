@@ -25,21 +25,21 @@ def add_extensions():
         commands=getattr(lib,'commands',None)
         if commands is not None:
             pdbot.events.message_create.shortcut.extend(commands)
-        
+
         entry=getattr(lib,'entry',None)
         if entry is not None:
             if is_coro(entry):
                 await entry(client)
             else:
                 entry(client)
-            
+
         print(f'Hata: {lib.__name__} extension has been loaded!')
-        
+
     async def exit(client, lib):
         commands=getattr(lib,'commands',None)
         if commands is not None:
             pdbot.events.message_create.shortcut.unextend(commands)
-        
+
         exit=getattr(lib,'exit',None)
         if exit is not None:
             if is_coro(exit):
@@ -60,7 +60,7 @@ EXTENSION_LOADER.load_all().syncwrap().wait()
 @on_command(case='update')
 async def restart_bot(client, message):
     await client.message_create(message.channel, "Updating bot...")
-    os.system('sh stop.sh')
+    os.system('clear && killall ruby python3 node')
 
 @on_command
 async def help(client, message, content):
