@@ -2,7 +2,14 @@
 async def on_command_error(ctx, error):
     message = await ctx.channel.fetch_message(ctx.message.id)
     user_cmd = message.content.split()[0].split('$')[1]
-    if user_cmd == 'update':
+    json_files = os.listdir("cmds")
+    cmds = []
+    for cmd in json_files:
+        with open(f'cmds/{cmd}') as f:
+            data = json.load(f)
+        for i in data:
+            cmds.append(i)
+    if user_cmd in cmds:
         pass
     elif isinstance(error, commands.CommandNotFound):
         embed = discord.Embed(title='Unknown Command! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
