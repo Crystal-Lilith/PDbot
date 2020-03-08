@@ -27,6 +27,7 @@ client.on 'message', (message) ->
       console.error(error)
 
 cmds = {}
+console.log cmds
 for cmd in client.commands
   console.log "#{cmd.name} does #{cmd.description}. It requires roles: #{cmd.required_roles} and perms: #{cmd.required_perms}"
 for cmd in client.commands
