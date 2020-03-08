@@ -17,8 +17,13 @@ client.on 'message', (message) ->
   args = message.content.slice(process.env.PREFIX.length).split(" ")
   command = args.shift().toLowerCase()
   return unless client.commands.has(command)
-  try 
-    client.commands.get(command).execute(message, args)
+  try
+    hasperms = client.commands.get(command).required_perms.some((perm) -> message.member.guild.me.hasPermission(perm))
+    for perm in client.commands.get(command).required_perms
+      if message.member.guild.me.hasPermission perm
+        client.commands.get(command).execute(message, args)
+      else
+        message.reply "You do not have the required permissions to execute this command."
   catch error
     if error.length <= (2000 - 60)
       message.channel.send("There was an error in executing that command. It was:\n```#{e}```")
