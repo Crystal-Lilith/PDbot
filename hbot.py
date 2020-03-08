@@ -60,7 +60,7 @@ EXTENSION_LOADER.load_all().syncwrap().wait()
 @on_command(case='update')
 async def restart_bot(client, message):
     await client.message_create(message.channel, "Updating bot...")
-    os.system('clear && killall ruby python3 node')
+    os.system('clear && sh stop.sh')
 
 @on_command
 async def help(client, message, content):
