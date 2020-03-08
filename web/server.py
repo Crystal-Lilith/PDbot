@@ -8,7 +8,7 @@ async def render_template(file):
     try:
         async with AIOFile(f'web/templates/{file}', 'r') as f:
             x = await f.read()
-            return f
+            return str(f)
     except FileNotFoundError as fnfe:
         raise fnfe
     except Exception as e:
