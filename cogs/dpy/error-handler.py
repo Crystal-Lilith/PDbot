@@ -1,8 +1,8 @@
 @client.listen()
 async def on_command_error(ctx, error):
-    if isinstance(error, client.commands.CommandNotFound):
+    if isinstance(error, discord.commands.CommandNotFound):
         pass
-    elif isinstance(error, client.commands.MissingRequiredArgument):
+    elif isinstance(error, discord.commands.MissingRequiredArgument):
         message = await ctx.channel.fetch_message(ctx.message.id)
         user_cmd = message.content.split()[0]
         desc = user_cmd.description.split('||')[0]
