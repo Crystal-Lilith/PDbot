@@ -7,7 +7,7 @@ app=Sanic(__name__)
 async def render_template(file):
     try:
         async with AIOFile("./templates/"+file, 'r') as f:
-            x=await f.read()
+            x = await f.read()
             return f
     except FileNotFoundError as fnfe:
         raise fnfe
