@@ -16,10 +16,6 @@ def html_format(file):
     except FileNotFoundError:
         return "The page you were looking for could not be found, is it valid?", 404
 
-app.static('/static', './static')
-for filename in listdir('./static'):
-    app.url_for('static', filename=filename) == f'/static/{filename}'
-
 @app.route('/')
 def index():
     try:
