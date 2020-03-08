@@ -39,4 +39,4 @@ async def dashboard(req):
     except FileNotFoundError:
         return response.text("No dashboard.html file")
 
-app.run('0.0.0.0', 80)
+app.run('0.0.0.0', 8080, ssl={'cert': "../keys/certificate.crt", 'key': "../keys/private.key"})
