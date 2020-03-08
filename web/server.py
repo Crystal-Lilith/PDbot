@@ -1,6 +1,7 @@
 from sanic import Sanic
 from sanic import response
 from aiofile import AIOFile
+from os import listdir
 
 app=Sanic(__name__)
 
@@ -14,6 +15,10 @@ async def render_template(file):
     except Exception as e:
         print(e)
         return response.text(str(e))
+
+app.static('/static', './static')
+for filename in listdir('./static'):
+    app.url_for('static', filename=filename) == f'/static/{filename}'
 
 @app.route('/')
 async def index(req):
