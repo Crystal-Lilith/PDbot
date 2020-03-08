@@ -1,44 +1,42 @@
-from flask import Flask, url_for, render_template
-from gevent.pywsgi import WSGIServer
+from sanic import Sanic
+from sanic import response
+from aiofile import AIOFile
 
-app=Flask(__name__)
+app=Sanic(__name__)
 
-def html_format(file):
+async def render_template(file):
     try:
-        with open(file) as f:
-            if file.lower().endswith(".css"):
-                return f.read()
-            try:
-                return eval(f"f'''"+f.read().replace("{", "|~~").replace("}", "~~|").replace("$>", "{").replace("}", "<$")+"'''").replace("|~~", "{").replace("~~|", "}")
-            except Exception as e: # Catching all errors so we can have this working no matter what
-                print(e)
-                return f.read()
-    except FileNotFoundError:
-        return "The page you were looking for could not be found, is it valid?", 404
+        async with AIOFile("templates/"+file, 'r') as f:
+            x=await f.read()
+            return f
+    except FileNotFoundError as fnfe:
+        raise fnfe
+    except Exception as e:
+        print(e)
+        return response.text(str(e))
 
 @app.route('/')
-def index():
+async def index(req):
     try:
-        return render_template('index.html')
+        x = await render_template('index.html')
+        return x
     except FileNotFoundError:
-        return "No index.html file"
+        return response.text("No index.html file")
 
 @app.route('/contact')
-def contact():
+async def contact(req):
     try:
-        return render_template('contact.html')
+        x = await render_template('contact.html')
+        return x
     except FileNotFoundError:
-        return "No Contact.html file"
+        return response.text("No Contact.html file")
     
 @app.route('/dashboard')
-def dashboard():
+async def dashboard(req):
     try:
-        return html_format('templates/dashboard.html')
+        x = await render_template('dashboard.html')
+        return x
     except FileNotFoundError:
-        return "No dashboard.html file"
+        return response.text("No dashboard.html file")
 
-# @app.route("/<path:filepath>")
-# def page_loader(filepath):
-#     return html_format("./"+filepath)
-
-WSGIServer(('0.0.0.0', 80), app, keyfile='keys/private.key', certfile='keys/certificate.crt').serve_forever()
+app.run('0.0.0.0', 80)
