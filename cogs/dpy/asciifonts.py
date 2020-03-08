@@ -1,4 +1,4 @@
-@client.command(description='Displays ascii fonts||None')
+@client.command(description='Creates ascii art||None')
 async def asciifonts(ctx):
     try:
         page = requests.get('http://www.figlet.org/fontdb.cgi')
