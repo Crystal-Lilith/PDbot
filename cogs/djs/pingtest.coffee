@@ -3,4 +3,4 @@ module.exports =
     description: 'Find the ping of the bot.'
     required_roles: []
     required_perms: ['test']
-    execute: (message, args) -> message.channel.send "Pong!"
+    execute: (message, args) -> message.channel.send "Pong! "
