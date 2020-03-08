@@ -21,10 +21,10 @@ async def dp(ctx, *, projectname):
         await category.delete()
 
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34), description=f'Deleted {projectname}!')
-        embed.set_footer(text=f'Project deleted by: {ctx.message.author}')
+        embed.set_footer(text=f'Project deleted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to delete it!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)

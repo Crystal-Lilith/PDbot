@@ -12,7 +12,7 @@ async def cat(ctx, *, directory):
                 embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not cat this file!')
                 embed.set_thumbnail(url=ctx.author.avatar_url)
-                embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+                embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                 await ctx.channel.send(embed=embed)
                 return
         lang = ''

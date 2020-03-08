@@ -10,10 +10,10 @@ async def prc(ctx, *, projectname):
         await dev.edit(color=color)
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34),
                                 description=f'The project color has been updated to **{color}**!')
-        embed.set_footer(text=f'Project color updated by: {ctx.message.author}')
+        embed.set_footer(text=f'Project color updated by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to change the color!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)

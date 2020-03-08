@@ -64,10 +64,10 @@ async def cp(ctx, *, projectname):
             await ctx.guild.create_text_channel(i, category=category)
         await ctx.guild.create_voice_channel('chat', category=category)
         embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0), description=f'Category **{projectname}** created!')
-        embed.set_footer(text=f'Project created by: {ctx.message.author}')
+        embed.set_footer(text=f'Project created by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='That project already exists!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)

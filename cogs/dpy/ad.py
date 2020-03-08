@@ -9,33 +9,33 @@ async def ad(ctx, user: discord.User, *, projectname):
             if not user:
                 embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                         description='That **user** does not exist!')
-                embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+                embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                 await ctx.channel.send(embed=embed)
             else:
                 if not category:
                     embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                             description='That **project** does not exist!')
-                    embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+                    embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                     await ctx.channel.send(embed=embed)
                 else:
                     if not get(user.roles, name=f'{projectname} Dev'):
                         await user.add_roles(get(ctx.guild.roles, name=f'{projectname} Dev'))
                         embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0),
                                                 description=f'User **{user}** added to **{projectname} Dev**!')
-                        embed.set_footer(text=f'Dev added by: {ctx.message.author}')
+                        embed.set_footer(text=f'Dev added by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                         await ctx.channel.send(embed=embed)
                     else:
                         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                                 description=f'User **{user}** is already a dev of **{projectname}**!')
-                        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+                        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                         await ctx.channel.send(embed=embed)
         else:
             embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                     description='You cannot add **yourself** as Dev!')
-            embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+            embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to add devs!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
