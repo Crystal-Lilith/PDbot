@@ -29,20 +29,18 @@ async def cat(ctx, *, directory):
         if len(contents) < 2000:
             embed = discord.Embed(title=f'Contents in `{directory}` ✅', color=discord.Color.from_rgb(0, 191, 255),
                                     description=f'```{lang}\n{contents}```')
-            embed.set_thumbnail(url=ctx.author.avatar_url)
-            embed.set_footer(text=f'Requested by: {ctx.message.author}')
+            embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed)
         else:
             with open('output.txt', 'w') as fp:
                 fp.write(contents)
             embed = discord.Embed(title=f'Contents in `{directory}` was too long ❗', color=discord.Color.from_rgb(0, 191, 255),
                                     description='File contents was over 2000 characters! Sent as output.txt')
-            embed.set_footer(text=f'Requested by: {ctx.message.author}')
+            embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed, file=discord.File('output.txt'))
             os.remove('output.txt')
     except:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='File doesn\'t exist!')
-        embed.set_thumbnail(url=ctx.author.avatar_url)
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}')
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
