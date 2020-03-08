@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/src/Header/styles.css">
-    <link rel="stylesheet" href="./static/contact.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/Header/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <title>PD | Contacts</title>
 </head>
@@ -31,19 +31,19 @@
         <div class="in">
             <div class="deg">
                 <a class="cont" href="#">
-                    <img src="{{ app.url_for('static', filename='src/img/email.png') }}" alt="email">
+                    <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
                     <h2>Email</h2>
                     <h5>Email <strong>skane@criptext.com</strong> to contact us</h5>
                 </a>
                 <a class="cont" href="https://discord.gg/Ws37MKy">
-                    <img src="{{ app.url_for('static', filename='src/img/discord-logo-png-7617.png') }}" alt="discord">
+                    <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}" alt="discord">
                     <h2>Discord</h2>
                     <h5>Join our discord server!</h5>
                 </a>
             </div>
         </div>
     </div>
-    <script src="./static/src/Header/app.js"></script>
+    <script src="{{ url_for('static', filename='src/Header/app.js') }}"></script>
 </body>
 
 </html>
