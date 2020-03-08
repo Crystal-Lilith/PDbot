@@ -44,7 +44,7 @@ async def ad(ctx, user: discord.User, *, projectname):
 async def ad_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         message = await ctx.channel.fetch_message(ctx.message.id)
-        user_cmd = message.content.split()[0]
+        user_cmd = message.content.split()
         desc = user_cmd.split('||')[0]
         syntax = user_cmd.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
