@@ -14,7 +14,7 @@ client.once 'ready', () -> console.log 'Ready!'
 
 client.on 'message', (message) ->
   return unless message.content.startsWith(config.prefix) or not message.author.bot
-  args = message.content.slice(config.prefix.length).split(" ")
+  args = message.content.slice(process.env.PREFIX.length).split(" ")
   command = args.shift().toLowerCase()
   return unless client.commands.has(command)
   try 
