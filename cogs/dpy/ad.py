@@ -44,11 +44,11 @@ async def ad(ctx, user: discord.User, *, projectname):
 async def ad_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         message = await ctx.channel.fetch_message(ctx.message.id)
-        user_cmd = message.content.split()[0].split('$')[1]
-        cmd = get(client.commands, name=user_cmd)
+        user_cmd = message.content.split()[0].split('$')
+        cmd = get(client.commands, name=user_cmd[1])
         desc = cmd.description.split('||')[0]
         syntax = cmd.description.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
-                                description=f'{desc} ({syntax})')
+                                description=f'{user_cmd[0]} ({syntax})')
         embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
