@@ -19,7 +19,7 @@ client.on 'message', (message) ->
   return unless client.commands.has(command)
   try
     hasperms = client.commands.get(command).required_perms.some((perm) -> message.member.guild.me.hasPermission(perm))
-    message.reply hasperms
+    message.reply client.commands.get(command).required_perms is []
     
     if client.commands.get(command).required_perms is [] or hasperms is true
       client.commands.get(command).execute(message, args) 
