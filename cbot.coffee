@@ -19,7 +19,11 @@ client.on 'message', (message) ->
   return unless client.commands.has(command)
   try
     hasperms = client.commands.get(command).required_perms.some((perm) -> message.member.guild.me.hasPermission(perm))
-    if hasperms is true then client.commands.get(command).execute(message, args) else message.reply 'No perms to run the command'
+    if client.commands.get(command).required_perms is [] or hasperms is true
+      client.commands.get(command).execute(message, args) 
+    else
+      message.reply("You don't have the required permissions to run this command.")
+    
   catch error
     if error.length <= (2000 - 60)
       message.channel.send("There was an error in executing that command. It was:\n```#{e}```")
