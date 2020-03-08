@@ -27,8 +27,6 @@ client.on 'message', (message) ->
       console.error(error)
 
 cmds = {}
-console.log(typeof client.commands)
-for cmd in client.commands
-  cmds[cmd.name] = {desc: cmd.description, required_roles: cmd.required_roles, required_perms: cmd.required_perms}
+client.commands.forEach(cmd -> cmds[cmd.name] = {desc: cmd.description, required_roles: cmd.required_roles, required_perms: cmd.required_perms})
 fs.writeFileSync(path.join('.', 'cmds', 'djscmds.json'), JSON.stringify(cmds), encoding: 'utf8')
 client.login(process.env.TOKEN)
