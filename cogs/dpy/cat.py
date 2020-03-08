@@ -11,6 +11,7 @@ async def cat(ctx, *, directory):
             if i in split_directory:
                 embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not cat this file!')
+                embed.set_thumbnail(url=ctx.author.avatar_url)
                 embed.set_footer(text=f'Attempted by: {ctx.message.author}')
                 await ctx.channel.send(embed=embed)
                 return
@@ -28,6 +29,7 @@ async def cat(ctx, *, directory):
         if len(contents) < 2000:
             embed = discord.Embed(title=f'Contents in `{directory}` ✅', color=discord.Color.from_rgb(0, 191, 255),
                                     description=f'```{lang}\n{contents}```')
+            embed.set_thumbnail(url=ctx.author.avatar_url)
             embed.set_footer(text=f'Requested by: {ctx.message.author}')
             await ctx.channel.send(embed=embed)
         else:
@@ -41,5 +43,6 @@ async def cat(ctx, *, directory):
     except:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='File doesn\'t exist!')
+        embed.set_thumbnail(url=ctx.author.avatar_url)
         embed.set_footer(text=f'Attempted by: {ctx.message.author}')
         await ctx.channel.send(embed=embed)
