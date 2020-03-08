@@ -1,6 +1,6 @@
 fs = require 'fs'
 Discord = require 'discord.js'
-config = require('dotenv').config()
+require('dotenv').config()
 path=require 'path'
 
 client = new Discord.Client()
@@ -13,17 +13,13 @@ for file in fs.readdirSync(path.join('.', 'cogs', 'djs'))
 client.once 'ready', () -> console.log 'Ready!'
 
 client.on 'message', (message) ->
-  return unless message.content.startsWith(config.prefix) or not message.author.bot
+  return unless message.content.startsWith(process.env.PREFIX) or not message.author.bot
   args = message.content.slice(process.env.PREFIX.length).split(" ")
   command = args.shift().toLowerCase()
   return unless client.commands.has(command)
   try
     hasperms = client.commands.get(command).required_perms.some((perm) -> message.member.guild.me.hasPermission(perm))
-    for perm in client.commands.get(command).required_perms
-      if message.member.guild.me.hasPermission perm
-        client.commands.get(command).execute(message, args)
-      else
-        message.reply "You do not have the required permissions to execute this command."
+    if hasperms is true then client.commands.get(command).execute(message, args) else message.reply 'No perms to run the command'
   catch error
     if error.length <= (2000 - 60)
       message.channel.send("There was an error in executing that command. It was:\n```#{e}```")
