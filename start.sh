@@ -9,7 +9,7 @@ export PREFIX
 sudo gem install discordrb dotenv
 while :
 do
-    ruby rbot.rb & authbind --deep python3 web/server.py & python3 dbot.py & node_modules/coffeescript/bin/coffee cbot.coffee & python3 hbot.py
+    ruby rbot.rb & python3 web/server.py & python3 dbot.py & node_modules/coffeescript/bin/coffee cbot.coffee & python3 hbot.py
     killall python3 ruby node
     git fetch
     git pull
