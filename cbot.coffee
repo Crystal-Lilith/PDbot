@@ -1,6 +1,6 @@
 fs = require 'fs'
 Discord = require 'discord.js'
-config = require('dotenv').config()
+require('dotenv').config()
 path=require 'path'
 
 client = new Discord.Client()
@@ -13,12 +13,18 @@ for file in fs.readdirSync(path.join('.', 'cogs', 'djs'))
 client.once 'ready', () -> console.log 'Ready!'
 
 client.on 'message', (message) ->
-  return unless message.content.startsWith(config.prefix) or not message.author.bot
+  return unless message.content.startsWith(process.env.PREFIX) or not message.author.bot
   args = message.content.slice(process.env.PREFIX.length).split(" ")
   command = args.shift().toLowerCase()
   return unless client.commands.has(command)
-  try 
-    client.commands.get(command).execute(message, args)
+  try
+    hasperms = client.commands.get(command).required_perms.some((perm) -> message.member.guild.me.hasPermission(perm))
+    
+    if client.commands.get(command).required_perms.length is 0 or hasperms is true
+      client.commands.get(command).execute(message, args) 
+    else
+      message.reply("You don't have the required permissions to run this command.")
+    
   catch error
     if error.length <= (2000 - 60)
       message.channel.send("There was an error in executing that command. It was:\n```#{e}```")
@@ -28,6 +34,7 @@ client.on 'message', (message) ->
 
 cmds = {}
 client.commands.forEach( (cmd)  =>
-  cmds[cmd.name] = {desc: cmd.description, required_roles: cmd.required_roles, required_perms: cmd.required_perms})
+  cmds[cmd.name] = {desc: cmd.description, required_roles: cmd.required_roles, required_perms: cmd.required_perms}
+)
 fs.writeFileSync(path.join('.', 'cmds', 'djscmds.json'), JSON.stringify(cmds), encoding: 'utf8')
 client.login(process.env.TOKEN)
