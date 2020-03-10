@@ -40,7 +40,7 @@ header {
 }
 
 
-  
+
 .nav__links {
   list-style: none;
   display: flex;
@@ -77,7 +77,7 @@ header{
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-  
+
 .cta:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
