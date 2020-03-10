@@ -50,16 +50,16 @@ def contact():
 def login():
     try:
         return discord.create_session()
-    except FileNotFoundError:
-        return "No login.html file"
+    except:
+        return redirect('/')
 
 @app.route("/callback")
 def callback():
-    try:
-        discord.callback()
-        return redirect('/')
-    except:
-        return redirect('/')
+    # try:
+    discord.callback()
+    return redirect('/')
+    # except:
+    #     return redirect('/')
 
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
