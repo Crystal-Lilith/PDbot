@@ -25,8 +25,15 @@ def html_format(file):
 
 @app.route('/')
 def index():
+    user = discord.fetch_user()
     try:
-        return render_template('index.html')
+        if user:
+            return html_format('templates/dashboard.html', user=user)
+        else:
+            class user:
+                name = 'Login'
+            return html_format('templates/dashboard.html', user=user)
+
     except FileNotFoundError:
         return "No index.html file"
 
@@ -39,17 +46,12 @@ def contact():
     
 @app.route('/dashboard')
 def dashboard():
-    user = discord.fetch_user()
+    
     try:
-        if user:
-            return html_format('templates/dashboard.html', user=user)
-        else:
-            class user:
-                name = 'Login'
-            return html_format('templates/dashboard.html', user=user)
+        return html_format('templates/dashboard.html')
+        
     except FileNotFoundError:
         return "No dashboard.html file"
-    
 
 @app.route('/login')
 def login():
