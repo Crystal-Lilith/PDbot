@@ -2,12 +2,9 @@
 clear
 if [ -f .env ]
 then
-  export $(cat .env | sed 's/#.*//g' | xargs)
+  export $(cut -d= -f1 .env)
 fi
-export TOKEN
-export PREFIX
-export CLIENT_ID
-export CLIENT_SECRET
+
 sudo gem install discordrb dotenv
 while :
 do
