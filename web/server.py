@@ -64,6 +64,11 @@ def callback():
     except:
         return redirect('/')
 
+@app.route("/commit", methods=['POST'])
+def commit_update():
+    os.system("bash stop.sh")
+    return ''
+
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
