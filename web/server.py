@@ -25,14 +25,14 @@ def html_format(file):
 
 @app.route('/')
 def index():
-    user = discord.fetch_user()
+    
     try:
-        if user:
-            return html_format('templates/dashboard.html', user=user)
-        else:
-            class user:
-                name = 'Login'
-            return html_format('templates/dashboard.html', user=user)
+        user = discord.fetch_user()
+        return html_format('templates/dashboard.html', user=user)
+    except Unauthorized:
+        class user:
+            name = 'Login'
+        return html_format('templates/dashboard.html', user=user)
 
     except FileNotFoundError:
         return "No index.html file"
