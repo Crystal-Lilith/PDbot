@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, redirect, render_template
 from flask_discord import DiscordOAuth2Session
 from gevent.pywsgi import WSGIServer
 
