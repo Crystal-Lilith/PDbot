@@ -43,7 +43,9 @@ def index():
 @app.route('/contact')
 def contact():
     try:
-        return render_template('contact.html')
+        user = discord.fetch_user()
+        login_status = discord.authorized
+        return render_template('contact.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No Contact.html file"
 
