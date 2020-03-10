@@ -41,12 +41,15 @@ def contact():
 def dashboard():
     user = discord.fetch_user()
     try:
-        return html_format('templates/dashboard.html', user=user)
+        if user:
+            return html_format('templates/dashboard.html', user=user)
+        else:
+            class user:
+                name = 'Login'
+            return html_format('templates/dashboard.html', user=user)
     except FileNotFoundError:
         return "No dashboard.html file"
-    except:
-        return html_format('templates/dashboard.html', user='Login')
-
+    
 
 @app.route('/login')
 def login():
