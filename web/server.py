@@ -53,6 +53,14 @@ def login():
     except FileNotFoundError:
         return "No login.html file"
 
+@app.route("callback/")
+def callback():
+    try:
+        discord.callback()
+        return redirect(url_for("/"))
+    except:
+        return redirect(url_for("/"))
+
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
