@@ -10,6 +10,7 @@ app.secret_key = b'Y\xd9\x8c\xcc\x8e\x16\x8d\x94\x93{/\xa2\x16\x88\t"\x11j\xc3/\
 app.config["DISCORD_CLIENT_ID"] = os.environ.get('CLIENT_ID')
 app.config["DISCORD_CLIENT_SECRET"] = os.environ.get('CLIENT_SECRET')
 app.config["DISCORD_REDIRECT_URI"] = "https://pden.net/callback"
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 discord = DiscordOAuth2Session(app)
 
 def html_format(file):
