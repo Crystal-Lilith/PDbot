@@ -39,10 +39,9 @@ def contact():
     
 @app.route('/dashboard')
 def dashboard():
-    user = discord.fetch_user()
-    if user:
-        pass
-    else:
+    try:
+        user = discord.fetch_user()
+    except:
         class user:
             name = 'Login'
     try:
