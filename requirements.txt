@@ -1,5 +1,6 @@
 discord
 flask
+Flask-Discord
 beautifulsoup4
 requests
 pandas

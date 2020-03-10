@@ -1,7 +1,14 @@
 from flask import Flask, url_for, render_template
+from flask_discord import DiscordOAuth2Session
 from gevent.pywsgi import WSGIServer
+import os
 
 app=Flask(__name__)
+
+app.config["DISCORD_CLIENT_ID"] = os.environ.get('CLIENT_ID')
+app.config["DISCORD_CLIENT_SECRET"] = os.environ.get('CLIENT_SECRET')
+app.config["DISCORD_REDIRECT_URI"] = "https://pden.net"
+discord = DiscordOAuth2Session(app)
 
 def html_format(file):
     try:
@@ -32,10 +39,23 @@ def contact():
     
 @app.route('/dashboard')
 def dashboard():
+    user = discord.fetch_user()
+    if user:
+        pass
+    else:
+        user = 'Login'
     try:
-        return html_format('templates/dashboard.html')
+        if user:
+            return html_format('templates/dashboard.html', user=user)
     except FileNotFoundError:
         return "No dashboard.html file"
+
+@app.route('/login')
+def login():
+    try:
+        return discord.create_session()
+    except FileNotFoundError:
+        return "No login.html file"
 
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
