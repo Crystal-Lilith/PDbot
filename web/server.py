@@ -41,4 +41,4 @@ def dashboard():
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0', 8080), app).serve_forever()
+WSGIServer(('0.0.0.0', 8080), app, keyfile='keys/private.pem', certfile='keys/certificate.pem').serve_forever()
