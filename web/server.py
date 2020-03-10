@@ -27,7 +27,7 @@ def html_format(file):
 def index():
     try:
         user = discord.fetch_user()
-        return html_format('templates/dashboard.html', user=user)
+        return render_template('templates/dashboard.html', user=user)
 
     except FileNotFoundError:
         return "No index.html file"
@@ -35,7 +35,7 @@ def index():
     except:
         class user:
             name = 'Login'
-        return html_format('templates/dashboard.html', user=user)
+        return render_template('templates/dashboard.html', user=user)
 
 @app.route('/contact')
 def contact():
@@ -47,7 +47,7 @@ def contact():
 @app.route('/dashboard')
 def dashboard():
     try:
-        return html_format('templates/dashboard.html')
+        return render_template('templates/dashboard.html')
         
     except FileNotFoundError:
         return "No dashboard.html file"
