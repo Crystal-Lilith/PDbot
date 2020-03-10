@@ -57,9 +57,9 @@ def login():
 def callback():
     try:
         discord.callback()
-        return redirect(url_for("."))
+        return redirect('/')
     except:
-        return redirect(url_for("."))
+        return redirect('/')
 
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
