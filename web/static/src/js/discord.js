@@ -1,14 +1,20 @@
 const Cta = () => {
-    const logButton = document.querySelector('.cta');
-    let userName = logButton.textContent;
+    if (login_status) {
+        const logButton = document.querySelector('.cta');
+        let userName = logButton.textContent;
 
-    logButton.addEventListener('mouseenter', () => {
-        logButton = 'Logout';
-    })
+        logButton.addEventListener('mouseover', () => {
+            logButton = 'Logout';
+        })
 
-    logButton.addEventListener('mouseover', () => {
-        logButton = userName;
-    })
+        logButton.addEventListener('mouseout', () => {
+            logButton = userName;
+        })
+
+        logButton.addEventListener('click', () => {
+            alert('Are you sure?');
+        })
+    }
 }
 
 Cta();

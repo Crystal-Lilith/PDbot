@@ -30,8 +30,8 @@ def html_format(file):
 def index():
     try:
         user = discord.fetch_user()
-        return render_template('index.html', user=user)
-
+        login_status = discord.authorized
+        return render_template('index.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No index.html file"
 
@@ -56,11 +56,11 @@ def login():
 
 @app.route("/callback")
 def callback():
-    # try:
-    discord.callback()
-    return redirect('/')
-    # except:
-    #     return redirect('/')
+    try:
+        discord.callback()
+        return redirect('/')
+    except:
+        return redirect('/')
 
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
