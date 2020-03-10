@@ -1,4 +1,4 @@
-const Cta = (login_status) => {
+const loginCheck = (login_status) => {
     if (login_status) {
         const logButton = document.querySelector('.cta');
         let userName = logButton.text;
@@ -17,4 +17,4 @@ const Cta = (login_status) => {
     }
 }
 
-Cta();
+loginCheck();
