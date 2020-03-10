@@ -42,6 +42,9 @@ def dashboard():
     user = discord.fetch_user()
     if user:
         pass
+    else:
+        class user:
+            name = 'Login'
     try:
         if user:
             return html_format('templates/dashboard.html', user=user)
