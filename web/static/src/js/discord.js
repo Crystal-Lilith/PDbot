@@ -1,6 +1,6 @@
 const loginCheck = (login_status) => {
     if (login_status == "True") {
-        const logButton = document.querySelector('.cta');
+        let logButton = document.querySelector('.cta');
         let userName = logButton.text;
 
         logButton.addEventListener('mouseover', () => {
