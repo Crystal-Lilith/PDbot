@@ -7917,7 +7917,7 @@ button.bg-dark:hover {
     float: none !important
 }
 
-@media (min-width:576px) {
+@media (min-width:992px) {
     .float-sm-left {
         float: left !important
     }
@@ -7931,33 +7931,7 @@ button.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
-    .float-md-left {
-        float: left !important
-    }
 
-    .float-md-right {
-        float: right !important
-    }
-
-    .float-md-none {
-        float: none !important
-    }
-}
-
-@media (min-width:992px) {
-    .float-lg-left {
-        float: left !important
-    }
-
-    .float-lg-right {
-        float: right !important
-    }
-
-    .float-lg-none {
-        float: none !important
-    }
-}
 
 @media (min-width:1200px) {
     .float-xl-left {
