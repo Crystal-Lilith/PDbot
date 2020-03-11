@@ -1,6 +1,7 @@
 function loginCheck() {
     let logButton = document.querySelector('.cta');
     let userName = logButton.text;
+    session = document.cookie.split(';')
 
     logButton.addEventListener('mouseover', () => {
         logButton.text = 'Logout';
@@ -12,7 +13,7 @@ function loginCheck() {
 
     logButton.addEventListener('click', () => {
         if (confirm('Are you sure?')) {
-            document.cookie = 'session=;'
+            document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             logout();
             location.reload();
         } else {
