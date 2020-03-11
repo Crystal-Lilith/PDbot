@@ -48,6 +48,10 @@ def contact():
         return render_template('contact.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No Contact.html file"
+    except:
+        class user:
+            name = 'Login'
+        return render_template('index.html', user=user)
 
 @app.route('/login')
 def login():
