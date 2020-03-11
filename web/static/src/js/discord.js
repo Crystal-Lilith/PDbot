@@ -11,7 +11,9 @@ function loginCheck() {
     })
 
     logButton.addEventListener('click', () => {
-        alert('Are you sure?');
+        if (confirm('Are you sure?')) {
+            logout();
+        }
     })
 }
 

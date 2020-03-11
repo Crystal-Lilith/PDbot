@@ -29,12 +29,11 @@ def html_format(file):
 @app.route('/')
 def index():
     try:
-        user = discord.fetch_user()
+        user = discord.fetch_user().username
         login_status = discord.authorized
         return render_template('index.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No index.html file"
-
     except:
         class user:
             name = 'Login'
@@ -43,7 +42,7 @@ def index():
 @app.route('/contact')
 def contact():
     try:
-        user = discord.fetch_user()
+        user = discord.fetch_user().username
         login_status = discord.authorized
         return render_template('contact.html', user=user, login_status=login_status)
     except FileNotFoundError:
@@ -57,6 +56,13 @@ def contact():
 def login():
     try:
         return discord.create_session()
+    except:
+        return redirect('/')
+
+def logout():
+    try:
+        discord.revoke()
+        return redirect('/')
     except:
         return redirect('/')
 
