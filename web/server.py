@@ -59,12 +59,6 @@ def login():
     except:
         return redirect('/')
 
-def logout():
-    try:
-        discord.revoke()
-    except:
-        pass
-
 @app.route("/callback")
 def callback():
     try:
