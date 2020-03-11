@@ -61,7 +61,6 @@ def login():
 
 def logout():
     try:
-        session.clear()
         return redirect('/')
     except:
         return redirect('/')
