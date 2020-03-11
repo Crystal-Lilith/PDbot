@@ -12,8 +12,8 @@ function loginCheck() {
 
     logButton.addEventListener('click', () => {
         if (confirm('Are you sure?')) {
-            logout();
             document.cookie = 'session=;'
+            logout();
             location.reload();
         } else {
             location.reload();
