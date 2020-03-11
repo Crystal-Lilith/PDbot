@@ -45,7 +45,9 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
-    <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
+    {% if login_status %}
+        <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
+    {% endif %}
 </body>
 
 </html>
