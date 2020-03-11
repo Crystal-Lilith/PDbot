@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for, redirect, render_template, session
+from flask import Flask, url_for, redirect, render_template
 from flask_discord import DiscordOAuth2Session
 from gevent.pywsgi import WSGIServer
 
@@ -56,12 +56,6 @@ def contact():
 def login():
     try:
         return discord.create_session()
-    except:
-        return redirect('/')
-
-def logout():
-    try:
-        return redirect('/')
     except:
         return redirect('/')
 

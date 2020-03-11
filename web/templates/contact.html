@@ -20,7 +20,11 @@
                 <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
-        <a class="cta" href="login">{{user.name}}</a>
+        {% if not login_status %}
+            <a class="cta" href="login">{{user.name}}</a>
+        {% else %}
+            <a class="cta">{{user.name}}</a>
+        {% endif %}
         <div class="selector">
             <div class="l1"></div>
             <div class="l2"></div>

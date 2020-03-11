@@ -12,7 +12,10 @@ function loginCheck() {
     })
 
     logButton.addEventListener('click', () => {
-        logout();
+        if (confirm('Are you sure?')) {
+            discord.revoke();
+            location.reload();
+        }
     })
 }
 
