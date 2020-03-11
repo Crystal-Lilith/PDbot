@@ -38,7 +38,7 @@ def index():
     except:
         class user:
             name = 'Login'
-        return render_template('index.html', user=user)
+        return render_template('index.html', user=user, login_status=False)
 
 @app.route('/contact')
 def contact():
@@ -51,7 +51,7 @@ def contact():
     except:
         class user:
             name = 'Login'
-        return render_template('index.html', user=user)
+        return render_template('contact.html', user=user, login_status=False)
 
 @app.route('/login')
 def login():
