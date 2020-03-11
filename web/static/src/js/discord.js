@@ -13,6 +13,7 @@ function loginCheck() {
     logButton.addEventListener('click', () => {
         if (confirm('Are you sure?')) {
             logout();
+            location.reload()
         }
     })
 }
