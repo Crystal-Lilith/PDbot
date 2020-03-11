@@ -13,9 +13,10 @@ function loginCheck() {
     logButton.addEventListener('click', () => {
         if (confirm('Are you sure?')) {
             logout();
-            location.replace('/');
+            document.cookie = 'session=;'
+            location.reload();
         } else {
-            location.replace('/');
+            location.reload();
         }
     })
 }
