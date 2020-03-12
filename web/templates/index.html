@@ -126,6 +126,7 @@
     <script src="{{ url_for('static', filename='src/js/index/scripts.js') }}"></script>
     <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
     {% if login_status %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
     {% endif %}
     </body>
