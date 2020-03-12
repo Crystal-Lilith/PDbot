@@ -12,8 +12,24 @@ function loginCheck() {
     })
 
     logButton.addEventListener('click', () => {
-        if (confirm('Are you sure?')) {
-            location.replace('https://pden.net/logout');
+        function JSconfirm() {
+            swal({
+                    title: "Confirm",
+                    text: "Are sure you want to logout?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("Logged out", "success");
+                        location.replace('https://pden.net/logout');
+                    }
+                });
         }
     })
 }
