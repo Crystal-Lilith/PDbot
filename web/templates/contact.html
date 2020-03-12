@@ -21,9 +21,9 @@
             </ul>
         </nav>
         {% if not login_status %}
-            <a class="cta" href="login">{{user.name}}</a>
+        <a class="cta" href="login">{{user.name}}</a>
         {% else %}
-            <a class="cta">{{user.name}}</a>
+        <a class="cta">{{user.name}}</a>
         {% endif %}
         <div class="selector">
             <div class="l1"></div>
@@ -50,7 +50,7 @@
     </div>
     <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
     {% if login_status %}
-        <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
+    <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
     {% endif %}
 </body>
 
