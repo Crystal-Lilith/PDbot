@@ -5,5 +5,5 @@ async def on_message(message):
         return
 
     if message.content.startswith('$slap'):
-        msg = '*Slapped* {0.author.mention}'.format(message)
+        msg = f”*Slapped* {ctx.author.mention}”
         await client.send_message(message.channel, msg)
