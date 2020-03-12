@@ -46,11 +46,18 @@ def contact():
         login_status = discord.authorized
         return render_template('contact.html', user=user, login_status=login_status)
     except FileNotFoundError:
-        return "No Contact.html file"
+        return "No contact.html file"
     except:
         class user:
             name = 'Login'
         return render_template('contact.html', user=user, login_status=False)
+
+@app.route('/about')
+def about():
+    try:
+        return render_template('about.html')
+    except FileNotFoundError:
+        return "No about.html file"
 
 @app.route('/login')
 def login():
