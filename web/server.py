@@ -32,8 +32,6 @@ def index():
         user = discord.fetch_user()
         login_status = discord.authorized
         return render_template('index.html', user=user, login_status=login_status)
-    except FileNotFoundError:
-        return "No index.html file"
     except:
         class user:
             name = 'Login'
@@ -45,8 +43,6 @@ def contact():
         user = discord.fetch_user()
         login_status = discord.authorized
         return render_template('contact.html', user=user, login_status=login_status)
-    except FileNotFoundError:
-        return "No contact.html file"
     except:
         class user:
             name = 'Login'
@@ -56,7 +52,7 @@ def contact():
 def about():
     try:
         return render_template('about.html')
-    except FileNotFoundError:
+    except:
         return "No about.html file"
 
 @app.route('/login')
