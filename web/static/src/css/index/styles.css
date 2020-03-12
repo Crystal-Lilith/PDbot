@@ -40,7 +40,7 @@ p {
 	color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
-	color: #fb9902;
+	color: crimson;
 	margin-bottom: 10px;
 	margin-top: 0px;
   font-family: 'Montserrat', sans-serif;
@@ -63,7 +63,7 @@ a {
 	font-size:14px;
 }
 a:hover{
-	color:#fb9902;
+	color:crimson;
 }
 a:active, a:hover, a:focus {
 	outline: none;
@@ -123,7 +123,7 @@ ul{
   left: 0;
 }
 .header-bottom {
-  border-bottom: 1px solid #fb9902;
+  border-bottom: 1px solid crimson;
 }
 .logo{
   padding: 20px 0px;
@@ -144,7 +144,7 @@ ul{
     display: block;
 }
 .mainmenu ul li.active > a,.mainmenu ul li:hover > a{
-  color: #fb9902  ;
+  color: crimson  ;
 }
 .mainmenu ul li > ul {
   position: absolute;
@@ -161,7 +161,7 @@ ul{
   transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
-  border-top: 2px solid #fb9902;
+  border-top: 2px solid crimson;
 }
 .mainmenu ul li:hover > ul{
   visibility: visible;
@@ -180,7 +180,7 @@ ul{
 }
 .mainmenu ul li > ul li:hover a{
   padding-left: 10px;
-  color: #fb9902;
+  color: crimson;
 }
 .search-wrap ul li{
   display: inline-block;
@@ -205,7 +205,7 @@ ul{
   border-radius: 50%;
   font-size: 10px;
   color: #fff;
-  background: #fb9902;
+  background: crimson;
   display: block;
   font-weight: 700;
   text-align: center;
@@ -220,7 +220,7 @@ ul{
     transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
-  border-top: 3px solid #fb9902;
+  border-top: 3px solid crimson;
   visibility: hidden;
   opacity: 0;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -253,7 +253,7 @@ ul{
   top: 0;
   width: 45px;
   height: 45px;
-  background: #fb9902;
+  background: crimson;
   color: #fff;
   font-size: 16px;
   border: none;
@@ -313,7 +313,7 @@ ul{
   background: #fff;
 }
 .responsive-menu-wrap .slicknav_nav {
-    background: #fb9902 none repeat scroll 0 0;
+    background: crimson none repeat scroll 0 0;
     border-radius: 0px;
     clear: both;
     color: #fff;
@@ -415,7 +415,7 @@ ul{
 .single-slider a{
   display: inline-block;
   padding:10px 30px;
-  background: #fb9902;
+  background: crimson;
   color: #fff;
   text-transform: uppercase;
   color: #fff;
@@ -423,7 +423,7 @@ ul{
 }
 .single-slider a:hover{
   background: #fff;
-  color: #fb9902;
+  color: crimson;
 }
 .slider-active .owl-dots{
   position: absolute;
@@ -446,7 +446,7 @@ ul{
   transition: all .3s;
 }
 .slider-active .owl-dot.active{
-  background: #fb9902;
+  background: crimson;
   height: 17px;
 }
 /*---------slider-area end---------*/
@@ -485,7 +485,7 @@ ul{
   border-radius: 3px;
 }
 .about-wrap a:hover{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 .about-img img{
@@ -510,7 +510,7 @@ ul{
 }
 .wedo-icon span:before{
   font-size: 50px;
-  color: #fb9902;
+  color: crimson;
 }
 .wedo-info {
     overflow: hidden;
@@ -545,7 +545,7 @@ ul{
   margin:0px 2px;
 }
 .project-menu button.active{
-  background: #fb9902;
+  background: crimson;
 }
 .project-wrap{
   position: relative;
@@ -585,7 +585,7 @@ ul{
   transform: translate(-50%,-50%) rotate(45deg);
   -webkit-transform: translate(-50%,-50%) rotate(45deg);
   -moz-transform: translate(-50%,-50%) rotate(45deg);
-  background: #fb9902;
+  background: crimson;
   color: #fff;
   line-height: 50px;
   font-size: 16px;
@@ -676,8 +676,8 @@ ul{
   border-radius: 50%;
 }
 .team-icon ul li a:hover{
-  background: #fb9902;
-  border-color: #fb9902;
+  background: crimson;
+  border-color: crimson;
 }
 .team-content{
   background: #0d0f11;
@@ -730,7 +730,7 @@ ul{
     border-radius: 25px;
 }
 .pricing-wrap.active .pricing-content:before{
-  background: #fb9902;
+  background: crimson;
 } 
 .pricing-content h2{
   font-weight: 700;
@@ -766,11 +766,11 @@ ul{
   border: none;
 }
 .pricing-wrap.active  button{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 .pricing-wrap button:hover{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 .pricing-wrap.active button:hover{
@@ -824,7 +824,7 @@ ul{
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
-  background: #fb9902;
+  background: crimson;
   border-radius: 3px;
   border: none;
 }
@@ -879,7 +879,7 @@ ul{
   color: #fff;
 }
 .blog-content a:hover{
-  color: #fb9902;
+  color: crimson;
 }
 /*---------blog-area end---------*/
 /*---------footer-area start---------*/
@@ -918,12 +918,12 @@ ul{
 .footer-content ul li i{
   position: absolute;
   left: 0;
-  color: #fb9902;
+  color: crimson;
   font-size: 18px;
   top: 7px;
 }
 .footer-time ul li span.color{
-  color: #fb9902;
+  color: crimson;
 }
 .footer-menu ul li a{
   display: block;
@@ -981,7 +981,7 @@ ul{
 }
 .footer-bottom-area{
   padding: 20px 0px;
-  background: #fb9902;
+  background: crimson;
 }
 
 .copyright p a{
@@ -1082,7 +1082,7 @@ a#scrollUp i:before{
 }
 .fanfact-icon i{
   font-size: 100px;
-  color: #fb9902;
+  color: crimson;
 }
 /*-----------fanfact-area end-----------*/
 .banner-area{
@@ -1127,7 +1127,7 @@ a#scrollUp i:before{
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
-  background: #fb9902;
+  background: crimson;
 }
 /*--------------------tetsmonial-area end--------------------*/
 
@@ -1161,7 +1161,7 @@ a#scrollUp i:before{
 .faq-wrap .panel-default a {
   display: block;
   position: relative;
-  background:#fb9902;
+  background:crimson;
   color:#fff;
   overflow:hidden;
   font-size:14px;
@@ -1173,7 +1173,7 @@ a#scrollUp i:before{
     top: 0;
     width: 57px;
     height: 100%;
-    background: #fb9902;
+    background: crimson;
     content: "";
     transform: skew(-20deg);
     -webkit-transform: skew(-20deg);
@@ -1188,14 +1188,14 @@ a#scrollUp i:before{
   font-size: 16px;
   position: absolute;
   right: 0;
-  background: #fb9902;
+  background: crimson;
   height: 100%;
   top: 0;
   width: 35px;
   color: #fff;
   text-align: center;
   line-height: 38px;
-  border:1px solid #fb9902;
+  border:1px solid crimson;
 }
 .faq-wrap .panel {
     margin-bottom: 10px;
@@ -1233,7 +1233,7 @@ a#scrollUp i:before{
   padding: 0px 10px;
 }
 .quote-wrap p span{
-  color: #fb9902;
+  color: crimson;
 }
 /*-------------------quote-area end-------------------*/
 
@@ -1255,7 +1255,7 @@ a#scrollUp i:before{
   position: absolute;
   right: 0;
   height: 100%;
-  background: #fb9902;
+  background: crimson;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1338,7 +1338,7 @@ a#scrollUp i:before{
   border-radius: 3px;
 }
 .discount-wrap a:hover{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 /*-------------------discount-area start-------------------*/
@@ -1373,7 +1373,7 @@ a#scrollUp i:before{
   font-weight: 600;
 }
 .breadcumb-wrap ul li.active{
-  color: #fb9902;
+  color: crimson;
 }
 /*-------------------breadcumb-area end-------------------*/
 .about-area3 .about-img {
@@ -1408,7 +1408,7 @@ a#scrollUp i:before{
   border-radius: 50%;
   line-height: 100px;
   font-size: 30px;
-  color: #fb9902;
+  color: crimson;
   margin-bottom: 25px;
 }
 .work-wrap h3{
@@ -1446,10 +1446,10 @@ a#scrollUp i:before{
   width: 100px;
 }
 .working-time-wrap ul li.weekend{
-  color: #fb9902;
+  color: crimson;
 }
 .working-time-wrap ul li.weekend:before{
-  border-bottom: 1px dashed #fb9902; 
+  border-bottom: 1px dashed crimson; 
 }
 /*--------working-time-area end--------*/
 .wedo-area.bg-2.wedo-area2.wedo-area3.pt-100 {
@@ -1492,7 +1492,7 @@ a#scrollUp i:before{
     height: 100%;
     color: #fff;
     text-align: center;
-    background-color: #fb9902;
+    background-color: crimson;
     box-shadow: none;
     -webkit-transition: width .6s ease;
     transition: width .6s ease;
@@ -1513,7 +1513,7 @@ a#scrollUp i:before{
 a.appoinment-btn{
   padding: 10px 30px;
   text-transform: uppercase;
-  background: #fb9902;
+  background: crimson;
   font-weight: 700;
   font-size: 12px;
   border-radius: 3px;
@@ -1570,7 +1570,7 @@ a.appoinment-btn:hover{
   top: 0px;
 }
 .search-wrap button:hover{
-  color: #fb9902;
+  color: crimson;
 }
 .search-wrap input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   opacity: 1;
@@ -1655,8 +1655,8 @@ a.appoinment-btn:hover{
 }
 .tag-wrap ul li a:hover{
   color: #fff;
-  background: #fb9902;
-  border-color: #fb9902;
+  background: crimson;
+  border-color: crimson;
 }
 .tag-wrap{
   margin-bottom: 0px;
@@ -1678,7 +1678,7 @@ a.appoinment-btn:hover{
   display: block;
 }
 .pagination-wrap ul li span,.pagination-wrap ul li:hover a{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 
@@ -1689,7 +1689,7 @@ a.appoinment-btn:hover{
 }
 .ui-slider-horizontal .ui-slider-handle {
   background: #ffffff none repeat scroll 0 0;
-  border: 3px solid #fb9902;
+  border: 3px solid crimson;
   border-radius: 50%;
   height: 15px;
   top: -4px;
@@ -1697,7 +1697,7 @@ a.appoinment-btn:hover{
   width: 15px;
 }
 .ui-slider-horizontal .ui-slider-range {
-  background: #fb9902 none repeat scroll 0 0;
+  background: crimson none repeat scroll 0 0;
 }
 .ui-slider-horizontal {
   background: #e9e9e9 none repeat scroll 0 0;
@@ -1742,11 +1742,11 @@ a.appoinment-btn:hover{
   overflow: hidden;
 }
 .recent-product-content a {
-  color: #fb9902;
+  color: crimson;
   font-size: 16px;
   display: block;
 }
-.recent-product-content a:hover{color:#fb9902}
+.recent-product-content a:hover{color:crimson}
 .recent-product-content span {
   display: block;
   margin-bottom: 5px;
@@ -1773,14 +1773,14 @@ a.appoinment-btn:hover{
     font-size: 16px;
     font-style: italic;
     margin: 40px 0;
-    border-left: 10px solid #fb9902;
+    border-left: 10px solid crimson;
 }
 .socila-link{
   margin-bottom: 100px;
 }
 .socila-link ul li{
   display: inline-block;
-  color: #fb9902;
+  color: crimson;
 }
 .socila-link ul li a{
   font-size: 16px;
@@ -1809,7 +1809,7 @@ a.appoinment-btn:hover{
 }
 .blog-form button,.contact-form button{
   padding:10px 30px;
-  background: #fb9902;
+  background: crimson;
   color: #fff;
   text-transform: uppercase;
   font-size: 14px;
@@ -1848,7 +1848,7 @@ a.appoinment-btn:hover{
   top: 50%;
   left: 30px;
   font-size: 35px;
-  color: #fb9902;
+  color: crimson;
 }
 .contact-wrap ul li p{
   font-size: 14px;
@@ -1899,7 +1899,7 @@ a.appoinment-btn:hover{
   display: block;
 }
 .error-wrap ul li a:hover{
-  background: #fb9902;
+  background: crimson;
   color: #fff;
 }
 /*-------------------------error-area end-------------------------*/
@@ -1934,7 +1934,7 @@ a.appoinment-btn:hover{
 /*-------- checkout-area start ----------*/
 .checkout-title{
   padding:20px 30px;
-  background:#fb9902;
+  background:crimson;
   color:#fff;
   font-size:20px;
   font-weight:600;
@@ -1946,13 +1946,13 @@ a.appoinment-btn:hover{
   padding:30px 30px 30px;
 }
 .checkout-form p,.account-area .checkout-form span{
-  color:#fb9902;
+  color:crimson;
   font-weight:600;
   margin-bottom:5px;
   font-size:14px;
 }
 .checkout-form p span,.account-area .checkout-form span.star{
-  color:#fb9902;
+  color:crimson;
 }
 .checkout-form input, .checkout-form select {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -1972,7 +1972,7 @@ a.appoinment-btn:hover{
 }
 .checkout-form ul li{
   overflow:hidden;
-  color:#fb9902;
+  color:crimson;
   padding-bottom:20px;
   margin-bottom:20px;
   border-bottom:1px solid #e1e1e1;
@@ -1987,24 +1987,24 @@ a.appoinment-btn:hover{
   float:right;
   font-family:raleway;
   font-size:16px;
-  color:#fb9902;
+  color:crimson;
 }
 .checkout-form ul li span{
   position:absolute;
   left:50%;
   top:0;
   font-size:16px;
-  color:#fb9902;
+  color:crimson;
 }
 .checkout-form ul li b{
   font-size:16px;
-  color:#fb9902;
+  color:crimson;
   font-weight:800;
 }
 .checkout-form .panel-default > .panel-heading {
   background: transparent none repeat scroll 0 0;
   border-color: transparent;
-  color: #fb9902;
+  color: crimson;
   padding: 10px 35px;
   border-bottom: 1px solid #ccc;
 }
@@ -2056,7 +2056,7 @@ a.appoinment-btn:hover{
   line-height:50px;
   color:#fff;
   font-weight:700;
-  background:#fb9902;
+  background:crimson;
   border-radius:5px;
   text-align:center;
   font-size:16px;
@@ -2066,7 +2066,7 @@ a.appoinment-btn:hover{
 
 /*-------- cart-area start ----------*/
 .shoping-cart-wrap thead{
-  background:#fb9902;
+  background:crimson;
   color:#fff;
   height:50px;
 }
@@ -2093,12 +2093,12 @@ a.appoinment-btn:hover{
 .table-wrap tr td{
   text-align:center;
   font-size:16px;
-  color:#fb9902;
+  color:crimson;
   font-weight: 600;
 }
 
 .shoping-cart-name a,.shoping-cart-remove a{
-  color:#fb9902;
+  color:crimson;
   font-size: 16px;
   font-weight: 700;
 }
@@ -2122,7 +2122,7 @@ a.appoinment-btn:hover{
 .shoping-cart-btn a{
   display:inline-block;
   padding:10px 40px;
-  background:#fb9902;
+  background:crimson;
   color:#fff;
   font-weight:600;
   margin-left:5px;
@@ -2151,7 +2151,7 @@ a.appoinment-btn:hover{
   height:45px;
   border-radius:5px;
   border:transparent;
-  background:#fb9902;
+  background:crimson;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
@@ -2164,7 +2164,7 @@ a.appoinment-btn:hover{
 .cart-form-wrap ul li{
   padding-bottom:25px;
   margin-bottom:25px;
-  color:#fb9902;
+  color:crimson;
   font-size:16px;
   overflow:hidden;
   border-bottom:1px solid #cdd5d9;
