@@ -1,6 +1,6 @@
 @client.listen()
 async def on_raw_message_delete(message):
-    deleted_message = await ctx.channel.fetch_message(message.message_id)
+    deleted_message = await client.fetch_message(message.message_id)
     # log_channel = get(message.guild.channels, name='log')
     # embed = discord.Embed(title='Message Deleted 🗑️', color=discord.Color.from_rgb(178, 34, 34),
     #                             description=message.content)
