@@ -66,17 +66,17 @@ def login():
 def logout():
     try:
         discord.revoke()
-        return redirect('contact')
+        return redirect('/')
     except:
-        return redirect('contact')
+        return redirect('/')
 
 @app.route("/callback")
 def callback():
     try:
         discord.callback()
-        return redirect('contact')
+        return redirect('/')
     except:
-        return redirect('contact')
+        return redirect('/')
 
 @app.route("/commit", methods=['POST'])
 def commit_update():
