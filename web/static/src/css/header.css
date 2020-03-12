@@ -46,11 +46,12 @@ header {
   display: flex;
   transition: 0ms ease;
   z-index: 100;
-  line-height: 29px;
 }
   
 .nav__links li {
   padding: 0px 10px;
+  line-height: 2;
+  font-size: 16px;
   transition: all 0.3s ease 0s;
 }
 header{
