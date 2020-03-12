@@ -1,133 +1,141 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PD | Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
-        <!-- bootstrap v3.3.7 css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
-        <!-- animate css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.min.css') }}">
-        <!-- owl.carousel.2.0.0-beta.2.4 css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css) }}">
-        <!-- style css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">Forums</a></li>
-                    <li><a href="/">PDBot</a></li>
-                    <li><a href="contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="login">{{user.name}}</a>
-            <div class="selector">
-                <div class="l1"></div>
-                <div class="l2"></div>
-                <div class="l3"></div>
-            </div>
-        </header>
-        <!-- header-area start -->
-        <header class="header-area" id="sticky-header">
-            <div class="container">
-                                </div>
-                                <div class=" col-xs-2 col-sm-1 hidden-md hidden-lg">
-                                    <div class="responsive-menu-wrap floatright"></div>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header-area end -->
 
-        <!-- slider-area start -->
-        <div class="slider-area">
-            <div class="slider-active">
-                <div class="slider-items">
-                    <img src="{{ url_for('static', filename='src/img/slider/pic-1.png') }}" alt="slider" class="slider">
-                    <div class="single-slider">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-7 col-sm-10 col-xs-12">
-                                    <h2>Programmers Den.</h2>
-                                    <p>We are a community that helps with any type of code Java, JS, Python etcs. </p>
-                                    <a href="https://discord.gg/Ws37MKy">Join our server!</a>
-                                </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PD | Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.min.css') }}">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css') }}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Forums</a></li>
+                <li><a href="/">PDBot</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="login">{{user.name}}</a>
+        <div class="selector">
+            <div class="l1"></div>
+            <div class="l2"></div>
+            <div class="l3"></div>
+        </div>
+    </header>
+    <!-- header-area start -->
+    <header class="header-area" id="sticky-header">
+        <div class="container">
+        </div>
+        <div class=" col-xs-2 col-sm-1 hidden-md hidden-lg">
+            <div class="responsive-menu-wrap floatright"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </header>
+    <!-- header-area end -->
+
+    <!-- slider-area start -->
+    <div class="slider-area">
+        <div class="slider-active">
+            <div class="slider-items">
+                <img src="{{ url_for('static', filename='src/img/slider/pic-1.png') }}" alt="slider" class="slider">
+                <div class="single-slider">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-10 col-xs-12">
+                                <h2>Programmers Den.</h2>
+                                <p>We are a community that helps with any type of code Java, JS, Python etcs. </p>
+                                <a href="https://discord.gg/Ws37MKy">Join our server!</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="slider-items">
-                    <img src="{{ url_for('static', filename='src/img/slider/pic-2.png') }}" alt="slider" class="slider">
-                    <div class="single-slider single-slider2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-offset-2 col-sm-10 col-xs-12 col-md-7 col-md-offset-5 text-right">
-                                    <h2>An active community.</h2>
-                                    <p>PD is a growing community with active members and staff! </p>
-                                    <a href="https://discord.gg/Ws37MKy">Join us!</a>                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
-        </div>
-        <!-- slider-area end -->
-        
-        <!-- about-area start -->
-        <div class="about-area ptb-130 bg-1 about-area2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 hidden-sm hidden-xs">
-                        <div class="about-img">
-                            <iframe src="https://discordapp.com/widget?id=668000598221651975&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <div class="about-wrap">
-                            <h3>PD's community.</h3>
-                            <p>✔ Tired of being stuck with your code? Today is your lucky day, I'll take you on a ride through <strong>Programmers Den</strong>!</p>
-                            <p> We're a <strong>community</strong> featuring awesome Discord members for to help you with your code! No money no nothing, It's all <strong>FREE</strong>! You just need to join the server, Read the guide and you're all set!.</p>
-                            <a href="about.html">View All</a>
+            <div class="slider-items">
+                <img src="{{ url_for('static', filename='src/img/slider/pic-2.png') }}" alt="slider" class="slider">
+                <div class="single-slider single-slider2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-offset-2 col-sm-10 col-xs-12 col-md-7 col-md-offset-5 text-right">
+                                <h2>An active community.</h2>
+                                <p>PD is a growing community with active members and staff! </p>
+                                <a href="https://discord.gg/Ws37MKy">Join us!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<!-- all js here -->
-		<!-- jquery latest version -->
-        <script src="{{ url_for('static', filename='src/js/index/vendorjquery-1.12.4.min.js') }}"></script>
-		<!-- bootstrap js -->
-		<!-- owl.carousel.2.0.0-beta.2.4 css -->
-        <script src="{{ url_for('static', filename='src/js/index/owl.carousel.min.js') }}"></script>
-		<!-- isotope.pkgd.min.js -->
-        <script src="{{ url_for('static', filename='src/js/index/imagesloaded.pkgd.min.js') }}"></script>
-		<!-- isotope.pkgd.min.js -->
-        <script src="{{ url_for('static', filename='src/js/index/isotope.pkgd.min.js') }}"></script>
-		<!-- jquery.waypoints.min.js -->
-        <script src="{{ url_for('static', filename='src/js/index/jquery.waypoints.min.js') }}"></script>
-		<!-- jquery.magnific-popup.min.js -->
-        <script src="{{ url_for('static', filename='src/js/index/jquery.magnific-popup.min.js') }}"></script>
-		<!-- jquery.slicknav.min.js -->
-        <script src="{{ url_for('static', filename='src/js/index/jquery.slicknav.min.js') }}"></script>
-		<!-- wow js -->
-        <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
-        <!-- plugins js -->
-        <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
-        
-		<!-- main js -->
-        <script src="{{ url_for('static', filename='src/js/index/scripts.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
+    </div>
+    </div>
+    <!-- slider-area end -->
 
-    </body>
+    <!-- about-area start -->
+    <div class="about-area ptb-130 bg-1 about-area2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hidden-sm hidden-xs">
+                    <div class="about-img">
+                        <iframe src="https://discordapp.com/widget?id=668000598221651975&theme=dark" width="350"
+                            height="500" allowtransparency="true" frameborder="0"></iframe> </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="about-wrap">
+                        <h3>PD's community.</h3>
+                        <p>✔ Tired of being stuck with your code? Today is your lucky day, I'll take you on a ride
+                            through <strong>Programmers Den</strong>!</p>
+                        <p> We're a <strong>community</strong> featuring awesome Discord members for to help you with
+                            your code! No money no nothing, It's all <strong>FREE</strong>! You just need to join the
+                            server, Read the guide and you're all set!.</p>
+                        <a href="about.html">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="{{ url_for('static', filename='src/js/index/vendorjquery-1.12.4.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{{ url_for('static', filename='src/js/index/owl.carousel.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/imagesloaded.pkgd.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/isotope.pkgd.min.js') }}"></script>
+    <!-- jquery.waypoints.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.waypoints.min.js') }}"></script>
+    <!-- jquery.magnific-popup.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.magnific-popup.min.js') }}"></script>
+    <!-- jquery.slicknav.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.slicknav.min.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
+    <!-- plugins js -->
+    <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
+
+    <!-- main js -->
+    <script src="{{ url_for('static', filename='src/js/index/scripts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
+
+</body>
+
 </html>
