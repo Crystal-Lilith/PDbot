@@ -12,24 +12,41 @@ function loginCheck() {
     })
 
     logButton.addEventListener('click', () => {
-        Swal.fire({
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
             title: 'Confirm',
-            text: "Are sure you want to logout?",
+            text: 'Are sure you want to logout?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, logout!'
+            confirmButtonText: 'Yes, logout!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
         }).then((result) => {
             if (result.value) {
-                Swal.fire(
-                    'Logging Out!',
-                    'You will now be logged out',
+                swalWithBootstrapButtons.fire(
+                    'Logging out',
+                    'You will now be logged out...',
                     'success'
                 )
                 location.replace('https://pden.net/logout');
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'You are still logged in',
+                    'error'
+                )
             }
-        });
+        })
     })
 }
 
