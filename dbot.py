@@ -23,7 +23,7 @@ async def help(ctx):
     with open('./cmds/dcmds.json', 'w') as f:
         for command in client.commands:
             desc = command.description.split('||')
-            if command.name != "help":
+            if command.name != 'help':
                 cmds[command.name] = {"desc": desc[0], 'syntax': desc[-1], 'required_roles': [], 'required_perms': []}
         json.dump(cmds, f)
         f.close()
