@@ -5,4 +5,4 @@ async def on_raw_message_delete(message):
     #                             description=message.content)
     # embed.set_footer(text=f'Deleted by: {message.author}', icon_url=message.author.avatar_url)
     # await log_channel.send(embed=embed, files=message.attachments)
-    print(message.cached_messages)
+    print(message.cached_message)
