@@ -80,6 +80,10 @@ header{
   transition: all 0.3s ease 0s;
 }
 
+header nav a {
+  font-size: 16px;
+}
+
 .cta:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
