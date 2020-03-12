@@ -29,28 +29,32 @@ def html_format(file):
 @app.route('/')
 def index():
     try:
-        user = discord.fetch_user()
-        login_status = discord.authorized
-        return render_template('index.html', user=user, login_status=login_status)
+        # user = discord.fetch_user()
+        # login_status = discord.authorized
+        return render_template('index.html')
+        # return render_template('index.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No index.html file"
     except:
-        class user:
-            name = 'Login'
-        return render_template('index.html', user=user, login_status=False)
+        # class user:
+        #     name = 'Login'
+        return render_template('index.html')
+        # return render_template('index.html', user=user, login_status=False)
 
 @app.route('/contact')
 def contact():
     try:
-        user = discord.fetch_user()
-        login_status = discord.authorized
-        return render_template('contact.html', user=user, login_status=login_status)
+        # user = discord.fetch_user()
+        # login_status = discord.authorized
+        return render_template('contact.html')
+        # return render_template('contact.html', user=user, login_status=login_status)
     except FileNotFoundError:
         return "No Contact.html file"
     except:
-        class user:
-            name = 'Login'
-        return render_template('contact.html', user=user, login_status=False)
+        # class user:
+        #     name = 'Login'
+        return render_template('contact.html')
+        # return render_template('contact.html', user=user, login_status=False)
 
 @app.route('/login')
 def login():
