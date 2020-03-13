@@ -145,3 +145,4 @@ config/*.cfg
 
 # virtualenv
 env
+.vscode
