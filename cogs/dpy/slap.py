@@ -1,4 +1,4 @@
-@client.command()
+@client.command(description='Slaps the mentioned user||<username>')
 async def slap(ctx, user=None):
     try:
         user=discord.User(user)
