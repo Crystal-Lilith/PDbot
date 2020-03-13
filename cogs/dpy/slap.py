@@ -6,4 +6,4 @@ async def slap(ctx, user=None):
         pass
     if user==None:
         user=ctx.author.mention
-    await ctx.send("*Slapped "+user+"*")
+    await ctx.send("*Slapped* "+user+"")
