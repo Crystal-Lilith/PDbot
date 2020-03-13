@@ -1,4 +1,4 @@
-@client.command(description='Creates a vote||<timer> <desc>')
+@client.command(description='Creates a vote||<timer(days)> <desc>')
 @commands.has_role('Owner')
 async def cv(ctx, timer, *, desc):
     try:
@@ -17,7 +17,7 @@ async def cv(ctx, timer, *, desc):
     else:
         vote_amount = 0
     current_vote_count = vote_amount + 1
-    embed = discord.Embed(title=f'Vote #{current_vote_count} [{timer}min]', color=discord.Color.from_rgb(0, 255, 0),
+    embed = discord.Embed(title=f'Vote #{current_vote_count} [{timer} days]', color=discord.Color.from_rgb(0, 255, 0),
                             description=f'{desc}\n\n```✅: Yes\n🚫: No```')
     embed.set_footer(text=f'Vote started by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
     vote = await vote_channel.send(embed=embed)
@@ -26,7 +26,7 @@ async def cv(ctx, timer, *, desc):
 
     for i in ['✅', '🚫']:
         await vote.add_reaction(i)
-    await asyncio.sleep(float(timer) * 60)
+    await asyncio.sleep(float(timer) * 60 * 60 * 24)
 
     vote = await vote_channel.fetch_message(vote.id)
     for i in vote.reactions:
