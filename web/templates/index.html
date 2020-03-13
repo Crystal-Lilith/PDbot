@@ -84,18 +84,25 @@
             <div class="row">
                 <div class="col-md-6 hidden-sm hidden-xs">
                     <div class="about-img">
-                        <iframe src="https://discordapp.com/widget?id=668000598221651975&theme=dark" width="350"
-                            height="500" allowtransparency="true" frameborder="0"></iframe> </div>
+                        <div data-aos="zoom-in-right" data-aos-duration="1500">
+                            <iframe src="https://discordapp.com/widget?id=668000598221651975&theme=dark" width="350"
+                            height="500" allowtransparency="true" frameborder="0"></iframe>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="about-wrap">
-                        <h3>PD's community</h3>
-                        <p>✔ Tired of being stuck with your code? Today is your lucky day, we will take you on a ride
-                            through <strong>Programmers Den</strong>!</p>
-                        <p> We are a <strong>community</strong> featuring awesome Discord members to help you with
-                            your code! No money no nothing, It's all <strong>FREE</strong>! You just need to join the
-                            server, read the guide and you're all set!</p>
-                        <a href="contact">Contact</a>
+                        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
+                            <h3>PD's community</h3>
+                            <p>✔ Tired of being stuck with your code? Today is your lucky day, we will take you on a
+                                ride
+                                through <strong>Programmers Den</strong>!</p>
+                            <p> We are a <strong>community</strong> featuring awesome Discord members to help you with
+                                your code! No money no nothing, It's all <strong>FREE</strong>! You just need to join
+                                the
+                                server, read the guide and you're all set!</p>
+                            <a href="contact">Contact</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,6 +128,12 @@
     <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
     <!-- plugins js -->
     <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <!-- main js -->
     <script src="{{ url_for('static', filename='src/js/index/scripts.js') }}"></script>
