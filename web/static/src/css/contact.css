@@ -12,6 +12,11 @@ body{
 
 }
 
+.spacer{
+    padding: 100px;
+    background-color: #0d0f11;
+}
+
 .deg{
     cursor: pointer;
 }
