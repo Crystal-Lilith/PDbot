@@ -13,6 +13,8 @@ function email_copy() {
             position: 'bottom-end',
             icon: 'success',
             title: 'Copied to clipboard!',
+            background: '#04b353',
+            padding: 2,
             showConfirmButton: false,
             timer: 1500
         })
