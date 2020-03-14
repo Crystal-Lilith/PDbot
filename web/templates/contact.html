@@ -2,28 +2,31 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PD | Contacts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/contact.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='src/icon/pd.ico') }}">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
+    <!-- header css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.css') }}">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css') }}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PD | Contacts</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='src/icon/pd.ico') }}">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
-        <!-- header css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
-        <!-- bootstrap v3.3.7 css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
-        <!-- animate css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.css') }}">
-        <!-- owl.carousel.2.0.0-beta.2.4 css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css') }}">
-        <!-- style css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
-    </head>
+
 </head>
 
 <body>
@@ -31,8 +34,8 @@
         <nav>
             <ul class="nav__links">
                 <li><a href="/">Home</a></li>
-                <li><a href="contact">Forums</a></li>
-                <li><a href="contact">PDBot</a></li>
+                <li><a href="/">Forums</a></li>
+                <li><a href="/">PDBot</a></li>
                 <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
@@ -65,6 +68,7 @@
         </div>
     </div>
     <!-- breadcumb-area end -->
+
     <h1 id="center">You can get support or contacting us by using these links</h1>
     <div>
         <div class="in">
@@ -82,6 +86,27 @@
             </div>
         </div>
     </div>
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="{{ url_for('static', filename='src/js/index/vendor/jquery-1.12.4.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{{ url_for('static', filename='src/js/index/owl.carousel.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/imagesloaded.pkgd.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/isotope.pkgd.min.js') }}"></script>
+    <!-- jquery.waypoints.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.waypoints.min.js') }}"></script>
+    <!-- jquery.magnific-popup.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.magnific-popup.min.js') }}"></script>
+    <!-- jquery.slicknav.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.slicknav.min.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
+    <!-- plugins js -->
+    <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
+
     <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
     {% if login_status %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
