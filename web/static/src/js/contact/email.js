@@ -1,13 +1,13 @@
 function email_copy() {
-    const copyText = document.querySelector('.cont');
+    /* Get the text field */
+    const copyText = document.querySelector('#email');
 
-    copyText.addEventListener('click', () => {
-        // /* Select the text field */
-        // copyText.select();
-        // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-        // /* Copy the text inside the text field */
-        // document.execCommand("copy");
+    copyText.addEventListener('click', () => {      
+        /* Select the text field */
+        copyText.select(); 
+        
+        /* Copy the text inside the text field */
+        document.execCommand("copy"); 
         // /* Alert the copied text */
         Swal.fire({
             icon: 'success',
