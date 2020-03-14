@@ -43,24 +43,26 @@
 </head>
 
 <body>
-    <!-- breadcumb-area start -->
-    <div class="breadcumb-area bg-img-5 black-opacity">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="breadcumb-wrap text-center">
-                        <h2>Programmer's Den</h2>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li>/</li>
-                            <li class="active">Contact</li>
-                        </ul>
+    <div data-aos="zoom-in">
+        <!-- breadcumb-area start -->
+        <div class="breadcumb-area bg-img-5 black-opacity">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcumb-wrap text-center">
+                            <h2>Programmer's Den</h2>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>/</li>
+                                <li class="active">Contact</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- breadcumb-area end -->
     </div>
-    <!-- breadcumb-area end -->
 
     <!-- service-page start -->
     <div class="service-page-area bg-1 pt-130">
@@ -71,15 +73,19 @@
                     <div class="in">
                         <div class="deg">
                             <a class="cont">
-                                <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
-                                <h2>Email</h2>
-                                <h5>Email <strong id="email">skane@pden.net</strong> to contact us</h5>
+                                <div data-aos="zoom-out-up">
+                                    <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
+                                    <h2>Email</h2>
+                                    <h5>Email <strong id="email">skane@pden.net</strong> to contact us</h5>
+                                </div>
                             </a>
                             <a class="cont" href="https://discord.gg/Ws37MKy">
-                                <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}"
-                                    alt="discord">
-                                <h2>Discord</h2>
-                                <h5>Join our discord server!</h5>
+                                <div data-aos="zoom-out-up">
+                                    <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}"
+                                        alt="discord">
+                                    <h2>Discord</h2>
+                                    <h5>Join our discord server!</h5>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -115,6 +121,12 @@
     <script src="{{ url_for('static', filename='src/js/contact/email.js') }}"></script>
     <!-- alert js -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
