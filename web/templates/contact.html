@@ -34,11 +34,7 @@
                 <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
-        {% if not login_status %}
-        <a class="cta" href="login">{{user.name}}</a>
-        {% else %}
-        <a class="cta">{{user.name}}</a>
-        {% endif %}
+        <a class="cta" href="contact">Contact</a>
         <div class="selector">
             <div class="l1"></div>
             <div class="l2"></div>
@@ -120,10 +116,6 @@
     <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
 
     <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
-    {% if login_status %}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="{{ url_for('static', filename='src/js/discord.js') }}"></script>
-    {% endif %}
 </body>
 
 </html>

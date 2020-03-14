@@ -1,17 +1,10 @@
 import os
 from flask import Flask, url_for, redirect, render_template
-from flask_discord import DiscordOAuth2Session
 from gevent.pywsgi import WSGIServer
 
 app=Flask(__name__)
 
 app.secret_key = b'Y\xd9\x8c\xcc\x8e\x16\x8d\x94\x93{/\xa2\x16\x88\t"\x11j\xc3/\xb9\xf9ra'
-
-app.config["DISCORD_CLIENT_ID"] = os.environ.get('CLIENT_ID')
-app.config["DISCORD_CLIENT_SECRET"] = os.environ.get('CLIENT_SECRET')
-app.config["DISCORD_REDIRECT_URI"] = "https://pden.net/callback"
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
-discord = DiscordOAuth2Session(app)
 
 def html_format(file):
     try:
@@ -29,58 +22,22 @@ def html_format(file):
 @app.route('/')
 def index():
     try:
-        user = discord.fetch_user()
-        login_status = discord.authorized
-        return render_template('index.html', user=user, login_status=login_status)
+        return render_template('index.html')
     except:
-        class user:
-            name = 'Login'
-        return render_template('index.html', user=user, login_status=False)
-
+        return 'Unable to find index.html'
 @app.route('/contact')
 def contact():
     try:
-        user = discord.fetch_user()
-        login_status = discord.authorized
-        return render_template('contact.html', user=user, login_status=login_status)
+        return render_template('contact.html')
     except:
-        class user:
-            name = 'Login'
-        return render_template('contact.html', user=user, login_status=False)
+        return 'Unable to find contact.html'
 
 @app.route('/about')
 def about():
     try:
-        user = disord.fetch_user()
-        login_status = discord.authorized
-        return render_template('about.html', user=user, login_status=login_status)
+        return render_template('about.html')
     except:
-        class user:
-            name = 'Login'
-        return render_template('about.html', user=user, login_status=False)
-
-@app.route('/login')
-def login():
-    try:
-        return discord.create_session()
-    except:
-        return redirect('/')
-
-@app.route('/logout')
-def logout():
-    try:
-        discord.revoke()
-        return redirect('/')
-    except:
-        return redirect('/')
-
-@app.route("/callback")
-def callback():
-    try:
-        discord.callback()
-        return redirect('/')
-    except:
-        return redirect('/')
+        return 'Unable to find about.html'
 
 @app.route("/commit", methods=['POST'])
 def commit_update():
