@@ -10,11 +10,9 @@ function email_copy() {
         // document.execCommand("copy");
         // /* Alert the copied text */
         Swal.fire({
-            position: 'bottom-end',
             icon: 'success',
             title: 'Copied to clipboard!',
             background: '#1d1e22',
-            padding: '50rem',
             showConfirmButton: false,
             timer: 1500
         })
