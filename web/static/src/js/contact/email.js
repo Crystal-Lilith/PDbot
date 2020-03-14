@@ -1,4 +1,4 @@
-const email_copy = () => {
+function email_copy() {
     const copyText = document.getElementById("email");
 
     copyText.addEventListener('click', () => {
@@ -18,5 +18,3 @@ const email_copy = () => {
         })
     })
 }
-
-email_copy();
