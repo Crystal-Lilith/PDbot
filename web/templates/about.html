@@ -21,6 +21,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
     <!-- responsive css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
+    <header>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Forums</a></li>
+                <li><a href="/">PDBot</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+        {% if not login_status %}
+        <a class="cta" href="login">{{user.name}}</a>
+        {% else %}
+        <a class="cta">{{user.name}}</a>
+        {% endif %}
+        <div class="selector">
+            <div class="l1"></div>
+            <div class="l2"></div>
+            <div class="l3"></div>
+        </div>
+    </header>
 </head>
 
 <body>
