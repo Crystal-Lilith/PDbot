@@ -51,9 +51,13 @@ def contact():
 @app.route('/about')
 def about():
     try:
-        return render_template('about.html')
+        user = disord.fetch_user()
+        login_status = discord.authorized
+        return render_template('about.html', user=user, login_status=login_status)
     except:
-        return "No about.html file"
+        class user:
+            name = 'Login'
+        return render_template('about.html', user=user, login_status=False)
 
 @app.route('/login')
 def login():
