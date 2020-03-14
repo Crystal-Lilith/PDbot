@@ -39,24 +39,26 @@
 </head>
 
 <body>
-    <!-- breadcumb-area start -->
-    <div class="breadcumb-area bg-img-5 black-opacity">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="breadcumb-wrap text-center">
-                        <h2>Programmer's Den</h2>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li>/</li>
-                            <li class="active">About</li>
-                        </ul>
+    <div data-aos="zoom-in">
+        <!-- breadcumb-area start -->
+        <div class="breadcumb-area bg-img-5 black-opacity">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcumb-wrap text-center">
+                            <h2>Programmer's Den</h2>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>/</li>
+                                <li class="active">About</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- breadcumb-area end -->
     </div>
-    <!-- breadcumb-area end -->
 
     <!-- service-page start -->
     <div class="service-page-area bg-1 pt-130">
@@ -64,27 +66,29 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <div class="service-page-wrap">
-                        <h3>The Amazing Community</h3>
-                        <p>Programmer's Den is a discord server for people who are interested in programming! We accept
-                            people of all skill levels either expert or completely new at programming. This is a server
-                            with a community of programmers who helps each other out. We have a custom bot that allows
-                            you to create a category for your project with no permission limits within the category. You
-                            are able to add developers to it so that they may join your project. It would be your own
-                            private category that only people you allow can access! Feel free to socialize and meet new
-                            people who have the same interests. You might even meet new people to start awesome projects
-                            with!</p>
-                        <h3>Friendly Users!</h3>
-                        <p>Our server is full of friendly programmers! If you ever need help with your project, you can
-                            ask us for help! We have auto-assigning roles so that you can select the languages of your
-                            interest. However, if you are already experienced, you can also help other people who are
-                            wanting to learn and strive! We have dedicated channels for each programming language so
-                            that you can go more into detail about the language. You might even find new friends with
-                            common interests!</p>
-                        <h3>Active Staff!</h3>
-                        <p>We always have staff that is active and ready to help! They are very understanding don't be
-                            afraid to ask them questions or ask for help. We also accept suggestions from everyone so
-                            that we can improve! If you would like to be a part of our staff team, that is possible too!
-                        </p>
+                        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                            <h3>The Amazing Community</h3>
+                            <p>Programmer's Den is a discord server for people who are interested in programming! We accept
+                                people of all skill levels either expert or completely new at programming. This is a server
+                                with a community of programmers who helps each other out. We have a custom bot that allows
+                                you to create a category for your project with no permission limits within the category. You
+                                are able to add developers to it so that they may join your project. It would be your own
+                                private category that only people you allow can access! Feel free to socialize and meet new
+                                people who have the same interests. You might even meet new people to start awesome projects
+                                with!</p>
+                            <h3>Friendly Users!</h3>
+                            <p>Our server is full of friendly programmers! If you ever need help with your project, you can
+                                ask us for help! We have auto-assigning roles so that you can select the languages of your
+                                interest. However, if you are already experienced, you can also help other people who are
+                                wanting to learn and strive! We have dedicated channels for each programming language so
+                                that you can go more into detail about the language. You might even find new friends with
+                                common interests!</p>
+                            <h3>Active Staff!</h3>
+                            <p>We always have staff that is active and ready to help! They are very understanding don't be
+                                afraid to ask them questions or ask for help. We also accept suggestions from everyone so
+                                that we can improve! If you would like to be a part of our staff team, that is possible too!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,6 +116,12 @@
     <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
     <!-- plugins js -->
     <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
