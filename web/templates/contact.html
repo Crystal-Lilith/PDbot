@@ -67,23 +67,37 @@
     </div>
     <!-- breadcumb-area end -->
 
-    <h1 id="center">You can get support or contacting us by using these links</h1>
-    <div>
-        <div class="in">
-            <div class="deg">
-                <a class="cont" href="#">
-                    <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
-                    <h2>Email</h2>
-                    <h5>Email <strong>skane@pden.net</strong> to contact us</h5>
-                </a>
-                <a class="cont" href="https://discord.gg/Ws37MKy">
-                    <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}" alt="discord">
-                    <h2>Discord</h2>
-                    <h5>Join our discord server!</h5>
-                </a>
+    <!-- service-page start -->
+    <div class="service-page-area bg-1 pt-130">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="service-page-wrap">
+                        <h1 id="center">You can get support or contacting us by using these links</h1>
+                        <div>
+                            <div class="in">
+                                <div class="deg">
+                                    <a class="cont" href="#">
+                                        <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
+                                        <h2>Email</h2>
+                                        <h5>Email <strong>skane@pden.net</strong> to contact us</h5>
+                                    </a>
+                                    <a class="cont" href="https://discord.gg/Ws37MKy">
+                                        <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}"
+                                            alt="discord">
+                                        <h2>Discord</h2>
+                                        <h5>Join our discord server!</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- service-page end -->
+
     <!-- all js here -->
     <!-- jquery latest version -->
     <script src="{{ url_for('static', filename='src/js/index/vendor/jquery-1.12.4.min.js') }}"></script>
