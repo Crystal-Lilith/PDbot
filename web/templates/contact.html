@@ -2,12 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/contact.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
-    <title>PD | Contacts</title>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>PD | Contacts</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='src/icon/pd.ico') }}">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
+        <!-- header css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
+        <!-- bootstrap v3.3.7 css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.css') }}">
+        <!-- owl.carousel.2.0.0-beta.2.4 css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css') }}">
+        <!-- style css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
+    </head>
 </head>
 
 <body>
@@ -31,6 +47,24 @@
             <div class="l3"></div>
         </div>
     </header>
+    <!-- breadcumb-area start -->
+    <div class="breadcumb-area bg-img-5 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Programmer's Den</h2>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li class="active">About</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcumb-area end -->
     <h1 id="center">You can get support or contacting us by using these links</h1>
     <div>
         <div class="in">
