@@ -3,12 +3,12 @@ function email_copy() {
     const copyText = document.querySelector('#email');
 
     copyText.addEventListener('click', () => {      
-        /* Select the text field */
-        copyText.select(); 
-        
-        /* Copy the text inside the text field */
-        document.execCommand("copy"); 
-        // /* Alert the copied text */
+        const el = document.createElement('textarea');
+        el.value = 'skane@pden.net';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
         Swal.fire({
             icon: 'success',
             title: 'Copied to clipboard!',
