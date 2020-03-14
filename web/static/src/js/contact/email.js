@@ -14,7 +14,7 @@ function email_copy() {
             icon: 'success',
             title: 'Copied to clipboard!',
             background: '#1d1e22',
-            padding: 5,
+            padding: '5rem',
             showConfirmButton: false,
             timer: 1500
         })
