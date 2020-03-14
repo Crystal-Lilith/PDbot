@@ -13,12 +13,12 @@ async def asciifonts(ctx):
 
         embed = discord.Embed(title='Fonts', color=discord.Color.from_rgb(0, 191, 255), 
                                 description=font)
-        embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Requested by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     except:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='Failed to get fonts')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
 
 @asciifonts.error
@@ -31,5 +31,5 @@ async def asciifonts_error(ctx, error):
         syntax = cmd.description.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description=f'${desc} ({syntax})')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
