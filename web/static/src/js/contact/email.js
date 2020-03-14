@@ -1,4 +1,4 @@
-function email_copy() {
+const email_copy = () => {
     /* Get the text field */
     var copyText = document.getElementById("cta");
 
@@ -20,3 +20,5 @@ function email_copy() {
         })
     })
 }
+
+email_copy();
