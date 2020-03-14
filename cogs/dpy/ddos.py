@@ -1,4 +1,4 @@
-@Client.command(description='Figure It Out||<username>')
+@Client.command(description='Fake DDOS||<username>')
 async def ddos(ctx, user: discord.User):
     await ctx.channel.send(f'DDOSing {user.name}')
     status = ['DDOS Complete!', 'DDOS Failed']
