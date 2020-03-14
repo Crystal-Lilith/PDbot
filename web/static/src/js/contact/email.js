@@ -9,7 +9,12 @@ function email_copy() {
         /* Copy the text inside the text field */
         document.execCommand("copy");
         /* Alert the copied text */
-        alert('test')
-        
+        Swal.fire({
+            position: 'top-start',
+            icon: 'success',
+            title: 'Copied to clipboard!',
+            showConfirmButton: false,
+            timer: 1500
+        })
     })
 }
