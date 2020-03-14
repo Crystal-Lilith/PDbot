@@ -1,6 +1,6 @@
 function email_copy() {
     const el = document.createElement('textarea');
-    el.value = 'skane@pden.net';
+    el.value = 'support@pden.net';
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
