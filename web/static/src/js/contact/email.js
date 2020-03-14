@@ -1,5 +1,5 @@
 const email_copy = () => {
-    var copyText = document.getElementById("email");
+    const copyText = document.getElementById("email");
 
     copyText.addEventListener('click', () => {
         /* Select the text field */
