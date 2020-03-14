@@ -8,3 +8,4 @@ pyfiglet
 sanic
 aiofile
 gevent
+FlaskBB
