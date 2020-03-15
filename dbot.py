@@ -16,7 +16,7 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
-    nitro_role = get(client.guilds.roles, name='Server Booster')
+    nitro_role = client.fetch_guild(668000598221651975).get_role(674833235238322187)
     client.loop.create_task(rainbow_role(nitro_role))
 
 async def rainbow_role(role):
