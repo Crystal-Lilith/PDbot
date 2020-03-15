@@ -50,6 +50,7 @@ def apply():
         return render_template('apply.html')
     except:
         return 'Unable to find apply.html'
+
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
