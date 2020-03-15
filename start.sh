@@ -12,7 +12,6 @@ sudo gem install discordrb dotenv
 while :
 do
     ruby rbot.rb & python3 dbot.py & bash -c "exec -a PDBot-c coffee cbot.coffee"
-    sh stop.sh
-    git fetch
-    git pull
+    bash stop.sh
+    git fetch && git pull
 done
