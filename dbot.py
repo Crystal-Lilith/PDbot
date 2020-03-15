@@ -16,6 +16,33 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
+    nitro_role = get(client.guilds.roles, name='Server Booster')
+    client.loop.create_task(rainbow_role(nitro_role))
+
+async def rainbow_role(role):
+    class RandColors:
+        red = randint(0,255)
+        green = randint(0,255)
+        blue = randint(0,255)
+        async def __init__(self):
+            if RandColors.red > 254:
+                RandColors.red = 0
+            else:
+                RandColors.red += 1
+            if RandColors.green > 254:
+                RandColors.green = 0
+            else:
+                RandColors.green += 1
+            if RandColors.blue > 254:
+                RandColors.blue = 0
+            else:
+                RandColors.blue += 1
+
+    color = discord.Color.from_rgb(RandColors.red, RandColors.green, RandColors.blue)
+    while True:
+        await role.edit(colour=color)
+        await asyncio.sleep(4)
+
 
 @client.command()
 async def help(ctx):
