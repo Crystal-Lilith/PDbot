@@ -16,33 +16,44 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
+
+    global nitro_red
+    global nitro_green
+    global nitro_blue
+    nitro_red = randint(0,255)
+    nitro_green = randint(0,255)
+    nitro_blue = randint(0,255)
+
     pden = get(client.guilds, name="Programmer's Den")
     nitro_role = get(pden.roles, name='Server Booster')
     client.loop.create_task(rainbow_role(nitro_role))
 
 async def rainbow_role(role):
-    class RandColors:
-        red = randint(0,255)
-        green = randint(0,255)
-        blue = randint(0,255)
-        async def __init__(self):
-            if RandColors.red > 254:
-                RandColors.red = 0
-            else:
-                RandColors.red += 1
-            if RandColors.green > 254:
-                RandColors.green = 0
-            else:
-                RandColors.green += 1
-            if RandColors.blue > 254:
-                RandColors.blue = 0
-            else:
-                RandColors.blue += 1
-
-    color = discord.Color.from_rgb(RandColors.red, RandColors.green, RandColors.blue)
+    global nitro_red
+    global nitro_green
+    global nitro_blue
+    color = discord.Color.from_rgb(nitro_red, nitro_green, nitro_blue)
     while True:
         await role.edit(colour=color)
         await asyncio.sleep(4)
+async def update_color():
+    global nitro_red
+    global nitro_green
+    global nitro_blue
+    if nitro_red > 254:
+        nitro_red = 0
+    else:
+        nitro_red += 1
+    if nitro_green > 254:
+        nitro_green = 0
+    else:
+        nitro_green += 1
+    if nitro_blue > 254:
+        nitro_blue = 0
+    else:
+        nitro_blue += 1
+
+
 
 
 @client.command()
