@@ -44,6 +44,12 @@ def commit_update():
     os.system("bash stop.sh")
     return ''
 
+@app.route('/apply')
+def apply(): 
+    try:
+        return render_template('apply.html')
+    except:
+        return 'Unable to find apply.html'
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
