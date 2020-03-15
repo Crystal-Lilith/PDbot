@@ -29,32 +29,27 @@ async def on_ready():
     client.loop.create_task(rainbow_role(nitro_role))
 
 async def rainbow_role(role):
-    global nitro_red
-    global nitro_green
-    global nitro_blue
-    color = discord.Color.from_rgb(nitro_red, nitro_green, nitro_blue)
     while True:
-        await role.edit(colour=color)
         await update_color()
         await asyncio.sleep(4)
 async def update_color():
     global nitro_red
     global nitro_green
     global nitro_blue
+    color = discord.Color.from_rgb(nitro_red, nitro_green, nitro_blue)
+    await role.edit(colour=color)
     if nitro_red > 254:
         nitro_red = 0
-    else:
+    elif nitro_red < 255:
         nitro_red += 1
     if nitro_green > 254:
         nitro_green = 0
-    else:
+    elif nitro_green < 255:
         nitro_green += 1
     if nitro_blue > 254:
         nitro_blue = 0
-    else:
+    elif nitro_blue < 255:
         nitro_blue += 1
-
-
 
 
 @client.command()
