@@ -35,6 +35,7 @@ async def rainbow_role(role):
     color = discord.Color.from_rgb(nitro_red, nitro_green, nitro_blue)
     while True:
         await role.edit(colour=color)
+        await update_color()
         await asyncio.sleep(4)
 async def update_color():
     global nitro_red
