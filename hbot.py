@@ -57,7 +57,7 @@ def add_extensions():
 add_extensions()
 EXTENSION_LOADER.load_all().syncwrap().wait()
 
-@on_command(case='update')
+@on_command(name='update')
 async def restart_bot(client, message):
     await client.message_create(message.channel, "Updating bot...")
     os.system('clear && sh stop.sh')
@@ -104,6 +104,6 @@ async def help(client, message, content):
     del pages
     await Pagination(client, message.channel,result)
 
-on_command(Interpreter(locals().copy()), case='execute')
+on_command(Interpreter(locals().copy()), name='execute')
 
 start_clients()

@@ -143,4 +143,6 @@ dmypy.json
 config/*.yaml
 config/*.cfg
 
-keys/
+# virtualenv
+env
+.vscode

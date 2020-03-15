@@ -1,7 +1,10 @@
-from flask import Flask, url_for, render_template
+import os
+from flask import Flask, url_for, redirect, render_template
 from gevent.pywsgi import WSGIServer
 
 app=Flask(__name__)
+
+app.secret_key = b'Y\xd9\x8c\xcc\x8e\x16\x8d\x94\x93{/\xa2\x16\x88\t"\x11j\xc3/\xb9\xf9ra'
 
 def html_format(file):
     try:
@@ -20,25 +23,29 @@ def html_format(file):
 def index():
     try:
         return render_template('index.html')
-    except FileNotFoundError:
-        return "No index.html file"
-
+    except:
+        return 'Unable to find index.html'
 @app.route('/contact')
 def contact():
     try:
         return render_template('contact.html')
-    except FileNotFoundError:
-        return "No Contact.html file"
-    
-@app.route('/dashboard')
-def dashboard():
+    except:
+        return 'Unable to find contact.html'
+
+@app.route('/about')
+def about():
     try:
-        return html_format('templates/dashboard.html')
-    except FileNotFoundError:
-        return "No dashboard.html file"
+        return render_template('about.html')
+    except:
+        return 'Unable to find about.html'
+
+@app.route("/commit", methods=['POST'])
+def commit_update():
+    os.system("bash stop.sh")
+    return ''
 
 # @app.route("/<path:filepath>")
 # def page_loader(filepath):
 #     return html_format("./"+filepath)
 
-WSGIServer(('0.0.0.0', 8080), app, keyfile='keys/private.key', certfile='keys/certificate.crt').serve_forever()
+WSGIServer(('0.0.0.0', 8080), app).serve_forever()

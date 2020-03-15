@@ -1,8 +1,10 @@
 discord
 flask
+Flask-Discord
 beautifulsoup4
 requests
 pandas
 pyfiglet
 sanic
 aiofile
+gevent

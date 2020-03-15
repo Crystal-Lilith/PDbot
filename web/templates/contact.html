@@ -3,20 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='src/Header/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PD | Contacts</title>
-</head>
-
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/contact.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='src/icon/pd.ico') }}">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index.css') }}">
+    <!-- header css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/header.css') }}">
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/bootstrap.min.css') }}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/animate.css') }}">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/owl.carousel.css') }}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/styles.css') }}">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/css/index/responsive.css') }}">
     <header>
         <nav>
             <ul class="nav__links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/">Forums</a></li>
-                <li><a href="/">PDBot</a></li>
+                <li><a href="https://forum.pden.net">Forums</a></li>
+                <li><a href="about">About</a></li>
             </ul>
         </nav>
         <a class="cta" href="contact">Contact</a>
@@ -26,24 +40,96 @@
             <div class="l3"></div>
         </div>
     </header>
-    <h1 id="center">You can get support or contacting us by using these links</h1>
-    <div>
-        <div class="in">
-            <div class="deg">
-                <a class="cont" href="#">
-                    <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
-                    <h2>Email</h2>
-                    <h5>Email <strong>skane@criptext.com</strong> to contact us</h5>
-                </a>
-                <a class="cont" href="https://discord.gg/Ws37MKy">
-                    <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}" alt="discord">
-                    <h2>Discord</h2>
-                    <h5>Join our discord server!</h5>
-                </a>
+</head>
+
+<body>
+    <!-- breadcumb-area start -->
+    <div class="breadcumb-area bg-img-5 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Programmer's Den</h2>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>/</li>
+                            <li class="active">Contact</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='src/Header/app.js') }}"></script>
+    <!-- breadcumb-area end -->
+
+    <!-- service-page start -->
+    <div class="service-page-area bg-1 pt-130">
+        <div class="container">
+            <div class="service-page-wrap">
+                <div data-aos="fade-up" data-aos-duration="1500">
+                    <h1 id="center">You can get support or contacting us by using these links</h1>
+                </div>
+                <div>
+                    <div class="in">
+                        <div class="deg">
+                            <div data-aos="zoom-out-up" onclick="email_copy()">
+                                <a class="cont">
+                                    <img src="{{ url_for('static', filename='src/img/email.png') }}" alt="email">
+                                    <h2>Email</h2>
+                                    <h5>Email <strong>support@pden.net</strong> to contact us</h5>
+                                </a>
+                            </div>
+                            <div data-aos="zoom-out-up">
+                                <a class="cont" href="https://discord.gg/Ws37MKy">
+                                    <img src="{{ url_for('static', filename='src/img/discord-logo-png-7617.png') }}"
+                                        alt="discord">
+                                    <h2>Discord</h2>
+                                    <h5>Join our discord server!</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"> </div>
+
+    <!-- service-page end -->
+
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="{{ url_for('static', filename='src/js/index/vendor/jquery-1.12.4.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{{ url_for('static', filename='src/js/index/owl.carousel.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/imagesloaded.pkgd.min.js') }}"></script>
+    <!-- isotope.pkgd.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/isotope.pkgd.min.js') }}"></script>
+    <!-- jquery.waypoints.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.waypoints.min.js') }}"></script>
+    <!-- jquery.magnific-popup.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.magnific-popup.min.js') }}"></script>
+    <!-- jquery.slicknav.min.js -->
+    <script src="{{ url_for('static', filename='src/js/index/jquery.slicknav.min.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ url_for('static', filename='src/js/index/wow.min.js') }}"></script>
+    <!-- plugins js -->
+    <script src="{{ url_for('static', filename='src/js/index/plugins.js') }}"></script>
+    <!-- header js -->
+    <script src="{{ url_for('static', filename='src/js/header.js') }}"></script>
+    <!-- alert js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- email js -->
+    <script src="{{ url_for('static', filename='src/js/contact/email.js') }}"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

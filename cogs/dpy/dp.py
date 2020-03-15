@@ -21,12 +21,12 @@ async def dp(ctx, *, projectname):
         await category.delete()
 
         embed = discord.Embed(color=discord.Color.from_rgb(178, 34, 34), description=f'Deleted {projectname}!')
-        embed.set_footer(text=f'Project deleted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Project deleted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to delete it!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
 
 @dp.error
@@ -39,5 +39,5 @@ async def dp_error(ctx, error):
         syntax = cmd.description.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description=f'${desc} ({syntax})')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
