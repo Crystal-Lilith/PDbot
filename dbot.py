@@ -30,9 +30,9 @@ async def on_ready():
 
 async def rainbow_role(role):
     while True:
-        await update_color()
+        await update_color(role)
         await asyncio.sleep(4)
-async def update_color():
+async def update_color(role):
     global nitro_red
     global nitro_green
     global nitro_blue
