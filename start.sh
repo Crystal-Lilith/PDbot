@@ -13,5 +13,5 @@ while :
 do
     ruby rbot.rb & python3 dbot.py & bash -c "exec -a PDBot-c coffee cbot.coffee"
     bash stop.sh
-    git fetch && git pull
+    git fetch; git pull
 done
