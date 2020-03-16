@@ -8,7 +8,7 @@ async def ls(ctx, *, directory='.'):
             if i in split_directory:
                 embed = discord.Embed(title='Warning ❗', color=discord.Color.from_rgb(178, 34, 34),
                                 description='You may not ls this directory!')
-                embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+                embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
                 await ctx.channel.send(embed=embed)
                 return
         for i in os.listdir(directory):
@@ -16,12 +16,12 @@ async def ls(ctx, *, directory='.'):
                 x = f"{x}{i}\n"
         embed = discord.Embed(title=f'List of files and folders in `{directory}`', color=discord.Color.from_rgb(0, 191, 255), 
                                 description=f'```css\n{x}```')
-        embed.set_footer(text=f'Requested by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
     except:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='Directory doesn\'t exist!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
 
 @ls.error
@@ -34,5 +34,5 @@ async def ls_error(ctx, error):
         syntax = cmd.description.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description=f'${desc} ({syntax})')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)

@@ -14,17 +14,17 @@ async def rp(ctx, projectname, *, newprojectname):
             
             embed = discord.Embed(color=discord.Color.from_rgb(0, 255, 0),
                                     description=f'Project **{projectname}** changed to **{newprojectname}**!')
-            embed.set_footer(text=f'Project renamed by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+            embed.set_footer(text=f'Project renamed by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed)
         else:
             embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='You must be the **__founder__** of the project to change the project name!')
-            embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+            embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='That project name already exists!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
 
 @rp.error
@@ -37,5 +37,5 @@ async def rp_error(ctx, error):
         syntax = cmd.description.split('||')[1]
         embed = discord.Embed(title='Invalid Syntax! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description=f'${desc} ({syntax})')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author.name}', icon_url=ctx.author.avatar_url)
+        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
