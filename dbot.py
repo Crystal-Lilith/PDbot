@@ -29,14 +29,14 @@ async def help(ctx):
         f.close()
     paginator = commands.Paginator(suffix='', prefix='')
     for guild in sorted(self.bot.guilds, key=lambda g: g.name):
-        if codepoint:
+        if True:
                 for emoji in emojis:
                     paginator.add_line(f'{emoji} -- {emoji.name} -- `{emoji}`')
                 paginator.add_line('')
-            else:
-                for emoji in emojis:
-                    paginator.add_line(f'{emoji} -- {emoji.name}')
-                paginator.add_line('')
+        else:
+            for emoji in emojis:
+                paginator.add_line(f'{emoji} -- {emoji.name}')
+            paginator.add_line('')
 
         for page in paginator.pages:
             await ctx.channel.send(page) 
