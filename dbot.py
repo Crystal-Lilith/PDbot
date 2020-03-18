@@ -30,7 +30,7 @@ async def help(ctx):
         f.close()
     help_menu = Paginator()
     help_menu.add_line(line='test')
-    await ctx.channel.send(embed=help_menu)
+    await ctx.channel.send(help_menu)
 
 
 for i in os.listdir('./cogs/dpy'):
