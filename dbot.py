@@ -3,7 +3,6 @@ from random import randint
 
 import discord, requests, random, pyfiglet
 from discord.ext import commands
-from discord.ext.commands import Paginator
 from discord.utils import get
 from bs4 import BeautifulSoup
 # from flask import Flask, request
@@ -28,9 +27,19 @@ async def help(ctx):
                 cmds[command.name] = {"desc": desc[0], 'syntax': desc[-1], 'required_roles': [], 'required_perms': []}
         json.dump(cmds, f)
         f.close()
-    help_menu = Paginator()
-    help_menu.add_line(line='test')
-    await ctx.channel.send(help_menu)
+    paginator = commands.Paginator(suffix='', prefix='')
+    for guild in sorted(self.bot.guilds, key=lambda g: g.name):
+        if codepoint:
+                for emoji in emojis:
+                    paginator.add_line(f'{emoji} -- {emoji.name} -- `{emoji}`')
+                paginator.add_line('')
+            else:
+                for emoji in emojis:
+                    paginator.add_line(f'{emoji} -- {emoji.name}')
+                paginator.add_line('')
+
+        for page in paginator.pages:
+            await ctx.channel.send(page) 
 
 
 for i in os.listdir('./cogs/dpy'):
