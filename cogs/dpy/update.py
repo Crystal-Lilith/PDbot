@@ -5,3 +5,4 @@ async def update(ctx):
     embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
     await ctx.channel.send(embed=embed)
     os.system('./stop.sh')
+    sys.exit()
