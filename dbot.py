@@ -27,12 +27,16 @@ async def help(ctx):
                 cmds[command.name] = {"desc": desc[0], 'syntax': desc[-1], 'required_roles': [], 'required_perms': []}
         json.dump(cmds, f)
         f.close()
-    p = commands.Paginator(prefix='```')
-    cmds = read_json('cmds/dcmds.json')
-    msg = []
-    for cmd in sorted(cmds):
-        msg.append(cmd)
-    for i in msg:
+
+    cmd_list = []
+    for y in os.listdir('./cmds/'):
+        with open('./cmds/'+y, 'r') as f:
+            x = json.load(f)
+        for i in x:
+            if i.lower() != 'help':
+                cmds.append(i)
+    p = commands.Paginator(prefix='```fix')
+    for i in cmd_list:
         p.add_line(i)
     for page in p.pages:
         embed = discord.Embed(title='[List of commands]', color=discord.Color.from_rgb(0, 191, 255),
