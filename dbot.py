@@ -1,6 +1,6 @@
 import os, json, asyncio, threading
 from random import randint
-
+from pandas import read_json
 import discord, requests, random, pyfiglet
 from discord.ext import commands
 from discord.utils import get
@@ -27,19 +27,17 @@ async def help(ctx):
                 cmds[command.name] = {"desc": desc[0], 'syntax': desc[-1], 'required_roles': [], 'required_perms': []}
         json.dump(cmds, f)
         f.close()
-    paginator = commands.Paginator(suffix='', prefix='')
-    for guild in sorted(self.bot.guilds, key=lambda g: g.name):
-        if True:
-                for emoji in emojis:
-                    paginator.add_line(f'{emoji} -- {emoji.name} -- `{emoji}`')
-                paginator.add_line('')
-        else:
-            for emoji in emojis:
-                paginator.add_line(f'{emoji} -- {emoji.name}')
-            paginator.add_line('')
-
-        for page in paginator.pages:
-            await ctx.channel.send(page) 
+        p = commands.Paginator(prefix='```css')
+        cmds = read_json('cmds/dcmds.json')
+        p.add_line('[List of Custom Commands]')
+        msg = []
+        for cmd in sorted(cmds):
+            msg.append(cmd)
+            if cmd == list(sorted(cmds))[-1] or len(msg) % 5 == 0 and len(msg) != 0:
+                p.add_line(', '.join(x for x in msg))
+                msg = []
+        for page in p.pages:
+            await ctx.channel.send(page)
 
 
 for i in os.listdir('./cogs/dpy'):
