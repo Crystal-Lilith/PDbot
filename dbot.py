@@ -33,7 +33,7 @@ async def help(ctx):
             x = json.load(f)
         for i in x:
             if i.lower() != 'help':
-                cmds.append(i)
+                cmd_list.append(i)
     p = commands.Paginator(prefix='```fix')
     for i in cmd_list:
         p.add_line(i)
