@@ -53,10 +53,10 @@ for i2 in os.listdir('./cogs/dpy1'):
     if i2.endswith('.py'):
          try:
             i2 = f"commands.{i2.replace('.py', '')}"
-            bot.load_extension(i2)
+            client.load_extension(i2)
         except Exception as err:
             print("An Error Has Occured, Logs Has Been Generated")
-            logging.basicConfig(filename="./Logs/log.txt", filemode='w+', format='%(levelname)s > %(message)s')
+            logging.basicConfig(filename="Logs/log.txt", filemode='w+', format='%(levelname)s > %(message)s')
             logging.error("An Error Occured.", exc_info=True)
 
 
