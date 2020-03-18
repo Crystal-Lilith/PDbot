@@ -1,6 +1,5 @@
-import os, json, asyncio, threading
+import os, json, asyncio, threading, json
 from random import randint
-from pandas import read_json
 import discord, requests, random, pyfiglet
 from discord.ext import commands
 from discord.utils import get
