@@ -29,12 +29,12 @@ async def help(ctx):
         f.close()
     p = commands.Paginator(prefix='```css')
     cmds = read_json('cmds/dcmds.json')
-    msg = ''
+    p.add_line('[List of Custom Commands]')
+    msg = []
     for cmd in sorted(cmds):
-        msg = f'{msg}{cmd}\n'
-        if cmd == list(sorted(cmds))[-1] or len(msg) % 5 == 0 and len(msg) != 0:
-            p.add_line(', '.join(x for x in msg))
-            msg = ''
+        msg.append(cmd)
+    for i in msg:
+        p.add_line(f'{i}\n')
     for page in p.pages:
         embed = discord.Embed(title='[List of commands]', color=discord.Color.from_rgb(0, 191, 255),
                         description=page)
