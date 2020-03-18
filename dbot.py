@@ -29,14 +29,13 @@ async def help(ctx):
         f.close()
     p = commands.Paginator(prefix='```')
     cmds = read_json('cmds/dcmds.json')
-    p.add_line('[List of Custom Commands]')
     msg = []
     for cmd in sorted(cmds):
         msg.append(cmd)
     for i in msg:
         p.add_line(i)
     for page in p.pages:
-        embed = discord.Embed(color=discord.Color.from_rgb(0, 191, 255),
+        embed = discord.Embed(title='[List of commands]', color=discord.Color.from_rgb(0, 191, 255),
                         description=page)
         embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
         await ctx.channel.send(embed=embed)
