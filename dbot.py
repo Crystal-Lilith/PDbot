@@ -1,4 +1,4 @@
-import os, json, asyncio, threading, json
+import os, json, asyncio, threading, sys
 from random import randint
 import discord, requests, random, pyfiglet
 from discord.ext import commands
