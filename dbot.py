@@ -37,7 +37,7 @@ async def help(ctx, *, arguments=None):
                     cmd_list.append(i)
         p = commands.Paginator(prefix='```fix')
         for i in cmd_list:
-            p.add_line(i)
+            p.add_line(f'>> {i}')
         for page in p.pages:
             embed = discord.Embed(title='[List of commands]', color=discord.Color.from_rgb(0, 191, 255),
                             description=page)
