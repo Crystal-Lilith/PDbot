@@ -17,7 +17,7 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(name='~$ ./PDBot'))
 
 @client.command()
-async def help(ctx, *, arguments):
+async def help(ctx, *, arguments=None):
     if not arguments:
         cmds = {}
         with open('./cmds/dcmds.json', 'w') as f:
