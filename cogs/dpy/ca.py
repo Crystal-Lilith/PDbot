@@ -1,5 +1,5 @@
 @client.command(description='Creates announcement||<general/add/remove/modify> <title> <desc>')
-@commands.has_role('Owner')
+@commands.has_any_role('Owner', 'Manager', 'Moderator')
 async def ca(ctx, option, title, *, message):
     if option == 'general' or option == 'add' or option == 'remove' or option == 'modify':
         if option == 'general':
