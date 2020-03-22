@@ -11,6 +11,8 @@ client = commands.Bot(command_prefix=os.environ.get('PREFIX'), case_insensitive=
 
 client.remove_command('help')
 
+global active_projects
+active_projects = []
 
 @client.event
 async def on_ready():
