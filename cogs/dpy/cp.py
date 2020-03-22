@@ -3,6 +3,7 @@ async def cp(ctx, *, projectname):
     global active_projects
     projectname = projectname.lower()
     if not get(ctx.guild.categories, name=f'{projectname} Founder'):
+        print(projectname)
         if not projectname in active_projects:
             active_projects.append(projectname)
             channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
