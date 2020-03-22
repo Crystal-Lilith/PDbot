@@ -1,10 +1,9 @@
 @client.command(description='Creates new project||<project-name>')
 async def cp(ctx, *, projectname):
-    global active_projects
     projectname = projectname.lower()
     if not get(ctx.guild.categories, name=f'{projectname} Founder'):
-        print(projectname)
         if not projectname in active_projects:
+            global active_projects
             active_projects.append(projectname)
             channels = ['sources', 'to-do-list', 'suggestions', 'known-bugs', 'general', 'bot-commands']
             color = discord.Color.from_rgb(randint(0,255), randint(0,255), randint(0,255))
@@ -72,6 +71,7 @@ async def cp(ctx, *, projectname):
             embed.set_footer(text=f'Project created by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
             await ctx.channel.send(embed=embed)
             projectname.remove(projectname)
+            print(active_projects)
         else:
             embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                     description='That project is currently being made!')
