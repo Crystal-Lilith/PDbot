@@ -5,3 +5,5 @@ class Command
         @required_perms = opts.required_perms or []
         @desc = opts.desc or opts.description or 'No description provided for this command.'
 
+module.exports =
+    { Command }
