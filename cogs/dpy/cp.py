@@ -72,10 +72,10 @@ async def cp(ctx, *, projectname):
             await ctx.channel.send(embed=embed)
             projectname.remove(projectname)
         else:
-        embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
-                                description='That project is currently being made!')
-        embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
-        await ctx.channel.send(embed=embed)
+            embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
+                                    description='That project is currently being made!')
+            embed.set_footer(text=f'Attempted by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
+            await ctx.channel.send(embed=embed)
     else:
         embed = discord.Embed(title='Error! ⚠️', color=discord.Color.from_rgb(255, 255, 51),
                                 description='That project already exists!')
