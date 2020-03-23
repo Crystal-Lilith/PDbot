@@ -22,6 +22,8 @@ async def cat(ctx, *, directory):
             lang = 'ruby'
         elif split_directory[-1].split('.')[-1] == 'json':
             lang = 'json'
+        elif split_directory[-1].split('.')[-1] == 'sh':
+            lang = 'bash'
         else:
             pass
         with open(directory, 'r') as f:
