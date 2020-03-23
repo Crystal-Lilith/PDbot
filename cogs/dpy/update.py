@@ -4,8 +4,8 @@ async def update(ctx):
     embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
     await ctx.channel.send(embed=embed)
     try:
-        await client.close()
         await os.system('clear && ./stop.sh')
+        await client.close()
     except:
         embed = discord.Embed(color=discord.Color.from_rgb(0, 191, 255), description='```Failed to update the bot!```')
         embed.set_footer(text=f'Requested by: {ctx.message.author}', icon_url=ctx.author.avatar_url)
