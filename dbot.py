@@ -1,4 +1,4 @@
-import os, json, asyncio, threading, json, logging
+import os, json, asyncio, threading, json, sys
 from random import randint
 import discord, requests, random, pyfiglet
 from discord.ext import commands
@@ -48,17 +48,6 @@ for i in os.listdir('./cogs/dpy'):
     if i.endswith('.py'):
         with open(f"./cogs/dpy/{i}", encoding='utf8') as f:
             exec(f.read())
-
-for i2 in os.listdir('./cogs/dpy1'):
-    if i2.endswith('.py'):
-         try:
-            i2 = f"commands.{i2.replace('.py', '')}"
-            client.load_extension(i2)
-        except Exception as err:
-            print("An Error Has Occured, Logs Has Been Generated")
-            logging.basicConfig(filename="Logs/log.txt", filemode='w+', format='%(levelname)s > %(message)s')
-            logging.error("An Error Occured.", exc_info=True)
-
 
 token = os.environ.get('TOKEN')
 
