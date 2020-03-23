@@ -5,6 +5,7 @@ async def update(ctx):
     await ctx.channel.send(embed=embed)
     try:
         await bot.close()
+        await os.system('./stop.sh')
         await sys.exit()
     except:
         embed = discord.Embed(color=discord.Color.from_rgb(0, 191, 255), description='```Failed to update the bot!```')
